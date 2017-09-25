@@ -5,17 +5,19 @@
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # `jekyll serve`. If you change this file, please restart the server process.
 
+minimal_mistakes_skin : "default" # "air", "contrast", "dark", "dirt", "mint", "sunrise"
+
 # Site Settings
-locale                   : "en"
+locale                   : "ko-KR"
 title                    : "Never test"
 title_separator          : "-"
 name                     : "YoungSeon.Ahn"
-description              : "New blog"
+description              : "short story about IT history economy life etc"
 url                      : "https://lovemewithoutall.github.io"
 baseurl                  : #
 repository               : "lovemewithoutall/lovemewithoutall.github.io"
 teaser                   : "/assets/images/20120817_115437.jpg"
-# breadcrumbs            : false # true, false (default)
+breadcrumbs              : true #, false (default)
 words_per_minute         : 200
 comments:
   provider               : # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "custom"
