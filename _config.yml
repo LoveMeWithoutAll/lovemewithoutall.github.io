@@ -8,7 +8,7 @@
 minimal_mistakes_skin : "default" # "air", "contrast", "dark", "dirt", "mint", "sunrise"
 
 # Site Settings
-locale                   : "ko-KR"
+locale                   : "en"
 title                    : "Never test"
 title_separator          : "-"
 name                     : "YoungSeon.Ahn"
