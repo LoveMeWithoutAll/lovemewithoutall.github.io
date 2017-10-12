@@ -4,6 +4,7 @@ title: 할아버지가 겪은 2차대전 이야기
 date: 2017-10-08 23:07:30.000000000 +09:00
 header:
   teaser: "https://upload.wikimedia.org/wikipedia/commons/1/13/Boeing_WB-29A_53_WRS_1954.jpg"
+  image: "https://upload.wikimedia.org/wikipedia/commons/1/13/Boeing_WB-29A_53_WRS_1954.jpg"
 type: post
 categories:
 - History

@@ -5,6 +5,7 @@ date: 2017-10-01 23:07:30.000000000 +09:00
 type: post
 header:
   teaser: "https://jekyllrb.com/img/logo-2x.png"
+  image: "https://jekyllrb.com/img/logo-2x.png"
 categories:
 - IT
 tags: [jekyll]

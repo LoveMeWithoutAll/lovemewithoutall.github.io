@@ -4,6 +4,7 @@ title: docker로 gitlab 설치하기
 date: 2017-10-02 23:07:30.000000000 +09:00
 header:
   teaser: "https://www.docker.com/sites/default/files/Whale%20Logo332%402x_5.png"
+  image: "https://www.docker.com/sites/default/files/Whale%20Logo332%402x_5.png"
 type: post
 categories:
 - IT

@@ -4,6 +4,7 @@ title: 회사가 사람 자르는 이야기
 date: 2017-10-03 23:07:30.000000000 +09:00
 header:
   teaser: "/assets/images/trump-youre-fired.png"
+  image: "/assets/images/trump-youre-fired.png"
 type: post
 categories:
 - IT
