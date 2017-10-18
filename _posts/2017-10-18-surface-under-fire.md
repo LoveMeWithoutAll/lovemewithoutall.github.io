@@ -1,7 +1,7 @@
 ---
 layout: single
 title: 서피스 프로3 포맷 삽질기
-date: 2017-10-18 21:07:30.000000000 +09:00
+date: 2017-10-18 09:07:30.000000000 +09:00
 header:
   teaser: "/assets/images/surface_broken.jpg"
   image: "/assets/images/surface_broken.jpg"
