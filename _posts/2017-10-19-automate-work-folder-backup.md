@@ -1,6 +1,6 @@
 ---
 layout: single
-title: git으로 작업 문서 폴더 백업 자동화하기
+title: git으로 work 폴더 백업 자동화하기
 date: 2017-10-19 18:42:30.000000000 +09:00
 header:
   teaser: "/assets/images/Git-Logo-2Color.png"
@@ -8,7 +8,7 @@ header:
 type: post
 categories:
 - IT
-tags: [git, automate, shell]
+tags: [git, automate, shell, backup]
 ---
 
 나는 게으른 사람이다. 그리고 뭔가를 백업하는건 아주 귀찮은 일이다. 소스코드는 그나마 낫다. 개발하고 수정할 때마다 git remote 서버로 push하면 된다. 하지만 작업용 및 관리용으로 들고 있는 work 폴더를 백업하는건 너무나도 귀찮은 일이다. 그러니 자동화하기로 했다. 작업 단계는 이렇다.
