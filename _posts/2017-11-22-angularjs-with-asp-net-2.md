@@ -10,8 +10,6 @@ categories:
 - IT
 tags: [angularjs, ASP.NET]
 ---
-# ASP.NET 2.0와 함께 하는 AngularJS 개발 이야기
-
 ## 0. 기묘한 조합
 
 요즘 나는 회사에서 웹개발을 주로 하게 되었는데, Front-end는 [AngularJS]를, Back-end는 ASP.NET 2.0(Core 2 아니다)을 사용 중이다. 기묘한 조합이다. 이런 조합을 써서 개발한다는 이야기를 들어본 적이 없다. 구닥다리간의 기묘한 혼종... 심지어 구글링을 해봐도 이런 케이스는 나오지 않는다. 물론 누가 등 떠밀어서 하게 된 것은 아니다...
