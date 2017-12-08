@@ -42,21 +42,35 @@ sudo docker run --detach \
 
 ## 5. docker-compose
 이대로 써도 좋지만 저 많은 옵션들을 기억해야 하는건 아름답지 못하다. 나 같은 사람을 위해 docker-compose가 있다. 나중에 CI 도구와 연계하기 위해서도 필요하다. 우선 이미 만들어진 컨테이너를 지워야한다. 여기서 간단히 짚고 넘어가야 할 것이 이미지와 컨테이너다. 이미지는 컨테이너 설치를 위한 cd로 생각하면 된다. 컨테이너는 host에 설치된 서버다. 데이터를 들고 있다. 그러므로 컨테이너를 지우면 데이터는 다 날아간다. 그럼 컨테이너 지우면 안되는거 아니냐고? 이건 다음 절에서 설명한다.
-```
+
+```bash
 sudo docker stop gitlab
 sudo docker rm gitlab
 ```
+
 docker-compose의 설치는 [가이드](https://docs.gitlab.com/omnibus/docker/README.html#install-gitlab-using-docker-compose)가 있으니 그대로 따라하면 된다. 그 다음 가이드에서 시키는대로 `docker-compose.yml` 파일을 만들고 명령어를 실행하면 된다. 마찬가지로 url과 port는 상황에 맞게 적당히 적는다.
+
+```bash
+docker-compose up -d
 ```
-docker-compose up -d 
-```
+
 이제 gitlab 컨테이너를 다시 만들어 띄웠다. 지금 당장 쓸 필요는 없지만 앞으로 gitlab 컨테이너를 띄울 때는 이 명령어로 한다.
-```
+
+```bash
 sudo docker start gitlab
 ```
 
 ## 6. backup & update
-만약의 사태를 대비하여 gitlab 서버의 데이터를 백업해두라는 지시를 받았다. 여기서 긴 삽질을 해야했다. 컨테이너를 어떻게 백업하지? 데이터는 컨테이너에 다 저장된다며? 컨테이너를 이미지로 만들어서 복사해둬야 하나? 처음에는 그렇게 생각했다. 그렇게 해도 된다. 하지만 그럴 필요 없다. 4절의 docker run 옵션 중 `--volume` 을 기억할 것이다. 이게 뭐냐면 컨테이너의 해당 폴더는 host의 특정 폴더로 사용하겠다는 옵션이다. 그리고 gitlab을 사용하면서 쌓이는 데이터는 git 커밋 데이터를 포함하여 모두 `--volume` 옵션에서 지정한 세 폴더 안에 쌓인다. 그러므로 저 세 폴더만 백업하면 된다. 복구할 때는 백업해둔 세 폴더를 `--volume` 옵션에서 설정해둔 세 폴더로 옮겨둔 후, gitlab 컨테이너를 run 하면 된다. gitlab의 버전을 업데이터 할 때도 마찬가지다. gitlab 컨테이너를 지우고, 도커 이미지를 업데이트 한 후, 그 이미지로 컨테이너를 만들면 된다. 백업 방법은 여러가지로 구성할 수 있겠지만, 나는 [samba]로 NAS를 마운트 한 후, crontab으로 매일 1회 압축파일을 떨구는 걸로 했다. 죄는 랜섬웨어에 있지 [samba]에 있지 않다.
+만약의 사태를 대비하여 gitlab 서버의 데이터를 백업해두라는 지시를 받았다. 여기서 긴 삽질을 해야했다. 컨테이너를 어떻게 백업하지? 데이터는 컨테이너에 다 저장된다며? 컨테이너를 이미지로 만들어서 복사해둬야 하나? 처음에는 그렇게 생각했다. 그렇게 해도 된다. 하지만 그럴 필요 없다. 4절의 docker run 옵션 중 `--volume` 을 기억할 것이다. 이게 뭐냐면 컨테이너의 해당 폴더는 host의 특정 폴더로 사용하겠다는 옵션이다. 그리고 gitlab을 사용하면서 쌓이는 데이터는 git 커밋 데이터를 포함하여 모두 `--volume` 옵션에서 지정한 세 폴더 안에 쌓인다. 그러므로 저 세 폴더만 백업하면 된다. 복구할 때는 백업해둔 세 폴더를 `--volume` 옵션에서 설정해둔 세 폴더로 옮겨둔 후, gitlab 컨테이너를 run 하면 된다.
+
+gitlab의 버전을 업데이터 할 때도 마찬가지다. gitlab 컨테이너를 지우고, 도커 이미지를 업데이트 한 후, 그 이미지로 컨테이너를 만들면 된다. 백업 방법은 여러가지로 구성할 수 있겠지만, 나는 [samba]로 NAS를 마운트 한 후, crontab으로 매일 1회 압축파일을 떨구는 걸로 했다. 죄는 랜섬웨어에 있지 [samba]에 있지 않다. 명령어는 다음과 같다. [여길](https://docs.gitlab.com/omnibus/docker/#upgrade-gitlab-to-newer-version) 참고했다.
+
+```bash
+sudo docker stop gitlab                   // 도커 컨테이너 중지
+sudo docker rm gitlab                     // 도커 이미지 삭제
+sudo docker pull gitlab/gitlab-ce:latest  // gitlab 최신버전 이미지 받아오기
+docker-compose up -d                      // gitlab 실행
+```
 
 ## 7. 마무리
 처음 만난 docker는 편리하고 강력했다. 이 좋은걸 왜 이제서야 써보나 싶을 정도로. 나는 개발하다가 기분이 좋아지면 키보드를 꽝꽝 내리찍으며 타이핑을 하는 버릇이 있는데, docker를 쓰고선 3일 동안 키보드를 내리찍었다. 오히려 이렇게 좋을거라고 도저히 믿기 어려워 다방면으로 테스트하느라 많은 시간을 낭비해야 했다. 이 글의 독자분들은 나처럼 괜한 의심으로 인생을 낭비하지 않길 바란다.
