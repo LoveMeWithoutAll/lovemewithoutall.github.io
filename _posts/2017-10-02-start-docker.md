@@ -60,9 +60,10 @@ docker-compose up -d
 sudo docker start gitlab
 ```
 
-## 6. backup & update
+## 6. backup
 만약의 사태를 대비하여 gitlab 서버의 데이터를 백업해두라는 지시를 받았다. 여기서 긴 삽질을 해야했다. 컨테이너를 어떻게 백업하지? 데이터는 컨테이너에 다 저장된다며? 컨테이너를 이미지로 만들어서 복사해둬야 하나? 처음에는 그렇게 생각했다. 그렇게 해도 된다. 하지만 그럴 필요 없다. 4절의 docker run 옵션 중 `--volume` 을 기억할 것이다. 이게 뭐냐면 컨테이너의 해당 폴더는 host의 특정 폴더로 사용하겠다는 옵션이다. 그리고 gitlab을 사용하면서 쌓이는 데이터는 git 커밋 데이터를 포함하여 모두 `--volume` 옵션에서 지정한 세 폴더 안에 쌓인다. 그러므로 저 세 폴더만 백업하면 된다. 복구할 때는 백업해둔 세 폴더를 `--volume` 옵션에서 설정해둔 세 폴더로 옮겨둔 후, gitlab 컨테이너를 run 하면 된다.
 
+## 7. update
 gitlab의 버전을 업데이터 할 때도 마찬가지다. gitlab 컨테이너를 지우고, 도커 이미지를 업데이트 한 후, 그 이미지로 컨테이너를 만들면 된다. 백업 방법은 여러가지로 구성할 수 있겠지만, 나는 [samba]로 NAS를 마운트 한 후, crontab으로 매일 1회 압축파일을 떨구는 걸로 했다. 죄는 랜섬웨어에 있지 [samba]에 있지 않다. 명령어는 다음과 같다. [여길](https://docs.gitlab.com/omnibus/docker/#upgrade-gitlab-to-newer-version) 참고했다.
 
 ```bash
@@ -72,7 +73,7 @@ sudo docker pull gitlab/gitlab-ce:latest  // gitlab 최신버전 이미지 받�
 docker-compose up -d                      // gitlab 실행
 ```
 
-## 7. 마무리
+## 8. 마무리
 처음 만난 docker는 편리하고 강력했다. 이 좋은걸 왜 이제서야 써보나 싶을 정도로. 나는 개발하다가 기분이 좋아지면 키보드를 꽝꽝 내리찍으며 타이핑을 하는 버릇이 있는데, docker를 쓰고선 3일 동안 키보드를 내리찍었다. 오히려 이렇게 좋을거라고 도저히 믿기 어려워 다방면으로 테스트하느라 많은 시간을 낭비해야 했다. 이 글의 독자분들은 나처럼 괜한 의심으로 인생을 낭비하지 않길 바란다.
 
 [yona]: <https://repo.yona.io/>
