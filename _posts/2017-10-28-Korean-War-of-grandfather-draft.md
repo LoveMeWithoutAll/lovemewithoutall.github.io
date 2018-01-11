@@ -2,6 +2,9 @@
 layout: single
 title: 할아버지가 겪은 한국전쟁 이야기(징병편)
 date: 2017-11-10 19:07:30.000000000 +09:00
+header:
+  teaser: "/assets/images/truck-in-korean-war.jpg"
+  image: "/assets/images/truck-in-korean-war.jpg"
 type: post
 categories:
 - History
