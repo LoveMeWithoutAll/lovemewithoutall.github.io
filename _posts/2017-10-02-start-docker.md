@@ -73,6 +73,13 @@ sudo docker pull gitlab/gitlab-ce:latest  // gitlab 최신버전 이미지 받�
 docker-compose up -d                      // gitlab 실행
 ```
 
+**docker-compose.yml**을 작성했다면 더 간단한 방법으로 update를 할 수 있다.
+
+```bash
+docker-compose pull
+docker-compose up -d
+```
+
 ## 8. 마무리
 처음 만난 docker는 편리하고 강력했다. 이 좋은걸 왜 이제서야 써보나 싶을 정도로. 나는 개발하다가 기분이 좋아지면 키보드를 꽝꽝 내리찍으며 타이핑을 하는 버릇이 있는데, docker를 쓰고선 3일 동안 키보드를 내리찍었다. 오히려 이렇게 좋을거라고 도저히 믿기 어려워 다방면으로 테스트하느라 많은 시간을 낭비해야 했다. 이 글의 독자분들은 나처럼 괜한 의심으로 인생을 낭비하지 않길 바란다.
 
