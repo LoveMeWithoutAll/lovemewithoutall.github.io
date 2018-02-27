@@ -8,7 +8,7 @@ header:
   image: "/assets/images/bootstrap-vue.png"
 categories:
 - IT
-tags: [Vue.js, Bootstrap jQuery]
+tags: [Vue.js, Bootstrap, jQuery]
 ---
 
 ## 시작
