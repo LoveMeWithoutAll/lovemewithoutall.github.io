@@ -1,0 +1,40 @@
+---
+layout: single
+title: IE에서 Vue.js 사용하기
+date: 2018-02-27 08:07:30.000000000 +09:00
+type: post
+header:
+  teaser: "/assets/images/old_ie.jpg"
+  image: "/assets/images/old_ie.jpg"
+categories:
+- IT
+tags: [Vue.js, IE, axios, es6-promise]
+---
+
+## 오류
+[Vue.js]에서 ajax요청을 할 때는 [axios]를 사용하기 마련이다. 편리하고 좋은 라이브러리지만, 구형 IE에서 실행하면 이런 오류가 뜬다.
+
+```javascript
+ReferenceError: 'Promise'이(가) 정의되지 않았습니다.
+   {
+      [functions]: ,
+      description: "'Promise'이(가) 정의되지 않았습니다.",
+      message: "'Promise'이(가) 정의되지 않았습니다.",
+      name: "ReferenceError",
+      number: -2146823279
+   }
+```
+[axios]가 IE를 지원하지 않기 때문이다.
+
+## 해결책
+[es6-promise](https://github.com/stefanpenner/es6-promise)를 적용하면 된다.
+
+```html
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script> 
+```
+
+위 스크립트를 넣으면 이제 IE에서도 [axios]를 이용한 비동기 http 통신이 잘 된다.
+
+[Vue.js]: https://vuejs.org
+[axios]: https://github.com/axios/axios
