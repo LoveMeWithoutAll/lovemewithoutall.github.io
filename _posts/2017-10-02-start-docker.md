@@ -76,6 +76,7 @@ docker-compose up -d                      // gitlab 실행
 **docker-compose.yml**을 작성했다면 더 간단한 방법으로 update를 할 수 있다.
 
 ```bash
+# docker-compose.yml의 위치로 이동
 docker-compose pull   // gitlab update
 docker-compose up -d  // gitlab 재실행
 ```
