@@ -36,5 +36,22 @@ ReferenceError: 'Promise'이(가) 정의되지 않았습니다.
 
 위 스크립트를 넣으면 이제 IE에서도 [axios]를 이용한 비동기 http 통신이 잘 된다.
 
+[webpack]을 사용하는 경우에는 아래와 같이 하면 된다.
+
+먼저 설치를 하고
+
+```bash
+# 설치
+npm install es6-promise --save
+```
+
+entry로 사용하는 javascript 파일에 다음과 같이 넣어주면, 전역 환경(global environment)에 적용된다.
+다른 파일에 달리 import하거나 require를 적어줄 필요가 없다.
+
+```javascript
+require('es6-promise').polyfill();
+```
+
 [Vue.js]: https://vuejs.org
 [axios]: https://github.com/axios/axios
+[webpack]: https://webpack.js.org/
