@@ -8,7 +8,7 @@ header:
   image: "https://docs.gitlab.com/ee/ci/img/cicd_pipeline_infograph.png"
 categories:
 - IT
-tags: [Git, Gitlab, Gitlab-CI, CI, CD]
+tags: [Git, Gitlab, Gitlab-CI, gitlab-runner, CI, CD]
 ---
 
 ## CI/CD 도입
@@ -48,9 +48,11 @@ c:\blah\blah\blah # dir의 결과
 ```
 는 master 브랜치에 커밋이나 변경 사항이 있을 때만 동작한다.
 
-하기 **.gitlab-ci.yml** 예시는 각각 master 브랜치와 develop 브랜치에 커밋이나 변경 사항이 있으면, 각각 하기의 script를 실행한다. Windows 환경에서 shell을 executor로 하여 xcopy 명령어를 활용하였다.
+배포 target 서버에 **gitlab-runner**를 *register*한 후, 하기 **.gitlab-ci.yml** 예시를 돌려보자. 
+master 브랜치와 develop 브랜치에 push가 들어오면, 각각 하기의 script를 실행한다. 
+Windows 환경에서 shell을 executor로 하여 xcopy 명령어를 활용하였다.
 
-```
+```yml
 deploy-to-production-server:
     only:
     - master
@@ -65,6 +67,47 @@ deploy-to-develop-server:
 ```
 
 허접하지만 단순 배포를 위해서는 잘 돌아간다. Anyway, It works!
+하지만 개발서버와 운영서버를 따로 구축해놓은 경우에는 조금 복잡해진다. 
+또한 운영 중인 서비스가 많을 경우, 서비스마다 **gitlab-runner**를 *register*하기도 어렵다.
+
+## 예제: Shared Runners를 활용한 원격 배포
+위 단순 배포 예제의 문제점을 해결하려면 **Shared Runners**로 원격 서버의 디스크를 마운트하여 배포하면 된다. 
+단순 배포 예제에서처럼 하나의 프로젝트에 하나의 **gitlab-runner**를 등록하는 경우를 **Specific Runners**라고 하는데, 
+**Shared Runners**와 **Specific Runners**의 차이점은 [공식 문서](https://docs.gitlab.com/ce/ci/runners/README.html#shared-vs-specific-runners)에 잘 나와있다. 
+특별히 복잡한 스크립트를 실행하여 특별 관리가 필요한 프로젝트가 아니라면 **Shared Runners**를 사용하는게 편하다. 
+**Shared Runners**의 설정 방법은 [여기](https://docs.gitlab.com/ce/ci/runners/README.html#registering-a-shared-runner)를 참고하면 된다. 
+아래 **.gitlab-ci.yml**은 Windows 환경에서 shell을 executor로 돌린다. 
+
+```yml
+deploy to production:
+    stage: deploy # 따로 설정해두지 않으면 기본값인 test로 박힌다
+    environment:  # 서버별로 따로 설정해두는 편이 나중에 롤백하기 편하다
+      name: production server
+    only:
+    - master
+    script:
+    - echo 'deploy to production server'
+    - 'net use o: \\서버IP\소스코드_경로 서버접속PW /user:서버접속ID' # 배포할 원격 서버의 경로를 o드라이브로 잡는다
+    - 'xcopy . o:\ /h /k /y /e /r /d' # 배포
+    after_script: # script실행시 에러가 발생해도 이 after_script 구문은 반드시 실행한다
+    - 'net use /delete o:' # 원격 드라이브의 연결을 해제
+
+deploy to develop:
+    stage: deploy
+    only:
+    - develop
+    environment:
+      name: develop server
+    script:
+    - echo 'deploy to develop server'
+    - 'net use o: \\서버IP\소스코드_경로 서버접속PW /user:서버접속ID'
+    - 'xcopy . o:\ /h /k /y /e /r /d'
+    after_script:
+    - 'net use /delete o:'
+
+```
+
+배포 지옥에서 해방되길 간절히 바랍니다!
 
 [Gitlab-CI]: https://about.gitlab.com/features/gitlab-ci-cd/
 [Gitlab-CI 공식 문서]: https://docs.gitlab.com/ee/ci/README.html
