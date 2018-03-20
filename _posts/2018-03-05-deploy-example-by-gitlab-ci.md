@@ -112,13 +112,6 @@ deploy to develop:
 
 배포 지옥에서 해방되길 간절히 바랍니다!
 
-```
-  only:
-    - branches
-  except:
-    - master
-```
-
 [Gitlab-CI]: https://about.gitlab.com/features/gitlab-ci-cd/
 [Gitlab-CI 공식 문서]: https://docs.gitlab.com/ee/ci/README.html
 [jenkins]: https://jenkins.io/
