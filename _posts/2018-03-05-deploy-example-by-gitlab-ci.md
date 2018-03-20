@@ -95,7 +95,10 @@ deploy to production:
 deploy to develop:
     stage: deploy
     only:
-    - develop
+    - develop 
+    - branches # 가끔 급히 branch를 push해서 개발서버에 배포해야 할 때도 있다
+    except:
+    - master # master 브랜치와는 확실히 분리해준다. 예시를 위해 추가한 구문이니 빼도 상관없다
     environment:
       name: develop server
     script:
@@ -108,6 +111,13 @@ deploy to develop:
 ```
 
 배포 지옥에서 해방되길 간절히 바랍니다!
+
+```
+  only:
+    - branches
+  except:
+    - master
+```
 
 [Gitlab-CI]: https://about.gitlab.com/features/gitlab-ci-cd/
 [Gitlab-CI 공식 문서]: https://docs.gitlab.com/ee/ci/README.html
