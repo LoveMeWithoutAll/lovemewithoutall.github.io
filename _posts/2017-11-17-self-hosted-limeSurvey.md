@@ -1,6 +1,6 @@
 ---
 layout: single
-title: 설문조사 서비스 설치하는 이야기(powered by LimeSurvey)
+title: 라임서베이 설문조사 서버 설치하기
 date: 2017-11-17 17:07:30.000000000 +09:00
 type: post
 header:
