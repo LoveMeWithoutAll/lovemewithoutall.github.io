@@ -11,7 +11,9 @@ categories:
 tags: [IBM BlueMix, BlueMix, bot, Node.js, telegram bot, deploy, cloud foundry]
 ---
 
-# If you do not follow this settings, you would see like this.
+### It works on my [Node.js project](https://github.com/LoveMeWithoutAll/HanGifBot).
+
+## If you do not follow this settings, you would see like this.
 ```sh
 0 of 1 instances running, 1 starting
 0 of 1 instances running, 1 starting
@@ -28,7 +30,7 @@ FAILED
 Start app timeout
 ```
 
-# setup
+## setup
 
 ### setup manifest.yml
 If you're app is not web app, you must describe it. Health checker will it turn off if you do not.
