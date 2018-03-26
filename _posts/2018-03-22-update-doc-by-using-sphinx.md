@@ -1,6 +1,6 @@
 ---
 layout: single
-title: Sphinx-intl로 번역할 때 원본 문서 변경사항 반영하기
+title: Sphinx로 번역 편하게 하기(원본 문서 업데이트 편)
 date: 2018-03-22 19:07:30.000000000 +09:00
 type: post
 header:
