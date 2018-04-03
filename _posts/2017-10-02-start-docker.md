@@ -1,7 +1,7 @@
 ---
 layout: single
 title: docker로 gitlab 설치하기
-date: 2017-10-02 23:07:30.000000000 +09:00
+date: 2018-04-03 13:07:30.000000000 +09:00
 header:
   teaser: "https://www.docker.com/sites/default/files/Whale%20Logo332%402x_5.png"
   image: "https://www.docker.com/sites/default/files/Whale%20Logo332%402x_5.png"
@@ -48,7 +48,32 @@ sudo docker stop gitlab
 sudo docker rm gitlab
 ```
 
-docker-compose의 설치는 [가이드](https://docs.gitlab.com/omnibus/docker/README.html#install-gitlab-using-docker-compose)가 있으니 그대로 따라하면 된다. 그 다음 가이드에서 시키는대로 `docker-compose.yml` 파일을 만들고 명령어를 실행하면 된다. 마찬가지로 url과 port는 상황에 맞게 적당히 적는다.
+docker-compose의 설치는 [공식 가이드](https://docs.gitlab.com/omnibus/docker/README.html#install-gitlab-using-docker-compose)가 있으니 그대로 따라하면 된다. 내 docker-compose의 구성은 이렇다. *volumes*에 백업 폴더를 추가한 것 제외하고는 [공식 가이드](https://docs.gitlab.com/omnibus/docker/README.html#install-gitlab-using-docker-compose)의 예제와 동일하다. 
+
+```bash
+# docker-compose.yml
+web:
+  image: 'gitlab/gitlab-ce:latest'
+  restart: always
+  hostname: 'gitlab.example.com'
+  container_name: gitlab
+  environment:
+    GITLAB_OMNIBUS_CONFIG: |
+      external_url 'http://gitlab.example.com'
+      # Add any other gitlab.rb configuration here, each on its own line
+  ports:
+    - '80:80'
+    - '443:443'
+    - '22:22'
+  volumes:
+    - '/srv/gitlab/config:/etc/gitlab'
+    - '/srv/gitlab/logs:/var/log/gitlab'
+    - '/srv/gitlab/data:/var/opt/gitlab'
+    - '내 백업폴더:/var/opt/gitlab/backups' # 백업 폴더 추가
+
+```
+
+`docker-compose.yml` 파일을 다 구성한 후, 아래 명령어를 실행하면 된다. 마찬가지로 url과 port는 상황에 맞게 적당히 적는다.
 
 ```bash
 docker-compose up -d
