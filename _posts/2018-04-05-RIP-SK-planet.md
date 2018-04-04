@@ -4,8 +4,8 @@ title: R.I.P SK Planet
 date: 2018-04-05 00:07:30.000000000 +09:00
 type: post
 header:
-    teaser: "https://www.skplanet.com/images/kor/common/header/h1_sk_planet.png"
-    image: "https://www.skplanet.com/images/kor/common/header/h1_sk_planet.png"
+    teaser: "https://www.skplanet.com/images/kor/common/footer/h2_sk_planet.png"
+    image: "https://www.skplanet.com/images/kor/common/footer/h2_sk_planet.png"
 categories:
 - Diary
 tags: [SK Planet, diary, dev-diary, JavaScript]
