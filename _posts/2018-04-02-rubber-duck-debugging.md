@@ -39,7 +39,7 @@ tags: [debugging, rubber duck, Stack Overflow, April Fools' Day]
 
 ![Quack](https://i.imgur.com/uPRBOyC.png)
 
-꽥! 답을 말하셨다.
+꽥!
 
 ![some more](https://i.imgur.com/vQOutk6.png)
 
