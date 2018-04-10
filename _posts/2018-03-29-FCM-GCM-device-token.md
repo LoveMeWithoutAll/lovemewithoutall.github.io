@@ -16,6 +16,9 @@ tags: [android, GCM, FCM, device token]
 ```java
 String fcmToken = FirebaseInstanceId.getInstance().getToken();
 String gcmToken = fcmTocken.substring(fcmTocken.indexOf(':') + 1);
+
+// fcmToken.equals("dtvc2g3nsrc:APA91bGEPZlxgZoh7sV9HROrPtOA8R2oQKB_u3LZr1QeX9Q9MW7UBqxmO73FPXppUUEpVaWcP35WdsZLHZV-tsFSdaKTZfSJV4c5E-yuVUCv3TDkaPPBovDiAU8v5xE0ANq7-47iqObS") == true;
+// gcmToken.equals("APA91bGEPZlxgZoh7sV9HROrPtOA8R2oQKB_u3LZr1QeX9Q9MW7UBqxmO73FPXppUUEpVaWcP35WdsZLHZV-tsFSdaKTZfSJV4c5E-yuVUCv3TDkaPPBovDiAU8v5xE0ANq7-47iqObS"_ == true;
 ```
 
 [FCM]: <https://firebase.google.com/docs/cloud-messaging>
