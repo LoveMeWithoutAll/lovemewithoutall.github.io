@@ -1,7 +1,7 @@
 ---
 layout: single
 title: aws cli 초기 설정
-date: 2018-04-03 13:07:30.000000000 +09:00
+date: 2018-04-11 13:07:30.000000000 +09:00
 header:
   teaser: "https://d1.awsstatic.com/Test%20Images/Kate%20Test%20Images/Serverless_Web_App_LP_assets-01.998a9201f50434767e58269c5b71b485014a4531.png"
   image: "https://d1.awsstatic.com/Test%20Images/Kate%20Test%20Images/Serverless_Web_App_LP_assets-01.998a9201f50434767e58269c5b71b485014a4531.png"
