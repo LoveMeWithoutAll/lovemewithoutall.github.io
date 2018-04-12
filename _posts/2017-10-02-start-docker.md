@@ -92,21 +92,31 @@ sudo docker start gitlab
 gitlab의 버전을 업데이터 할 때도 마찬가지다. gitlab 컨테이너를 지우고, 도커 이미지를 업데이트 한 후, 그 이미지로 컨테이너를 만들면 된다. 백업 방법은 여러가지로 구성할 수 있겠지만, 나는 [samba]로 NAS를 마운트 한 후, crontab으로 매일 1회 압축파일을 떨구는 걸로 했다. 죄는 랜섬웨어에 있지 [samba]에 있지 않다. 명령어는 다음과 같다. [여길](https://docs.gitlab.com/omnibus/docker/#upgrade-gitlab-to-newer-version) 참고했다.
 
 ```bash
-sudo docker stop gitlab                   // 도커 컨테이너 중지
-sudo docker rm gitlab                     // 도커 이미지 삭제
-sudo docker pull gitlab/gitlab-ce:latest  // gitlab 최신버전 이미지 받아오기
-docker-compose up -d                      // gitlab 실행
+sudo docker stop gitlab                   # 도커 컨테이너 중지
+sudo docker rm gitlab                     # 도커 이미지 삭제
+sudo docker pull gitlab/gitlab-ce:latest  # gitlab 최신버전 이미지 받아오기
+docker-compose up -d                      # gitlab 실행
 ```
 
 **docker-compose.yml**을 작성했다면 더 간단한 방법으로 update를 할 수 있다.
 
 ```bash
 # docker-compose.yml의 위치로 이동
-docker-compose pull   // gitlab update
-docker-compose up -d  // gitlab 재실행
+docker-compose pull   # gitlab update
+docker-compose up -d  # gitlab 재실행
 ```
 
-## 8. 마무리
+## 8. 메일 발송 설정
+사용자가 비밀번호를 분실했을 경우, 메일로 비밀번호를 재설정할 수 있으면 편리하다. docker container에 직접 접속하여 서정 파일을 수정하자.
+
+```bash
+sudo docker exec -it gitlab /bin/bash # 컨테이너에 접속한다
+vi etc/gitlab/gitlab.rb # 설정 파일을 수정하자
+```
+
+[공식 문서](https://docs.gitlab.com/omnibus/settings/smtp.html)가 있으니, 내가 사용하려는 stmp서버의 예제를 보고 똑같이 수정해주면 된다.
+
+## 9. 마무리
 처음 만난 docker는 편리하고 강력했다. 이 좋은걸 왜 이제서야 써보나 싶을 정도로. 나는 개발하다가 기분이 좋아지면 키보드를 꽝꽝 내리찍으며 타이핑을 하는 버릇이 있는데, docker를 쓰고선 3일 동안 키보드를 내리찍었다. 오히려 이렇게 좋을거라고 도저히 믿기 어려워 다방면으로 테스트하느라 많은 시간을 낭비해야 했다. 이 글의 독자분들은 나처럼 괜한 의심으로 인생을 낭비하지 않길 바란다.
 
 [yona]: <https://repo.yona.io/>
