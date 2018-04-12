@@ -107,14 +107,21 @@ docker-compose up -d  # gitlab 재실행
 ```
 
 ## 8. 메일 발송 설정
-사용자가 비밀번호를 분실했을 경우, 메일로 비밀번호를 재설정할 수 있으면 편리하다. docker container에 직접 접속하여 서정 파일을 수정하자.
+사용자가 비밀번호를 분실했을 경우, 메일로 비밀번호를 재설정할 수 있으면 편리하다. 도커 컨테이너에 직접 접속하여 설정 파일을 수정하자.
 
 ```bash
 sudo docker exec -it gitlab /bin/bash # 컨테이너에 접속한다
 vi etc/gitlab/gitlab.rb # 설정 파일을 수정하자
 ```
 
-[공식 문서](https://docs.gitlab.com/omnibus/settings/smtp.html)가 있으니, 내가 사용하려는 stmp서버의 예제를 보고 똑같이 수정해주면 된다.
+[공식 문서](https://docs.gitlab.com/omnibus/settings/smtp.html)가 있으니, 내가 사용하려는 stmp서버의 예제를 보고 똑같이 수정해주면 된다. 이제 변경된 설정을 적용해보자. 도커 컨테이너에 접속한 상태에서 그대로 아래 명령어를 입력하면 된다.
+
+```bash
+# /etc/gitlab/gitlab.rb 를 변경한 후에는 항상 이 명령어로 변경사항을 적용한다(Omnibus GitLab 한정)
+gitlab-ctl reconfigure
+```
+
+이제 비밀번호 재설정해달라는 긴급 요청을 받지 않아도 된다.
 
 ## 9. 마무리
 처음 만난 docker는 편리하고 강력했다. 이 좋은걸 왜 이제서야 써보나 싶을 정도로. 나는 개발하다가 기분이 좋아지면 키보드를 꽝꽝 내리찍으며 타이핑을 하는 버릇이 있는데, docker를 쓰고선 3일 동안 키보드를 내리찍었다. 오히려 이렇게 좋을거라고 도저히 믿기 어려워 다방면으로 테스트하느라 많은 시간을 낭비해야 했다. 이 글의 독자분들은 나처럼 괜한 의심으로 인생을 낭비하지 않길 바란다.
