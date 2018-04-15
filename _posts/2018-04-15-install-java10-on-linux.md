@@ -8,7 +8,7 @@ header:
     image: "https://cdn.pixabay.com/photo/2017/05/19/21/12/java-2327538_960_720.png"
 categories:
 - IT
-tags: [Java]
+tags: [Java, linux]
 ---
 
 Linux에서 Java10을 설치하는 방법을 정리해보았다. 우분투와 리눅스 민트에서 다 잘 설치된다. [linuxuprising](https://www.linuxuprising.com/2018/04/install-oracle-java-10-in-ubuntu-or.html)의 문서를 참조하였다.
@@ -45,7 +45,7 @@ sudo apt install oracle-java10-set-default
 ```
 
 이걸로 설치가 끝났다.니
-
+치
 ## 3. 확인
 
 설치가 잘 되었는지 확인해보자
