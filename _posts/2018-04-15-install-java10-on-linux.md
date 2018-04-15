@@ -4,8 +4,8 @@ title: 리눅스에 Java10 설치하기
 date: 2018-04-15 17:40:30.000000000 +09:00
 type: post
 header:
-    teaser: "https://cdn.pixabay.com/photo/2017/05/19/21/12/java-2327538_960_720.png"
-    image: "https://cdn.pixabay.com/photo/2017/05/19/21/12/java-2327538_960_720.png"
+    teaser: "https://i.imgur.com/gxL06lI.jpg"
+    image: "https://i.imgur.com/gxL06lI.jpg"
 categories:
 - IT
 tags: [Java, linux]
@@ -21,7 +21,7 @@ Linux에서 Java10을 설치하는 방법을 정리해보았다. 우분투와 �
 sudo apt-cache search java10
 ```
 
-apt-get에 아직 없다면 PPA repository에서 설치하자.
+apt-get에 아직 없다면 PPA repository에서 설치하자. JDK tar파일을 다운받아 PATH와 JAVA_HOME을 수작업 설정하는 방식도 시도해보았으나, 무슨 이유에서인지 Linux mint에서는 동작하지 않았다. 
 
 ```bash
 sudo add-apt-repository ppa:linuxuprising/java
