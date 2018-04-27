@@ -1,6 +1,6 @@
 ---
 layout: single
-title: Vue에서 메소드 정의하기(feat.화살표 함수)
+title: 화살표 함수의 this(feat. Vue.js)
 date: 2018-04-25 01:00:30.000000000 +09:00
 type: post
 header:
