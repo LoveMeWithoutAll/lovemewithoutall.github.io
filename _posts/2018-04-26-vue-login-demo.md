@@ -1,6 +1,6 @@
 ---
 layout: single
-title: Vue SPA 로그인 구현
+title: Vue.js 로그인 구현
 date: 2018-04-26 18:40:30.000000000 +09:00
 type: post
 header:
