@@ -21,6 +21,8 @@ tags: [Vue.js]
     * [Axios]
     * [vee-validate]
 
+소스코드는 [여기](https://github.com/LoveMeWithoutAll/vue-login-demo)서 볼 수 있다.
+
 ## 1. Vuex
 Vuex를 설치하고
 ```bash
