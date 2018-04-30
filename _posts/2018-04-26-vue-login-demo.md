@@ -449,7 +449,7 @@ export default new Router({
 ```
 
 ## 6. validation 적용
-로그인을 위한 작업은 얼추 다 되었다. 이제 잡다한 마무리 작업을 하자. vee-validate로 입력값을 편하게 검증하자.
+로그인을 위한 작업은 얼추 다 되었다. 이제 잡다한 마무리 작업을 하자. vee-validate로 입력값을 편하게 검증하자. vee-validate v2.0.6로 했다. 
 
 vee-validate를 설치하고,
 ```bash
