@@ -30,7 +30,10 @@ Vuex를 설치하고
 npm install --save vuex
 ```
 
-store와 그에 딸린 것들을 잡아준다.
+저장소(store)와 그에 딸린 것들을 잡아준다.
+
+### 1. store
+아래의 getters, actions, mutations를 다 잡아줘야 에러가 뜨지 않는다.
 ```javascript
 // src/vuex/store.js
 import Vue from 'vue'
@@ -55,6 +58,7 @@ export default new Vuex.Store({
 })
 ```
 
+### 2. getters
 ```javascript
 // src/vuex/getters.js
 export default {
@@ -64,6 +68,7 @@ export default {
 }
 ```
 
+### 3. mutation_types
 ```javascript
 // src/vuex/mutation_type.js
 export const UID = 'UID'
@@ -71,6 +76,7 @@ export const ERROR_STATE = 'ERROR_STATE'
 export const IS_AUTH = 'IS_AUTH'
 ```
 
+### 4. mutations
 ```javascript
 // src/vuex/mutation.js
 import * as types from './mutation_types'
@@ -88,6 +94,7 @@ export default {
 }
 ```
 
+### 5. actions
 ```javascript
 // src/vuex/actions.js
 export default {
@@ -98,9 +105,10 @@ export default {
 
 ```
 
+### 6. vue에 vuex 추가
+저장소를 Vue에 넣어준다.
 ```javascript
-// The Vue build version to load with the `import` command
-// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
+// src/main.js
 import Vue from 'vue'
 import App from './App'
 import router from './router'
@@ -120,6 +128,7 @@ new Vue({
 
 ## 2. Login component
 
+### 1. 컴포넌트 껍데기 만들기
 로그인 컴포넌트를 만든다. 일단 콘솔에 로그만 찍히는 껍데기부터 만들자.
 ```javascript
 // src/components/Login.vue
@@ -155,7 +164,8 @@ export default {
 </style>
 ```
 
-router에 등록한다.
+### 2. 라우터에 등록
+로그인 컴포넌트를 router에 등록한다.
 ```javascript
 // src/router/index.js
 import Vue from 'vue'
@@ -176,14 +186,16 @@ export default new Router({
 
 ```
 
-## 3. action을 만들어 비동기 통신
+## 3. 로그인
 
+### 1. axios 설치
 먼저 axios를 설치하자.
 ```bash
 npm install --save axios
 ```
 
-백엔드와 API 통신할 서비스를 만들자.
+### 2. REST API 호출
+로그인을 위해 백엔드와 API 통신할 서비스를 만들자.
 ```javascript
 // src/sercice/loginAPI.js
 import axios from 'axios'
@@ -211,7 +223,7 @@ export default {
       const getUserInfoPromise = await getUserInfo(uid, password)
       const isFinishedPromise = await isFinished(uid) // Promise.all의 예시를 위해 집어넣음
       const [userInfoResponse, isFinishedResponse] = await Promise.all([getUserInfoPromise, isFinishedPromise])
-      if (userInfoResponse.data.length === 0) return 'noAuth'
+      if (userInfoResponse.data.length === 0) return 'noAuth' // 로그인 결과에 따른 분기 처리를 해준다
       if (isFinishedResponse.data[0].CNT > 0) return 'done'
       return userInfoResponse
     } catch (err) {
@@ -221,6 +233,7 @@ export default {
 }
 ```
 
+### 3. REST API를 서비스에 등록
 서비스도 index를 만들어 관리하자.
 ```javascript
 // src/service/index.js
@@ -238,7 +251,8 @@ export default {
 }
 ```
 
-이제 action에서 API를 호출하고 vuex의 state들을 mutation 해주자.
+### 4. action
+이제 action에서 API를 호출하고, 호출 결과에 따라 vuex의 state들을 mutation 해주자.
 ```javascript
 // src/vuex/actions.js
 import {UID, IS_AUTH, ERROR_STATE} from './mutation_types'
@@ -256,28 +270,36 @@ let setIsAuth = ({commit}, data) => {
   commit(IS_AUTH, data)
 }
 
+// 백엔드에서 반환한 결과값을 가지고 로그인 성공 실패 여부를 vuex에 넣어준다.
+let processResponse = (store, loginResponse) => {
+  switch (loginResponse) {
+    case 'noAuth':
+      setErrorState(store, 'Wrong ID or Password')
+      setIsAuth(store, false)
+      break
+    case 'done':
+      setErrorState(store, 'No period')
+      setIsAuth(store, false)
+      break
+    default:
+      setUID(store, loginResponse.UID)
+      setErrorState(store, '')
+      setIsAuth(store, true)
+  }
+}
+
 export default {
   async login (store, {uid, password}) {
     let loginResponse = await api.login(uid, password)
-    switch (loginResponse) {
-      case 'noAuth':
-        setErrorState(store, 'Not qualified or Wrong student number/Password. Please check it and log in again.')
-        setIsAuth(store, false)
-        break
-      case 'done':
-        setErrorState(store, 'You have already finished the questionnaire. Thank you.')
-        setIsAuth(store, false)
-        break
-      default:
-        setUID(store, loginResponse.data[0].UID)
-        setErrorState(store, '')
-        setIsAuth(store, true)
-    }
-    return store.getters.getIsAuth  // 결과를 리턴한다
+    processResponse(store, loginResponse)
+    return store.getters.getIsAuth  // 로그인 결과를 리턴한다
   }
 }
 ```
 
+이제 vuex와 백엔드 사이에 작업할 내용은 다 끝났다.
+
+### 5. 컴포넌트와 연결
 Login 컴포넌트에서 위 action을 호출하자. 로그인에 성공하면 console.log로 true가 찍히고, 실패하면 false가 찍힌다.
 ```javascript
 // src/components/Login.vue
@@ -298,7 +320,8 @@ Login 컴포넌트에서 위 action을 호출하자. 로그인에 성공하면 c
 
 ## 4. 로그인 결과 처리
 
-로그인 성공하면 페이지를 이동한다. 라우터부터 등록해보자.
+### 1. 로그인 성공 시 처리
+로그인 성공하면 페이지를 이동한다. HelloWorld 컴포넌트로 이동시킬 것이다. 라우터부터 등록해보자.
 ```javascript
 // src/router/index.js
 /* 생략 */
@@ -312,7 +335,7 @@ export default new Router({
     {
       path: '/helloWorld', // 추가하는 path
       name: 'HelloWorld',
-      component: HelloWorld
+      component: HelloWorld // 추가하는 컴포넌트
     }
   ]
 })
@@ -341,14 +364,15 @@ export default new Router({
 /* 생략 */
 ```
 
-로그인 실패할 경우의 처리도 해주자. 이미 로그인에 실패할 경우 actions에서 errorState에 값을 집어넣었으니, 그걸 기준으로 한다. errorState에 값이 없으면 빨간 글씨로 errorState를 띄워준다.
+### 2. 로그인 실패시 처리
+로그인 실패할 경우의 처리도 해주자. 로그인에 실패할 경우 action에서 errorState에 값을 셋팅했었다(이 글에서는 3-4). 그걸 기준으로 한다. errorState에 값이 없으면 빨간 글씨로 errorState를 띄워준다.
 ```html
 <!-- src/components/Login.vue -->
 <template>
   <div>
       <h2>Log In</h2>
-      <div class="alert-danger" v-if="errorState">
-        <p>{{ errorState }}</p> <!-- errorState가 있으면 표시한다 -->
+      <div class="alert-danger" v-if="errorState"> <!-- errorState가 있으면 표시한다 -->
+        <p>{{ errorState }}</p>
       </div>
   </div>
 </template>
@@ -383,7 +407,7 @@ export default {
   },
   computed: {
     ...mapGetters({
-      errorState: 'getErrorState' // errorState를 받는다
+      errorState: 'getErrorState' // getter로 errorState를 받는다
     })
   }
 }
@@ -398,7 +422,8 @@ export default {
 
 ## 5. 보안 강화
 
-JWT를 Request Header에 박아넣자.
+### 1 jwt
+보안 강화를 위해 [JWT]를 Request Header에 박아넣자.
 ```javascript
 // src/vuex/actions.js
 export default {
@@ -419,6 +444,7 @@ export default {
 ```
 백엔드에 Request Header를 검증하는 코드를 추가하자(여기선 프론트엔드만 다루므로 생략).
 
+### 2. 네비게이션 가드
 로그인하지 않고 URL을 통해 로그인 이후의 페이지에 접근할 수 있다. router에 이를 예방하는 코드를 추가하자.
 ```javascript
 // src/router/index.js
@@ -449,8 +475,9 @@ export default new Router({
 ```
 
 ## 6. validation 적용
-로그인을 위한 작업은 얼추 다 되었다. 이제 잡다한 마무리 작업을 하자. vee-validate로 입력값을 편하게 검증하자. vee-validate v2.0.6로 했다. 
+로그인을 위한 작업은 얼추 다 되었다. 이제 잡다한 마무리 작업을 하자. vee-validate로 입력값을 편하게 validation check하자. vee-validate v2.0.6로 했다. 
 
+### 1. vee-validate 설치
 vee-validate를 설치하고,
 ```bash
 npm install --save vuex
@@ -465,6 +492,7 @@ Vue.use(VeeValidate)
 /* 생략 */
 ```
 
+### 2. vee-validation 적용
 Login 컴포넌트에 적용한다. 반드시 input에 name을 줘야 동작하니 주의할 것.
 ```html
 <!-- src/components/login.vue -->
@@ -507,3 +535,4 @@ methods: {
 [Vuex]: https://vuex.vuejs.org/kr/
 [Vue.js]: https://vuejs.org/
 [vue-auth]: https://github.com/websanova/vue-auth
+[JWT]: https://jwt.io/
