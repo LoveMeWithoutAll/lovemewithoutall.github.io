@@ -98,7 +98,7 @@ export default {
 ## 4. 마무리
 Complete 버튼을 누르면 아래 화면처럼 뜬다.
 
-![버킷 정책](/assets/images/surveyjs-vue.png)
+![surveyJS-onComplete](/assets/images/surveyjs-vue.png)
 
 끝!
 
