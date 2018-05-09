@@ -4,8 +4,8 @@ title: Android NetworkOnMainThreadException 해결 by AsyncTask
 date: 2018-05-08 20:00:30.000000000 +09:00
 type: post
 header:
-    teaser: "https://cdn.pixabay.com/photo/2015/01/19/18/35/android-604356_960_720.jpg"
-    image: "https://cdn.pixabay.com/photo/2015/01/19/18/35/android-604356_960_720.jpg"
+    teaser: "/assets/images/walking-android.jpg"
+    image: "/assets/images/walking-android.jpg"
 categories:
 - IT
 tags: [Android]
