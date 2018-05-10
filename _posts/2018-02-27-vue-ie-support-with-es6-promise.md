@@ -24,7 +24,7 @@ ReferenceError: 'Promise'이(가) 정의되지 않았습니다.
       number: -2146823279
    }
 ```
-[axios]가 IE를 지원하지 않기 때문이다.
+[axios]가 IE를 지원하지 않기 때문이다. 이는 [Vuex]도 마찬가지다.
 
 ## 해결책
 [es6-promise](https://github.com/stefanpenner/es6-promise)를 적용하면 된다.
@@ -46,12 +46,21 @@ npm install es6-promise --save
 ```
 
 entry로 사용하는 javascript 파일에 다음과 같이 넣어주면, 전역 환경(global environment)에 적용된다.
-다른 파일에 달리 import하거나 require를 적어줄 필요가 없다.
+다른 파일에 달리 import하거나 require를 적어줄 필요가 없다. 둘 중 하나를 선택해서 넣어주자.
 
 ```javascript
+// CommonJs 방식
 require('es6-promise').polyfill();
 ```
+
+```javascript
+// ES6 방식
+import 'es6-promise/auto'
+```
+
+이래도 여전히 *'Promise'이(가) 정의되지 않았습니다.* 오류가 뜬다면, [es6-promise]를 불러오는 순서를 위로 땡겨주자. 적어도 [Vuex]나 [axios]를 사용하는 시점보다는 빨리 불러와야 정상 동작한다.
 
 [Vue.js]: https://vuejs.org
 [axios]: https://github.com/axios/axios
 [webpack]: https://webpack.js.org/
+[Vuex]: https://vuex.vuejs.org/kr/
