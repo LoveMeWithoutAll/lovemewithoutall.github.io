@@ -19,7 +19,7 @@ tags: [Chrome, Chrome dev tools, debug, frontend]
 이제 *Local overrides* 기능을 사용하면, F5를 눌러도 개발자 도구에서 수정한 CSS와 문서 내용이 날아가지 않는다. 여기서 수정한 정적 소스들은 *Sources > Overrides* 에서 지정한 폴더에 저장된다. 
 
 ### 보충
-[chrome66 부터는 HTML파일의 <style> 태그 안에 정의한 CSS도 저장이 된다.](https://developers.google.com/web/updates/2018/02/devtools#overrides)
+[chrome66 부터는](https://developers.google.com/web/updates/2018/02/devtools#overrides) HTML파일의 **style** 태그 안에 정의한 CSS도 저장이 된다.
 
 ## [Changes tab](https://developers.google.com/web/updates/2018/01/devtools#changes)
 ![Changes tab](https://developers.google.com/web/updates/images/2018/01/changes.png)
