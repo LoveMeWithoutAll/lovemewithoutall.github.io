@@ -18,19 +18,27 @@ tags: [Tool]
 ## 1. 프로시져와 함수 & 테이블 정의 확인
 
 1. 프로시져와 함수
+
 exec 뒤에 프로시져나 함수명을 치고, 마우스 우클릭 후 정의 피킹(peeking)을 누른다.
+
 ```sql
 exec getUserName -- 정의 피킹(Alt+F12)을 하면 프로시저의 정의를 보여준다.
 ```
+
 ![definition peeking](/assets/images/2018-06-19-mssql-with-vscode/mssql-with-vscode.png)
+
+정의로 이동(F12)을 누르면 새 창이 열리면서 그 함수와 프로시져의 create문을 띄워준다.
 
 2. 테이블
 
 물론 같은 방법으로 테이블 정의도 확인할 수 있다.
+
 ```sql
 select *
 from users -- 여기에 정의 피킹(Alt+F12)을 하면 테이블 정의를 보여준다.
 ```
+
+정의로 이동(F12)도 프로시져와 마찬가지로 create문을 새 창에 띄운다.
 
 ## 2. 빠진 파라미터 확인
 프로시져나 함수를 실행할 때 필요한 파리미터를 확인하고 싶으면 이렇게 하면 된다.
