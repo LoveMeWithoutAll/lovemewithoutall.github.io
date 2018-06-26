@@ -4,19 +4,46 @@ permalink: /docs/history/
 excerpt: "Change log of enhancements and bug fixes made to the theme."
 sidebar:
   nav: docs
-last_modified_at: 2018-03-29T12:48:09-04:00
+last_modified_at: 2018-06-22T16:19:35-04:00
 toc: true
 ---
 
-## Unreleased
+## [4.12.0](https://github.com/mmistakes/minimal-mistakes/releases/tag/4.12.0)
 
 ### Enhancements
 
-* Update Font Awesome to version `5.0.9`. [#1605](https://github.com/mmistakes/minimal-mistakes/pull/1605)
+* Add Hungarian localized UI text strings. [#1682](https://github.com/mmistakes/minimal-mistakes/pull/1682)
+* DRY `tags_max` calculation in tags.html layout. [#1696](https://github.com/mmistakes/minimal-mistakes/pull/1696)
+* DRY `categories_max` calculation in categories.html layout.
+* Add support for ["sticking" table of contents](https://mmistakes.github.io/minimal-mistakes/layout-table-of-contents-sticky/) to top of page via `toc_sticky: true` YAML Front Matter.
+* Add support for captioning images in feature row helper via `image_caption` YAML Front Matter. [#1440](https://github.com/mmistakes/minimal-mistakes/issues/1440)
+* Add [Google Custom Search Engine](https://cse.google.com/cse) support. [#1652](https://github.com/mmistakes/minimal-mistakes/issues/1652)
+* Update Font Awesome to version [`5.1.13`](https://github.com/FortAwesome/Font-Awesome/blob/master/CHANGELOG.md)
+* Add "Pets" sample archive page to documentation site. [#1664](https://github.com/mmistakes/minimal-mistakes/pull/1664)
+* Add GitLab social icon brand color. [#1653](https://github.com/mmistakes/minimal-mistakes/issues/1653)
+* Prevent line breaks between FontAwesome icon and text in footer social links. [#1659](https://github.com/mmistakes/minimal-mistakes/issues/1659)
+
+### Bug Fixes
+
+* Set default `title_separator`. [#1701](https://github.com/mmistakes/minimal-mistakes/pull/1701)
+* Fix `naver_site_verification` typo in /_includes/seo.html. [#1687](https://github.com/mmistakes/minimal-mistakes/pull/1687)
+* Fix table of contents missing borders. [#1675](https://github.com/mmistakes/minimal-mistakes/issues/1675)
+* Fix link to "Recipes" sample archive on documentation site. [#1664](https://github.com/mmistakes/minimal-mistakes/pull/1664)
+* Update example Reddit social share interpolation syntax in documentation. [#1656](https://github.com/mmistakes/minimal-mistakes/issues/1656)
+* Fix "Back to Top" links on pages that use [header overlays](https://mmistakes.github.io/minimal-mistakes/docs/layouts/#header-overlay).
+
+## [4.11.2](https://github.com/mmistakes/minimal-mistakes/releases/tag/4.11.2)
+
+### Enhancements
+
+* Update Font Awesome to version `5.0.11`. [#1605](https://github.com/mmistakes/minimal-mistakes/pull/1620)
+* Add Slovak localized UI text strings. [#1613](https://github.com/mmistakes/minimal-mistakes/pull/1613)
+* Add option to anonymize IP addresses of hits sent to Google Analytics. [#1636](https://github.com/mmistakes/minimal-mistakes/pull/1636)
 
 ### Bug Fixes
 
 * Use correct text string for "Back to Top" link. [#1595](https://github.com/mmistakes/minimal-mistakes/issues/1595)
+* Add conditionals for showing `reCaptcha.siteKey` and `reCaptcha.secret` in Staticman comments form.
 
 ## [4.11.1](https://github.com/mmistakes/minimal-mistakes/releases/tag/4.11.1)
 
