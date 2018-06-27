@@ -1,6 +1,6 @@
 ---
 layout: single
-title: IBM Cloud에 텔레그램봇 배포하기
+title: IBM Cloud에 Node.js로 만든 텔레그램봇 배포하기
 date: 2018-06-25 23:50:30.000000000 +09:00
 type: post
 header:
