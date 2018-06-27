@@ -5,11 +5,12 @@ date: 2018-06-25 23:50:30.000000000 +09:00
 type: post
 header:
     teaser: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/IBM_Bluemix_logo.svg/1200px-IBM_Bluemix_logo.svg.png"
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/IBM_Bluemix_logo.svg/1200px-IBM_Bluemix_logo.svg.png
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/IBM_Bluemix_logo.svg/1200px-IBM_Bluemix_logo.svg.png"
 categories:
 - IT
 tags: [chatbot, telegram bot, IBM Cloud]
 ---
+
 ## 0. 클라우드 난민
 
 한동안 [네이버 클라우드 플랫폼](https://www.ncloud.com)의 마이크로 서버를 무료로 잘 쓰고 있었는데, 2018년 6월 1일자로 유료화 되는 바람에 더이상 서버를 유지할 수 없었다. 불과 한 달 13000원이라지만 아무튼 나는 가난한 개발자다... 그래서 이번 기회에 무료로 클라우드 서버를 제공하는 [IBM Cloud](https://console.bluemix.net/)로 서버를 옮겼다. 하고 많은 클라우드 서비스 중 IBM을 선택한 이유는...
