@@ -28,11 +28,11 @@ tags: [chatbot, telegram bot, IBM Cloud]
 
 나는 [cloud foundry] 애플리케이션으로 Node.js 서버를 띄웠다. 방법은 다음과 같다.
 
-1. **리소소 작성** 을 클릭하고
+1.**리소소 작성** 을 클릭하고
 
 ![create-resource](/assets/images/2018-06-25-deploy-on-ibm-cloud/create-resource.png)
 
-2. **Cloud Foundry 앱** 중 SDK for Node.js를 선택한다. 
+2.**Cloud Foundry 앱** 중 SDK for Node.js를 선택한다. 
 
 ![create-cloud-foundry-app](/assets/images/2018-06-25-deploy-on-ibm-cloud/create-cloud-foundry-app.png)
 
@@ -58,11 +58,11 @@ applications:
 
 [공식 문서](https://console.bluemix.net/docs/starters/upload_app.html)를 참조하여 배포해보자.
 
-1. **IBM Cloud Develop Tools** 설치
+1.**IBM Cloud Develop Tools** 설치
 
 먼저 [IBM Cloud Develop Tools](https://console.bluemix.net/docs/cli/index.html#overview)를 설치한다. [cloud foundry] 앱으로 만든다더니 웬 IBM이냐 생각할 수 있겠지만, IBM Cloud Develop Tools는 [Cloud Foundry cli](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html)의 확장판이니 걱정말고 설치하면 된다. 설치에는 시간이 좀 걸린다.
 
-2. 배포
+2.배포
 
 우선 내 로컬 머신에서 서비스가 잘 돌아가는지 확인하자. 문제없이 돌아간다면 준비 끝이다. 이제 커맨드창을 띄워 배포할 서비스가 있는 위치로 이동한 후, 다음과 같이 명령어를 입력한다. IBM Cloud cli를 설치했는데 왜 *bluemix*를 명령어로 치냐면, *bluemix*가 IBM Cloud의 예전 이름이기 때문이다.
 
@@ -80,7 +80,7 @@ bx target --cf
 
 이제 IBM Cloud가 시작 가이드가 알려주는대로 이 명령어를 입력하면
 
-```cmd
+```bash
 bx app push hanGifBot
 ```
 
@@ -92,7 +92,7 @@ bx app push hanGifBot
 
 ![start-unsuccessful](/assets/images/2018-06-25-deploy-on-ibm-cloud/start-unsuccessful.png)
 
-원인은 내가 지금 올릴 앱이 챗봇이기 때문이다. 시작 가이드가 알려주는 위 명령어는 웹앱을 위한 명령어다. 그러므로 우리는 이렇게 해야한다.
+원인은 내가 지금 올릴 **앱이 챗봇이기 때문**이다. 시작 가이드가 알려주는 위 명령어는 웹앱을 위한 명령어다. 그러므로 우리는 이렇게 해야한다.
 
 ```bash
 # health check 끄고
