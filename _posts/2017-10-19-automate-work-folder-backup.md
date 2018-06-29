@@ -14,7 +14,7 @@ tags: [git, automate, shell, backup]
 나는 게으른 사람이다. 그리고 뭔가를 백업하는건 아주 귀찮은 일이다. 소스코드는 그나마 낫다. 개발하고 수정할 때마다 git remote 서버로 push하면 된다. 하지만 작업용 및 관리용으로 들고 있는 work 폴더를 백업하는건 너무나도 귀찮은 일이다. 그러니 자동화하기로 했다. 작업 단계는 이렇다.
 
 1. work 폴더의 변경사항을 git으로 commit 하는 스크립트를 만든다.
-1. 쉘스크립트를 매일 1회 배치로 돌아가게 한다.
+1. 스크립트를 매일 1회 배치로 돌아가게 한다.
 
 Windows7과 Windows10에서의 설정법을 각각 정리해보았다.
 
@@ -35,7 +35,7 @@ git push -u origin master
 
 ## 2. Windows10
 
-Windows Subsystem for Linux(WSL) 덕분에 SSH Key 관리가 다소 복잡해졌다. [이 블로그](http://webdir.tistory.com/547)의 글을 참조하여 SSH Key를 만든 후, 아래 batch 스크립트를 작업 스케줄러에 등록한다.
+Windows Subsystem for Linux(WSL) 덕분에 SSH Key 관리가 다소 복잡해졌다. [이 블로그](http://webdir.tistory.com/547)의 글을 참조하여 SSH Key를 만든 후, 아래 batch 스크립트를 작업 스케줄러에 등록한다(no shell script! bat)
 
 ```cmd
 @echo off
