@@ -1,7 +1,7 @@
 ---
 layout: single
 title: ASP.NET2에서 HTTP Post method 사용하기
-date: 2018-07-02 23:50:30.000000000 +09:00
+date: 2018-07-02 11:45:30.000000000 +09:00
 type: post
 header:
     teaser: "http://wakeupandcode.com/wp-content/uploads/2016/03/asp-net-logo.png"
