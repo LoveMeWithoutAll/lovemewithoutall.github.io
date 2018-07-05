@@ -1,7 +1,7 @@
 ---
 layout: single
 title: Gitlab-CI 구성 & .gitlab-ci.yml 예제
-date: 2018-03-05 19:07:30.000000000 +09:00
+date: 2018-07-04 14:07:30.000000000 +09:00
 type: post
 header:
   teaser: "https://docs.gitlab.com/ee/ci/img/cicd_pipeline_infograph.png"
@@ -53,12 +53,14 @@ master 브랜치와 develop 브랜치에 push가 들어오면, 각각 하기의 
 Windows 환경에서 shell을 executor로 하여 xcopy 명령어를 활용하였다.
 
 ```yml
+# master 브랜치에 push가 들어올 때 동작하는 job
 deploy-to-production-server:
     only:
     - master
     script:
     - xcopy . D:\운영서버의\코드들어갈_위치\ /h /k /y /e /r /d
 
+# develop 브랜치에 push가 들어올 때 동작하는 job
 deploy-to-develop-server:
     only:
     - develop
@@ -71,6 +73,7 @@ deploy-to-develop-server:
 또한 운영 중인 서비스가 많을 경우, 서비스마다 **gitlab-runner**를 *register*하기도 어렵다.
 
 ## 예제: Shared Runners를 활용한 원격 배포
+
 위 단순 배포 예제의 문제점을 해결하려면 **Shared Runners**로 원격 서버의 디스크를 마운트하여 배포하면 된다. 
 단순 배포 예제에서처럼 하나의 프로젝트에 하나의 **gitlab-runner**를 등록하는 경우를 **Specific Runners**라고 하는데, 
 **Shared Runners**와 **Specific Runners**의 차이점은 [공식 문서](https://docs.gitlab.com/ce/ci/runners/README.html#shared-vs-specific-runners)에 잘 나와있다. 
@@ -110,7 +113,93 @@ deploy to develop:
 
 ```
 
+## 예제: stages와 cache 적용
+
+위 예제에서는 1번의 배포를 할 때 1개의 **job**을 실행했다.
+이번 예제에서는 **stage**와 **cache**를 추가했다.
+1. **stages**를 등록하면 여러 개의 **job**을 순차적으로 실행할 수 있다. 
+1. **cache**를 설정하면 과거에 수행한 **job**에서 만든 캐시를 사용할 수 있다. 따라서 **npm install**처럼 인터넷에서 라이브러리 등을 매번 다운받아야 하는 지점에 사용하면 배포 시간을 단축할 수 있다. 자세한 내용은 [공식 문서](https://docs.gitlab.com/ee/ci/caching/index.html#) 참조.
+
+```yml
+# deploy -> foreign_survey_build 순서로 job이 실행된다
+# deploy 먼저 실행하는 이유는, npm install과 build에 시간이 많이 걸리기 때문이다
+stages:
+  - deploy
+  - foreign_survey_build
+
+# 모든 job이 끝날 때마다 after_script를 실행한다
+after_script:
+  - 'net use /delete o:'
+
+# 모든 job의 이름은 unique 해야 한다
+deploy-to-dev:
+  stage: deploy # deploy 차례(stage)에 실행되는 job이다
+  environment:
+    name: development server
+  only:
+    - develop
+    - branches
+  except:
+    - master
+  script:
+    - echo 'deploy to develop server'
+    - 'net use o: \\서버IP\소스코드_경로 서버접속PW /user:서버접속ID'
+    - 'xcopy . o:\ /h /k /y /e /r /d /exclude:.\gitlab-ci-copy-exclude-list.txt'
+
+deploy-to-prod:
+  stage: deploy # stage: deploy인 job이 2개가 있는데, 이럴 경우에 두 job은 병렬로 실행된다
+  environment:
+    name: production server
+  only:
+  - master    
+  script:
+    - echo 'deploy to production server'
+    - 'net use o: \\서버IP\소스코드_경로 서버접속PW /user:서버접속ID'
+    - 'xcopy . o:\ /h /k /y /e /r /d /exclude:.\gitlab-ci-copy-exclude-list.txt'
+
+foreign-survey-build-to-dev:
+  stage: foreign_survey_build
+  only:
+    - develop
+    - branches
+  except:
+    - master
+  environment:
+    name: development server
+  script:
+    - echo 'foreign_survey is being builded to develop server'    
+    - cd foreign_survey\client # 일부 모듈만 npm을 사용하여 이렇게 구성했다
+    - call npm install # cache가 있고 package.json이 변경되지 않았으면, cache로 저장된 파일(압축 저장되어 있음)을 사용한다.
+    - call npm run build
+    - 'net use o: \\서버IP\소스코드_경로 서버접속PW /user:서버접속ID'
+    - 'xcopy dist\. o:\foreign_survey\client\dist\ /h /k /y /e /r'
+  cache:
+    key: ${CI_COMMIT_REF_SLUG} # 이 브랜치(master)에서 만들어둔 cache를 사용한다
+    paths:
+    - foreign_survey/client/node_modules/ # cache할 디렉토리를 정의한다
+
+foreign-survey-build-to-prod:
+  stage: foreign_survey_build
+  environment:
+    name: production server
+  only:
+  - master    
+  script:
+    - echo 'foreign_survey is being builded to production server'
+    - cd foreign_survey\client
+    - call npm install
+    - call npm run build
+    - 'net use o: \\서버IP\소스코드_경로 서버접속PW /user:서버접속ID'
+    - 'xcopy dist\. o:\foreign_survey\client\dist\ /h /k /y /e /r'
+  cache: # cache는 job을 실행하면서 존재 여부를 check하고, script를 다 실행한 이후에 다시 한 번 cache한다.
+    key: ${CI_COMMIT_REF_SLUG}
+    paths:
+    - foreign_survey/client/node_modules/
+```
+
 배포 지옥에서 해방되길 간절히 바랍니다!
+
+끝!
 
 [Gitlab-CI]: https://about.gitlab.com/features/gitlab-ci-cd/
 [Gitlab-CI 공식 문서]: https://docs.gitlab.com/ee/ci/README.html
