@@ -18,10 +18,11 @@ https://github.com/github/linguist/blob/master/lib/linguist/languages.yml
 syntax highlighting은 아래와 같이 사용한다.
 
 ```bash
-```cmd
-@echo off
-echo Here are the files to be deleted:>tmp
-```
+# sharp(#)은 comment 
+# ```cmd
+# @echo off
+# echo Here are the files to be deleted:>tmp
+# ```
 ```
 
 결과물은 아래와 같다.
