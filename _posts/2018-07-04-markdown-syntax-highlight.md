@@ -21,7 +21,6 @@ syntax highlighting은 아래와 같이 사용한다.
 ```cmd
 @echo off
 echo Here are the files to be deleted:>tmp
-...
 ```
 ```
 
