@@ -19,9 +19,11 @@ syntax highlighting은 아래와 같이 사용한다.
 
 ```bash
 # sharp(#)은 comment 
-# ```cmd
-# @echo off
-# echo Here are the files to be deleted:>tmp
+# ```cmd@echo off
+# dir /w %1 | find /v "Volume " | find /v "file(s)" | find /v "dir(s)"
+# choice /c:ny Do you really want to delete these
+# rem if errorlevel 2 del %1
+# if errorlevel 2 echo (I would have deleted them)
 # ```
 ```
 
@@ -29,29 +31,10 @@ syntax highlighting은 아래와 같이 사용한다.
 
 ```cmd
 @echo off
-echo Here are the files to be deleted:>tmp
-set dirc1=%dircmd%
-set dircmd=
-dir /a-d %1 | find /v " Volume " | find /v "dir(s)" | find /v "Directory of" | find " " >> tmp
-set dircmd=%dirc1%
-set dirc1=
-type tmp|more
-choice Are you sure 
-if errorlevel 2 goto DoNotDel
-if errorlevel 1 goto KillThem
-rem The following is just in case
-rem "choice" does something unexpected ...
-echo Something else happened!
-goto end
-
-:KillThem
-rem Here's where we would put the "del" command
-echo They are gone.
-goto end
-
-:DoNotDel
-echo They are still there.
-:end
+dir /w %1 | find /v "Volume " | find /v "file(s)" | find /v "dir(s)"
+choice /c:ny Do you really want to delete these
+rem if errorlevel 2 del %1
+if errorlevel 2 echo (I would have deleted them)
 ```
 
 위 bat 예제는 [여기](http://www.bluffton.edu/homepages/facstaff/nesterd/batch-examples.html)서 가져왔다.
