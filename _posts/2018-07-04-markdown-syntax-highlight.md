@@ -19,24 +19,15 @@ syntax highlighting은 아래와 같이 사용한다.
 
 ```bash
 # sharp(#)은 comment 
-# ```cmd@echo off
-# dir /w %1 | find /v "Volume " | find /v "file(s)" | find /v "dir(s)"
-# choice /c:ny Do you really want to delete these
-# rem if errorlevel 2 del %1
-# if errorlevel 2 echo (I would have deleted them)
+# ```javascript
+console.log(`hello world`)
 # ```
 ```
 
 결과물은 아래와 같다.
 
-```cmd
-@echo off
-dir /w %1 | find /v "Volume " | find /v "file(s)" | find /v "dir(s)"
-choice /c:ny Do you really want to delete these
-rem if errorlevel 2 del %1
-if errorlevel 2 echo (I would have deleted them)
+```javascript
+console.log(`hello world`)
 ```
-
-위 bat 예제는 [여기](http://www.bluffton.edu/homepages/facstaff/nesterd/batch-examples.html)서 가져왔다.
 
 끝!
