@@ -527,7 +527,9 @@ methods: {
 ```
 
 ## 7. 마무리
-다 만들고 보니 async 범벅의 코드가 되었다. 다행히 동작은 잘 하긴 한다. 부득이 로그인 화면이 대문처럼 막고 있는 어플리케이션을 만들었지만, 요즘 세상에 굳이 이렇게 만들 이유는 없으리라 생각한다. 그렇다면 굳이 aync 범벅의 코드로 짤 필요는 없다. [vue-auth]의 예제를 참고하면 좋을 것이다.
+다 만들고 보니 async 범벅의 코드가 되었다. 다행히 동작은 잘 하긴 한다. 부득이 로그인 화면이 대문처럼 막고 있는 어플리케이션을 만들었지만, 요즘 세상에 굳이 이렇게 만들 이유는 없으리라 생각한다. 그렇다면 굳이 aync 범벅의 코드로 짤 필요는 없다. [vue-auth]의 예제를 참고하면 좋을 것이다. [Vue.js에서 Vuex와 함께 동적 컴포넌트(다이나믹 컴포넌트) 사용하기](https://lovemewithoutall.github.io/it/vue-dynamic-component-with-vuex/)를 보아도 좋다.
+
+끝!
 
 [vee-validate]: https://vee-validate.logaretm.com
 [Axios]: https://github.com/axios/axios
