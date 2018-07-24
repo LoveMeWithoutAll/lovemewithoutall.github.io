@@ -4,8 +4,8 @@ title: Vue CLI 3에서의 Webpack 설정
 date: 2018-07-19 17:45:30.000000000 +09:00
 type: post
 header:
-    teaser: "/assets/images/exif-vue.png"
-    image: "/assets/images/exif-vue.png"
+    teaser: "/assets/images/vue-cli-3.png"
+    image: "/assets/images/vue-cli-3.png"
 categories:
 - IT
 tags: [Vue, JavaScript]
