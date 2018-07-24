@@ -35,4 +35,8 @@ module.exports = {
 }
 ```
 
+([Vue CLI]의 webpack 설정은 [이 글](https://lovemewithoutall.github.io/it/vue-cli-3-webpack/)을 참조하세요)
+
 끝!
+
+[Vue CLI]: https://cli.vuejs.org/

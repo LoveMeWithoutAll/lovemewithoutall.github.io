@@ -14,8 +14,8 @@ tags: [Vue.js, debug, webpack, vue-cli]
 ## webpack 시작
 [Vue.js] 등의 프론트엔드 프레임워크를 사용해서 개발을 시작하면 [webpack] 사용을 피할 수 없다. 
 [webpack]에서는 [webpack-dev-server]를 제공하는데, 개발시에 로컬 [웹서버](https://developer.mozilla.org/ko/docs/Learn/Common_questions/What_is_a_web_server) 역할을 해준다. 
-[webpack]의 설정은 상당히 복잡하지만, 대부분의 프론트엔드 프레임워크는 자신만의 생태계에 [vue-cli]와 같은 명령줄 도구에서 알아서 구성해주는대로 사용하면 쉽게 웹서버를 올릴 수 있다. 
-이하는 [vue-cli]를 기준으로 설명하겠다. 다른 프레임워크도 똑같다. 
+[webpack]의 설정은 상당히 복잡하지만, 대부분의 프론트엔드 프레임워크는 자신만의 생태계에 [Vue CLI]와 같은 명령줄 도구에서 알아서 구성해주는대로 사용하면 쉽게 웹서버를 올릴 수 있다. 
+이하는 [Vue CLI 2]를 기준으로 설명하겠다. 다른 프레임워크도 똑같다. ([Vue CLI] 3는 [이 글](https://lovemewithoutall.github.io/it/vue-cli-3-webpack/)을 참조하세요)
 
 ## 프론트엔드 디버깅 환경 구성
 대개 webpack의 기본 환경 구성만으로 브라우저의 개발자도구를 사용해 디버깅이 가능할 것이다. 다만 조금 혼동스러운 것이 있다. 
@@ -56,5 +56,6 @@ devtool: 'cheap-module-eval-source-map'
 
 [Vue.js]: https://vuejs.org/
 [webpack]: https://webpack.js.org/
-[vue-cli]: https://github.com/vuejs/vue-cli/blob/dev/docs/README.md
+[Vue CLI]: https://cli.vuejs.org/
+[Vue CLI 2]: https://github.com/vuejs/vue-cli/tree/v2#vue-cli
 [webpack-dev-server]: https://webpack.js.org/configuration/dev-server/
