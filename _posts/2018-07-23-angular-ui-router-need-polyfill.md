@@ -37,3 +37,5 @@ Add the below code.
 ```html
 <script src="//cdn.polyfill.io/v2/polyfill.min.js?features=default,MutationObserver"></script>
 ```
+
+And it will work.
