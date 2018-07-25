@@ -30,7 +30,7 @@ TypeError: Object doesn't support property or method 'find'
    at StateBuilder.prototype.build (http://unpkg.com/@uirouter/angularjs/release/angular-ui-router.js:2930:17)
 ```
 
-For solving this error, you need [polyfill](https://polyfill.io/v2/docs/).
+To resolve this error, you need [polyfill](https://polyfill.io/v2/docs/).
 
 Add the below code.
 
