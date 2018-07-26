@@ -16,7 +16,7 @@ tags: [Javascript, webpack]
 웹팩으로 빌드하면 dist 디렉토리 아래에 배포를 위한 결과물들이 만들어진다. 이 결과물들이 프로젝트의 루트 경로에 둘거라면 아무 문제 없다. 하지만 대형 프로젝트의 일부 모듈만 따로 작업하는 경우에는 webpack 설정을 조금 만져줘야 한다. build 결과물로 만들어진 index.html이 참조하는 static 파일의 경로 설정이 필요하다. webpack의 기본 설정은 static 파일의 경로를 프로젝트의 루트 경로 아래로 잡아두기 때문이다. 아래와 같이 바꾸면 된다.
 
 ```javascript
-// config/dindex.js
+// config/index.js
 'use strict'
 // Template version: 1.3.1
 // see http://vuejs-templates.github.io/webpack for documentation.
