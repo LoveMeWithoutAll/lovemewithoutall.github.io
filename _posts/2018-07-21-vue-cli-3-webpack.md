@@ -52,7 +52,7 @@ index.html이 참조할 js와 css의 URL을 명시적으로 지정하면 build o
 
 로컬 개발환경에서 프론트엔드와 백엔드 서버가 분리되지 않았다면, [여기에 나온 것처럼](https://lovemewithoutall.github.io/it/webpack-config-for-debug/#%EB%B0%B1%EC%97%94%EB%93%9C%20%EB%94%94%EB%B2%84%EA%B9%85%20%ED%99%98%EA%B2%BD%20%EA%B5%AC%EC%84%B1) proxy middleware를 설정해야 한다.
 
-그냥 vue.config.js 파일을 아래와 같이 수정해주면 된다. **pickpu_inter/api**라 박혀있는 경로는 적당히 바꾸자.
+그냥 vue.config.js 파일을 아래와 같이 수정해주면 된다. **pickup_inter/api**라 박혀있는 경로는 적당히 바꾸자.
 
 ```javascript
 'use strict'
