@@ -197,6 +197,17 @@ foreign-survey-build-to-prod:
     - foreign_survey/client/node_modules/
 ```
 
+위 예제에서는 branch를 기준으로 cache를 저장한다. 하지만 하나의 상위 프로젝트 안에 여러 개의 하위 Node 프로젝트가 들어 있고, 각각의 stage에서 build를 하는 경우에는 branch만을 기준으로는 cache를 저장해봐야 소용없다. 아래처럼 설정하면 stage & branch 별로 cache를 저장할 수 있다.
+
+```yml
+# ...
+cache:
+    key: "$CI_JOB_STAGE-$CI_COMMIT_REF_SLUG"
+# ...
+```
+
+동일 branch 내에서 cache를 공유하는 방법에 대한 자세한 내용은 [여기](https://docs.gitlab.com/ee/ci/caching/#sharing-caches-across-the-same-branch)를 참조하시라.
+
 배포 지옥에서 해방되길 간절히 바랍니다!
 
 끝!
