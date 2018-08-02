@@ -51,7 +51,25 @@ devtool: 'cheap-module-eval-source-map'
     }
 ```
 
-위 예시에서는 **proxyTable**이라는 이름이지만, [vue-cli]에서 [webpack] 구성을 그렇게 해놓은 것이고, [webpack]의 [공식 문서](https://webpack.js.org/configuration/dev-server/#devserver-proxy)를 비롯하여 대개 **proxy**라는 이름으로 설정해준다. 환경에 따라 적당히 사용하자. 
+위 예시에서는 **proxyTable**이라는 이름이지만, [vue-cli]에서 [webpack] 구성을 그렇게 해놓은 것이고, [webpack]의 [공식 문서](https://webpack.js.org/configuration/dev-server/#devserver-proxy)를 비롯하여 대개 **proxy**라는 이름으로 설정해준다. 아래와 같이 설정해주면 된다.
+
+```javascript
+// webpack.config.js
+devServer: {
+    host: '127.0.0.1',
+    port: 8010,
+    proxy: {
+      '/counsel/apply/api': { // /counsel/apply/api 는 예시다
+        target: 'https://개발서버_URL/counsel/apply/api',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/counsel/apply/api': ''
+        }
+      }
+    }
+  }
+```
+
 이 기술에 대해 더 자세히 알고 싶다면 [http-proxy-middleware](https://github.com/chimurai/http-proxy-middleware)를 읽어보자. 
 
 [Vue.js]: https://vuejs.org/
