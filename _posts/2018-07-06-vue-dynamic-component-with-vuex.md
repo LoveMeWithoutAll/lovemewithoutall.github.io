@@ -17,11 +17,16 @@ tags: [IT, Vue.js]
 1. [Dynamic component]를 사용하여 렌더링하는 컴포넌트를 변경한다
 
 1번 방법은 [Vue.js 로그인 구현]에서 이미 설명했다. 
-그러니 2번 방법으로 구현해보자. 바로 코드를 보자.
+그러니 2번 방법으로 구현해보자.
+
+## Component 갈아끼우기
+
+Component를 내가 원하는대로 갈아치우며 렌더링을 한다면 좋을 것이다. 이것이 동적 컴포넌트 그 자체다. 아래 코드를 보자.
 
 ```html
 <template>
   <div class="container">
+    <!-- 바로 아래에서 component를 갈아끼운다 -->
     <component :is="getIsAuth ? 'Result' : 'AdminLogin'"></component> 
   </div>
 </template>
@@ -73,6 +78,79 @@ export default {
 }
 </script>
 ```
+
+## 2. Component를 필요할 때만 로딩하기
+
+큰 규모의 SPA를 만들면 첫 화면에서 모든 component를 로딩하기 버겁다. 그러니 필요한 때에 component를 로딩하면 좋다. 아래 코드를 보자.
+
+```html
+<template>
+  <div>
+    <el-steps :active="active" finish-status="success">
+      <el-step title="Step 1"></el-step>
+      <el-step title="Step 2"></el-step>
+      <el-step title="Step 3"></el-step>
+      <el-step title="Step 4"></el-step>
+    </el-steps>
+    <component :is="whichStep"></component>
+    <el-button style="margin-top: 12px;" @click="previous">Previous step</el-button>
+    <el-button style="margin-top: 12px;" @click="next">Next step</el-button>
+  </div>
+</template>
+
+<script>
+export default {
+  components: { // 여기서 동적으로 로딩한다
+    'CounselType': () => import('../components/CounselType'),
+    'Family': () => import('../components/Family'),
+    'CounselSubject': () => import('../components/CounselSubject'),
+    'CounselTime': () => import('../components/CounselTime')
+  },
+  data () {
+    return {
+      active: 0
+    }
+  },
+  methods: {
+    previous() {
+      if (this.active-- === 0) this.active = 2
+    },
+    next() {
+      if (this.active++ > 2) this.active = 0
+    }
+  },
+  computed: {
+    whichStep () {
+      switch (this.active) {
+        case 0:
+          return 'CounselType'
+        case 1:
+          return 'Family'
+        case 2:
+          return 'CounselSubject'
+        case 3:
+          return 'CounselTime'
+        default:
+          return 'CounselType'
+      }
+    }
+  }
+}
+</script>
+
+<style>
+</style>
+```
+
+장황해졌는데, 핵심은 이거다.
+
+```javascript
+components: { // 여기서 동적으로 로딩한다
+  '컴포넌트명': () => import('../components/컴포넌트-파일-위치')
+}
+```
+
+물론 현실의 거대 SPA에서는 import로 달리 번들링된 모듈을 가져와야 할 것이다.
 
 끝!
 
