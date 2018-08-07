@@ -19,7 +19,7 @@ Computed property “name” was assigned to but it has no setter
 
 Of coures, [Vuex Guide document](https://vuex.vuejs.org/guide/forms.html#two-way-computed-property) is a good solution.
 
-But I want to use [mapGetters](https://vuex.vuejs.org/guide/getters.html#the-mapgetters-helper) and [mapMutations](https://vuex.vuejs.org/guide/getters.html#the-mapgetters-helper) with [Vuex]. Without **$store**, code is more beautiful. Example is below. Vuex files are ommited.
+But I want to use [mapGetters](https://vuex.vuejs.org/guide/getters.html#the-mapgetters-helper) and [mapMutations](https://vuex.vuejs.org/guide/getters.html#the-mapgetters-helper) with [Vuex]. Without **$store**, code could be more beautiful. Example is below. Vuex files are ommited.
 
 ```html
 <template>
