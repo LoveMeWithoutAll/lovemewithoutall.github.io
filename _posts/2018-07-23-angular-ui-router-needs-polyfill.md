@@ -41,6 +41,6 @@ Add the below code.
 And it will work.
 
 ## P.S.
-1. [This problem has been fixed](https://github.com/angular-ui/ui-router/issues/3725). It will work.
+1. [This problem has been fixed](https://github.com/angular-ui/ui-router/issues/3725). It will work on next ship.
 1. If polyfill did not work, use this [polyfil](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find#Polyfill) from mozilla.org(thanks [brennaveen](https://github.com/brennaveen)!)
 1. Revert to version 1.0.18 is also resonable solution because v1.0.19 looks unstable(thanks [betty](https://disqus.com/by/bettysteger/)!).
