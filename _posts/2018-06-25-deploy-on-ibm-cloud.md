@@ -110,6 +110,10 @@ bx cf push --no-route
 
 IBM Cloud를 사용하면, 복잡한 설정을 없이 로컬 서버에서 돌아가는 대로 *cf push*만 날려서 클라우드에 내 앱을 배포할 수 있다(공짜로). *npm install*은 언제 하나 걱정할 것 없다. 알아서 해준다. 끝!
 
-참고: 이 글은 [Deploy Node.js telegram bot on IBM BlueMix](https://lovemewithoutall.github.io/it/deploy-bot-on-IBM-bluemix/)의 업그레이드판입니다.
+## 참고
+
+1. 이 글은 [Deploy Node.js telegram bot on IBM BlueMix](https://lovemewithoutall.github.io/it/deploy-bot-on-IBM-bluemix/)의 업그레이드판입니다.
+1. [ibm cloud developer tools CLI] 1.3.3 버전 기준입니다.
 
 [cloud foundry]: https://console.bluemix.net/
+[ibm cloud developer tools CLI]: https://www.ibm.com/cloud/cli
