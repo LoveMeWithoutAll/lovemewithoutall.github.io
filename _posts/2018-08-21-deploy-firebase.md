@@ -1,14 +1,14 @@
 ---
 layout: single
-title: Deploy Vue SPA on firebase 
-date: 2018-08-17 09:45:30.000000000 +09:00
+title: Deploy Vue SPA on firebase
+date: 2018-08-21 09:45:30.000000000 +09:00
 type: post
 header:
     teaser: "https://firebase.google.com/_static/13499c168a/images/firebase/lockup.png?hl=ko"
     image: "https://firebase.google.com/_static/13499c168a/images/firebase/lockup.png?hl=ko"
 categories:
 - IT
-tags: [firebase]
+tags: [firebase, Vue.js]
 ---
 
 [firebase cli]로 [firebase hosting]에 [Vue.js]로 만든 SPA를 배포하는 순서를 정리해보았다.
