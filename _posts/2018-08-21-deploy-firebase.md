@@ -86,6 +86,15 @@ firebase deploy
 
 이제부터는 배포할 때 **6** , **7**번 과정만 하면 된다.
 
+# 그 외
+
+rule(규칙)만 배포하고 싶으면 아래와 같이 하면 된다.
+
+```bash
+firebase deploy --only storage # firebase storage rule 배포
+firebase deploy --only firestore # firestore rule 배포
+```
+
 # 끝
 
 [firebase cli]: https://firebase.google.com/docs/cli/?hl=ko
