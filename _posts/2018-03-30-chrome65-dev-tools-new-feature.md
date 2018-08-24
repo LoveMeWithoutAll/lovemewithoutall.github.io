@@ -29,3 +29,7 @@ tags: [Chrome, Chrome dev tools, debug, frontend]
 개발자 도구에서 CSS 등을 변경하고, 완성된 소스를 *Changes tab*에서 확인한 후, 로컬에 저장된 파일을 배포하면 편리하다.
 
 링크의 개발자 도구 소개 영상도 꼭 보자.
+
+## 추가
+
+이 기능을 모르는 사람이 많아 아쉬움이 있었는지, 구글에서는 아예 문서 하나를 따로 만들어서 위 기능을 소개하고 있다. [Save Changes To Disk With Workspaces 공식 문서](https://developers.google.com/web/tools/chrome-devtools/workspaces/?hl=ko)를 읽어보자!
