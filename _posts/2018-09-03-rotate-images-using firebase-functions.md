@@ -1,6 +1,6 @@
 ---
 layout: single
-title: Grid test
+title: Auto rotate images using Firebase Functions
 date: 2018-09-03 17:45:30.000000000 +09:00
 type: post
 header:
