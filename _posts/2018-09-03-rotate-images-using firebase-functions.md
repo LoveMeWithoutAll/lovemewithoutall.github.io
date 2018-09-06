@@ -11,7 +11,7 @@ categories:
 tags: [javascript, firebase]
 ---
 
-# Auto rotate images using Firebase Functions
+# Rotate images by EXIF orientation infomation
 
 Using [Cloud Functions for Firebase], Images uploaded in [Firebase Cloud Storage] will be automatically rotated by EXIF orientation meta data. The below function script is triggered on uploading image. And that's all. It works!
 
