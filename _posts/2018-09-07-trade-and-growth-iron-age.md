@@ -7,7 +7,7 @@ header:
     teaser: "https://voxeu.org/sites/default/files/image/FromMay2014/MappingMed_log500.png"
     image: "https://voxeu.org/sites/default/files/image/FromMay2014/MappingMed_log500.png"
 categories:
-- History
+- Economy
 tags: [trade, growth, trade routes, Mediterranean sea trade]
 ---
 
