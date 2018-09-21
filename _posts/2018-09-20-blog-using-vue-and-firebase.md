@@ -41,26 +41,6 @@ tags: [javascript, firebase, Vue]
 1. npm run build
 1. firebase deploy(using [firebase cli])
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
 [Vue.js]: https://vuejs.org/
 [firebase]: https://firebase.google.com/
 [Vuetify]: https://github.com/vuetifyjs/vuetify
