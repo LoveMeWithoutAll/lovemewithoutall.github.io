@@ -18,11 +18,11 @@ tags: [javascript, firebase, Vue]
 
 ## This blog is using
 
-1. [Vue.js]: Frontend Framework
-1. [Firebase]: Database, Storage, Serverless Function as a service, Auth
-1. [Vuetify]: UI Framework
-1. [Quill]: Text editor
-1. [Disqus]: Comment & Reply
+1. [Vue.js] : Frontend Framework
+1. [Firebase] : Database, Storage, Serverless Function as a service, Auth
+1. [Vuetify] : UI Framework
+1. [Quill] : Text editor
+1. [Disqus] : Comment & Reply
 
 ## If you want to fork and use
 
