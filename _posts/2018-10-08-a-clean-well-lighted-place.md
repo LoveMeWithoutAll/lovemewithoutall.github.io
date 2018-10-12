@@ -13,4 +13,4 @@ tags: [review]
 
 삶과 허무는 춤추듯 마주본 채 빙글빙글 돈다.
 
-Ernest Hemingway. 깨끗하고 밝은 곳.
+Ernest Hemingway. 1933. 깨끗하고 밝은 곳. 김욱동 옮김. 민음사
