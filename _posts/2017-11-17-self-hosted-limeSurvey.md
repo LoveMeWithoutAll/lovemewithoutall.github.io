@@ -4,8 +4,8 @@ title: 라임서베이 설문조사 서버 설치하기
 date: 2017-11-17 17:07:30.000000000 +09:00
 type: post
 header:
-  teaser: "https://demo.limesurvey.org/tmp/assets/cf96b0ea/logo.png"
-  image: "https://demo.limesurvey.org/tmp/assets/cf96b0ea/logo.png"
+  teaser: "https://www.limesurvey.org/images/logos/logo_main_white.png"
+  image: "https://www.limesurvey.org/images/logos/logo_main_white.png"
 categories:
 - IT
 tags: [survey, self hosted survey, LimeSurvey, self host]
