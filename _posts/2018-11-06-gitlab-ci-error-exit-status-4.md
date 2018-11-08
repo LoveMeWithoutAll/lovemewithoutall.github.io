@@ -1,7 +1,7 @@
 ---
 layout: single
 title: gitlab-ci ERROR Job failed exit status 4 해결
-date: 2018-11-06 14:03:30.000000000 +09:00
+date: 2018-11-08 08:03:30.000000000 +09:00
 type: post
 header:
     teaser: "https://docs.gitlab.com/ee/ci/img/cicd_pipeline_infograph.png"
@@ -10,6 +10,14 @@ categories:
 - IT
 tags: [Git, Gitlab, Gitlab-CI, gitlab-runner, CI, CD]
 ---
+
+## tl;dr
+
+Windows에서 git을 사용한다면 글자수 제한을 늘리자.
+
+```cmd
+git config --system core.longpaths true
+```
 
 ## 현상
 
