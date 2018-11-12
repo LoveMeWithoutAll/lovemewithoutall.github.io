@@ -28,7 +28,6 @@ The example code below shows how to download Excel file from JSON. I used [Vue.j
 
 <script>
 import XLSX from 'xlsx'
-import api from '@/service'
 
 export default {
   data: () => ({
@@ -46,9 +45,6 @@ export default {
                 ]
     }
   }),
-  async created () {
-    this.Datas = await api.getDatas()
-  },
   methods: {
     onexport () { // On Click Excel download button
     
