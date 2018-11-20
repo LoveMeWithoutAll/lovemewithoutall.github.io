@@ -32,6 +32,7 @@ This Application get messages from MS SQL DB, and send to individual devices.
     1. [mssql](https://github.com/tediousjs/node-mssql) v4.2.1
     1. [winston] v3.1.0
     1. eslint v5.6.0
+    1. [pm2] v3.2.2
 
 ## To run this app
 
@@ -43,13 +44,22 @@ This Application get messages from MS SQL DB, and send to individual devices.
 1. Write codes for push feedback on service/db.js pushFeedback function
 
 ## Project setup
+
+```
+npm install -g pm2
+```
+
+```
+pm2 install pm2-logrotate
+```
+
 ```
 npm install
 ```
 
 ## Run
 ```
-node server
+npm start
 ```
 
 ### Lints and fixes files
@@ -57,6 +67,16 @@ node server
 npm run lint
 ```
 
+Contributing
+-------------
+Changes and improvements are more than welcome! Feel free to fork and open a pull request. 
+
+License
+-------------
+This project is licensed under the MIT License
+
+
 [Node.js]: https://nodejs.org/ko/
 [Admin FCM API]: https://firebase.google.com/docs/cloud-messaging/admin/
 [winston]: https://github.com/winstonjs/winston
+[pm2]: http://pm2.keymetrics.io/
