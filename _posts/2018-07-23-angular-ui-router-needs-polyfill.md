@@ -1,6 +1,6 @@
 ---
 layout: single
-title: 
+title: Angular Ui Router Needs Polyfill
 date: 2018-07-23 17:45:30.000000000 +09:00
 type: post
 header:
@@ -10,6 +10,8 @@ categories:
 - IT
 tags: [Angular, JavaScript]
 ---
+
+# This problem was Fixed version 1.0.20!! (thanks [betty](https://disqus.com/by/bettysteger/)!)
 
 In IE(Internet Explorer) 11, [Angular-UI-Router](https://ui-router.github.io/ng1/)(v1.0.19) with AngularJS and [ocLazyLoad](https://oclazyload.readme.io/) failed to instantiate.
 
@@ -41,6 +43,6 @@ Add the below code.
 And it will work.
 
 ## P.S.
-1. [This problem has been fixed](https://github.com/angular-ui/ui-router/issues/3725). It will work on next ship.
+1. [This problem was fixed](https://github.com/angular-ui/ui-router/issues/3725). It works on v1.0.20.
 1. If polyfill did not work, use this [polyfil](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find#Polyfill) from mozilla.org(thanks [brennaveen](https://github.com/brennaveen)!)
-1. Revert to version 1.0.18 is also resonable solution because v1.0.19 looks unstable(thanks [betty](https://disqus.com/by/bettysteger/)!).
+1. v1.0.19 looks unstable
