@@ -30,7 +30,10 @@ tags: [ASP.NET, HTTP]
 
 반드시 **dataType**과 **headers**를 아래와 같이 명시해준다. 여기가 가장 중요하다.
 
+[axios], `XMLHttpRequest` 둘 중 무엇을 써도 좋다.
+
 ```javascript
+// axios 예제
 return axios({
     method: 'POST',
     url: '/경로/class_name',
@@ -41,6 +44,27 @@ return axios({
     'param2': param2
     }
 })
+```
+
+```javascript
+// XMLHttpRequest 예제
+var xhr = new XMLHttpRequest();
+xhr.onload = function() {
+    if (xhr.status === 200 || xhr.status === 201) {
+        console.log(xhr.responseText);
+    } else {
+        console.error(xhr.responseText);
+    }
+};
+xhr.open('POST', '/경로/class_name');
+xhr.setRequestHeader('Content-Type', "application/x-www-form-urlencoded; charset=utf-8");
+xhr.send(JSON.stringify(
+                        data: { // 보낼 JSON에 들어갈 data
+                                'param1': param1,
+                                'param2': param2
+                            }
+                        )
+        );
 ```
 
 # 3. Server side
