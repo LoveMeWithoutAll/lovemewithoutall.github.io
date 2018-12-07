@@ -19,7 +19,7 @@ Internet Explorer는 `URLSearchParams`를 지원하지 않는다. 그래서 URL 
 
 ```javascript
 // 아래 코드의 'key'를 수정하여 원하는 value를 뽑아내자
-var wantedParam = /key=[a-z]*/.exec(window.location.search)[0].replace("&key=", "").replace("key=", "");
+var wantedParam = /[a-zA-Z0-9_-]*/.exec(window.location.search)[0].replace("&key=", "").replace("key=", "");
 ```
 
 다소 번잡하지만 잘 돌아간다.
