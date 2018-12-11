@@ -99,4 +99,17 @@ foreach(JObject hopeTime in applyData["counselHopeTime"])
 }
 ```
 
+## json 만들기
+
+### Dictionary로 만들기
+
+```csharp
+string uploadedUrl = "http://whereTheFileWas.com/uploaded/what.jpg"
+Dictionary<string, string> location = new Dictionary<string, string>
+{
+    {"location", uploadedUrl}
+};
+string json = JsonConvert.SerializeObject(location, Formatting.Indented);
+```
+
 [Json.NET]: https://www.newtonsoft.com/json
