@@ -11,6 +11,8 @@ categories:
 tags: [Vue.js, IE, axios, es6-promise]
 ---
 
+# 1. 'Promise'이(가) 정의되지 않았습니다.
+
 ## 오류
 [Vue.js]에서 ajax요청을 할 때는 [axios]를 사용하기 마련이다. 편리하고 좋은 라이브러리지만, 구형 IE에서 실행하면 이런 오류가 뜬다.
 
@@ -59,6 +61,44 @@ import 'es6-promise/auto'
 ```
 
 이래도 여전히 *'Promise'이(가) 정의되지 않았습니다.* 오류가 뜬다면, [es6-promise]를 불러오는 순서를 위로 땡겨주자. 적어도 [Vuex]나 [axios]를 사용하는 시점보다는 빨리 불러와야 정상 동작한다.
+
+# 2. Symbol이 정의되지 않았습니다
+
+## 오류
+
+`es6`와 `typescript`로 프로젝트를 구성하면 이런 오류가 뜨기도 한다.
+
+```javascript
+SCRIPT5009: 'Symbol'이(가) 정의되지 않았습니다.
+lang.js (12,1)
+```
+
+IE가 [`symbol`](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Symbol)을 [지원하지 않기 때문](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Symbol)이다.
+
+## 해결책
+
+`babel-polyfill`을 적용하자.
+
+우선 프로젝트에 추가해주고
+
+```bash
+# 설치
+npm install --save babel-polyfill
+```
+
+entry로 사용하는 javascript 파일에 다음과 같이 넣어주면 된다. 아래 코드에서는 `es6` 방식으로 넣었다. `es6-promise`와 마찬가지로 최상단에 추가해줘야 한다.
+
+```javascript
+// main.js or index.js or main.ts
+import 'babel-polyfill' // <== 추가
+import Vue from 'vue'
+
+// ...
+
+new Vue({
+   // ...
+})
+```
 
 [Vue.js]: https://vuejs.org
 [axios]: https://github.com/axios/axios
