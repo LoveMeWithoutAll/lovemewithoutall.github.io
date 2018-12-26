@@ -83,7 +83,7 @@ facebook:
   username               : "youngsun.ahn.14"
   app_id                 :
   publisher              :
-og_image                 : # Open Graph/Twitter default site image
+og_image                 : "https://avatars2.githubusercontent.com/u/4844714?s=400&u=9e61e11e68320c419b0c9817f0db5299aa602002&v=4" # Open Graph/Twitter default site image
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
