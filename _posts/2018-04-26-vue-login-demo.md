@@ -116,14 +116,11 @@ import store from './vuex/store' // vuex 저장소 추가
 
 Vue.config.productionTip = false
 
-/* eslint-disable no-new */
 new Vue({
-  el: '#app',
   router,
-  components: { App },
-  template: '<App/>',
-  store // // vuex 저장소 추가
-})
+  store,
+  render: h => h(App)
+}).$mount('#app')
 ```
 
 ## 2. Login component
@@ -425,7 +422,7 @@ export default {
 ### 1 jwt
 보안 강화를 위해 [JWT]를 Request Header에 박아넣자.
 ```javascript
-// src/vuex/actions.js
+// src/service/loginAPI.js
 export default {
   async login (uid, password) {
     try {
@@ -475,7 +472,7 @@ export default new Router({
 ```
 
 ## 6. validation 적용
-로그인을 위한 작업은 얼추 다 되었다. 이제 잡다한 마무리 작업을 하자. vee-validate로 입력값을 편하게 validation check하자. vee-validate v2.0.6로 했다. 
+로그인을 위한 작업은 얼추 다 되었다. 이제 잡다한 마무리 작업을 하자. vee-validate로 입력값을 편하게 validation check하자. vee-validate v2.1.5로 했다. 
 
 ### 1. vee-validate 설치
 vee-validate를 설치하고,
