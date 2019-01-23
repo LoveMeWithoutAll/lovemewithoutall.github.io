@@ -15,6 +15,13 @@ C#에서 [Json.NET]의 사용 예제를 정리해보았다. 왜냐면 내가 자
 
 물론 [공식 문서](https://www.newtonsoft.com/json/help/html/Introduction.htm)가 최고다.
 
+## GET parameter 받아오기
+
+```csharp
+string course_no = Request["course_no"];
+string haksu_no = Request["haksu_no"];
+```
+
 ## POST request 받아오기
 
 ```csharp
