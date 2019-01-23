@@ -1,6 +1,6 @@
 ---
 layout: single
-title: 
+title: Vue.js devtools v5 beta
 date: 2019-01-22 09:00:30.000000000 +09:00
 type: post
 header:
