@@ -15,11 +15,13 @@ tags: [SurveyJS, Vue.js]
 소스코드는 [여기](https://github.com/LoveMeWithoutAll/vue-survey-template)서 볼 수 있다.
 
 ## 1. Vue 구성
-우선 [vue-cli]로 프로젝트를 시작한다. 사용한 vue-cli의 버전은 2.9.2다.
+우선 [vue-cli]로 프로젝트를 시작한다. 사용한 `vue-cli`의 버전은 2.3.0이다.
 ```bash
 # vue cli로 프로젝트 시작
-vue init webpack vue-survey-template 
+vue create vue-survey-template 
 ```
+
+간단히 `vue-router`, `babel`, `eslint`만 적용했다.
 
 ## 2. SurveyJS
 [SurveyJS]를 설치한다.
@@ -55,7 +57,7 @@ npm install --save survey-vue
 
 ## 3. SurveyJS 넣기
 HelloWorld 컴포넌트를 아래와 같이 수정한다.
-```javascript
+```html
 // src/components/HelloWorld.vue
 <template>
   <div class="hello">
@@ -69,10 +71,12 @@ HelloWorld 컴포넌트를 아래와 같이 수정한다.
 import * as SurveyVue from 'survey-vue' // surveyJS를 import한다
 import surveyJSON from '@/assets/survey.json' // 설문조사 JSON 문항을 불러온다
 
+let Survey = SurveyVue.Survey // surveyJS에서 Survey 컴포넌트만 따로 빼낸다
+
 export default {
   name: 'HelloWorld',
   components: {
-    SurveyVue // SurveyJS 컴포넌트를 사용한다
+    Survey // SurveyJS 컴포넌트를 사용한다
   },
   computed: {
     // data에 surveyModel을 넣어도 좋지만 
