@@ -11,6 +11,11 @@ categories:
 tags: [Vue.js, JavaScript]
 ---
 
+## UPDATE: 오류 재발생(v2.5.4)
+
+한글 입력이 제대로 되지 않는 오류가 재발생했다([issue link](https://github.com/ElemeFE/element/issues/11665#issuecomment-465379995)).
+하기 해결책으로 조치 가능한지 확인해보지 못했다. v2.5.2는 이상없다고 하니([issue link](https://github.com/ElemeFE/element/issues/11665#issuecomment-463073670)), [element-ui]를 꼭 사용하고 싶다면 이 버전을 사용해보자.
+
 ## 문제
 
 v2.4.5 기준으로 IE(Internet Explorer)11에서 [element-ui]를 사용하면 아래와 같은 오류가 뜬다. 한글 입력이 잘 안된다.
