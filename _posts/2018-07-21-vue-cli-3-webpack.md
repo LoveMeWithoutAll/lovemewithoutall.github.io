@@ -62,8 +62,7 @@ module.exports = {
     proxy: { // proxyTable 설정
       '/pickup_inter/api': {
         target: 'https://백엔드-서버-URI/pickup_inter/api',
-        changeOrigin: true,
-        pathRewrite: {
+        publicPath: {
           '^/pickup_inter/api': ''
         }
       }
