@@ -1,7 +1,6 @@
 ---
 layout: single
-title: 
-[Firebase] Cloud Firestore 데이터베이스에 안전하지 않은 규칙이 있습니다
+title: [Firebase] Cloud Firestore 데이터베이스에 안전하지 않은 규칙이 있습니다
 date: 2014-04-12 13:19:30.000000000 +09:00
 type: post
 header:
