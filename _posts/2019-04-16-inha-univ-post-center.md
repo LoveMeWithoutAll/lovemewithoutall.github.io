@@ -4,8 +4,8 @@ title: 인하대학교 우편분류실
 date: 2019-04-16 13:19:30.000000000 +09:00
 type: post
 header:
-    teaser: "https://firebase.google.com/_static/13499c168a/images/firebase/lockup.png?hl=ko"
-    image: "https://firebase.google.com/_static/13499c168a/images/firebase/lockup.png?hl=ko"
+    teaser: "http://www.inha.ac.kr/mbshome/mbs/kr/images/common/logo.png"
+    image: "http://www.inha.ac.kr/mbshome/mbs/kr/images/common/logo.png"
 categories:
 - etc
 tags: [인하대학교]
