@@ -1,7 +1,7 @@
 ---
 layout: single
 title: 리눅스 서버 용량 확보 방법(log 간편 정리)
-date: 2019-04-22 10:19:30.000000000 +09:00
+date: 2019-04-23 10:33:30.000000000 +09:00
 type: post
 header:
     teaser: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tux.svg/225px-Tux.svg.png"
