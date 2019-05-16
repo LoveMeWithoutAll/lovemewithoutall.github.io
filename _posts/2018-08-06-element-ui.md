@@ -25,7 +25,7 @@ tags: [Vue.js, JavaScript]
 1. [vuetify] 등 다른 UI Framework와 비교해 없는 컴포넌트가 몇 개 있다(divider 라든지...)
 1. [vuetify]보다 생태계가 덜 풍부하다.
 1. 놀랍게도 default 언어 설정이 중국어다. 그래서 달력을 영어로 보려면 i18n으로 언어 설정을 영어로 잡아줘야한다.
-1. [vuetify]처럼 [Vue CLI]의 명령어로 설치할 수 없다.
+1. ~~[vuetify]처럼 [Vue CLI]의 명령어로 설치할 수 없다.~~ 이젠 설치할 수 있다([vue add element](https://github.com/ElementUI/vue-cli-plugin-element)).
 
 ## 총평
 
