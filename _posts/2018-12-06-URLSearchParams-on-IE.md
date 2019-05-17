@@ -24,4 +24,13 @@ var wantedParam = /[a-zA-Z0-9_-]*/.exec(window.location.search)[0].replace("&key
 
 다소 번잡하지만 잘 돌아간다.
 
+더 귀찮으면 이렇게 해도 좋다.
+
+```javascript
+// 아래 코드의 'key'를 수정하여 원하는 value를 뽑아내자
+window.location.search.match(/key=([^&]*)/)[1];
+```
+
+하드코딩이라 욕을 먹을 수도 있으니 주의해서 사용하자.
+
 * 참고: [URLSearchParams 브라우저 호환성](https://developer.mozilla.org/ko/docs/Web/API/URLSearchParams#%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80_%ED%98%B8%ED%99%98%EC%84%B1)
