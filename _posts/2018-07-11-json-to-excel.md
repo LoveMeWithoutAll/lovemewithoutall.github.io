@@ -11,7 +11,7 @@ categories:
 tags: [Vue.js, JSON, excel, javascript]
 ---
 
-For Exporting JSON to Excel file, [SheetJS] is usefule. [SheetJS] is complicated to use, but powerful and well maintained. I tried to use [vue-json-excel](https://github.com/jecovier/vue-json-excel), but on v0.2.5, the package throw an [error](https://github.com/jecovier/vue-json-excel/issues/48) and has a [problem](https://github.com/jecovier/vue-json-excel/issues/2).
+For Exporting JSON to Excel file, [SheetJS] is useful. [SheetJS] is complicated to use, but powerful and well maintained. I tried to use [vue-json-excel](https://github.com/jecovier/vue-json-excel), but on v0.2.5, the package throw an [error](https://github.com/jecovier/vue-json-excel/issues/48) and has a [problem](https://github.com/jecovier/vue-json-excel/issues/2).
 
 First of all, let's install [SheetJS].
 
@@ -22,6 +22,7 @@ npm install --save xlsx
 The example code below shows how to download Excel file from JSON. I used [Vue.js] single component in below example. But it does not matter if you understand javascript.
 
 ```html
+<!-- Below code is tested on SheetJS v0.14.0 -->
 <template>
   <button type="button" v-on:click="onexport">Excel download</button>
 </template>
