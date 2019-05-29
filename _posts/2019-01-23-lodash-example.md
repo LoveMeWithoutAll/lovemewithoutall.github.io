@@ -66,4 +66,38 @@ json = _.chain(json)
         .value();
 ```
 
+## Array 안의 Object를 순회하며 특정 Property의 값을 unique 한 Array로 만들기
+
+1. Array 안의 모든 Object를 순회하며 `ROOM_NO` property의 value를 뽑아 Array로 만든 후
+1. Array 안의 값은 unique하게 재편한다
+
+```json
+// 변경 전
+[{
+  "id": 0,
+  "ROOM_NO": "5E405"
+}, {
+  "id": 3,
+  "ROOM_NO": "5S535"
+}, {
+  "id": 4,
+  "ROOM_NO": "5S535"
+}, {
+  "id": 6,
+  "ROOM_NO": "6-101"
+}]
+
+/// 변경 후
+["5E405", "5S535", "6-101"]
+```
+
+핵심은 `map` 함수로 모든 Object를 조회하며 특정 Propert의 값만 뽑고, `uniq` 함수를 쓴느 것이다.
+
+```javascript
+let result = _.chain(this.selected)
+              .map((o) => o.ROOM_NO)
+              .uniq()
+              .value()
+```
+
 [Lodash]: https://lodash.com/
