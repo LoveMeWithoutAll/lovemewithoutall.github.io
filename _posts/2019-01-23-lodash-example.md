@@ -91,7 +91,7 @@ json = _.chain(json)
 ["5E405", "5S535", "6-101"]
 ```
 
-핵심은 `map` 함수로 모든 Object를 조회하며 특정 Propert의 값만 뽑고, `uniq` 함수를 쓴느 것이다.
+핵심은 `map` 함수로 모든 Object를 조회하며 특정 Propert의 값만 뽑고, `uniq` 함수를 쓰는 것이다.
 
 ```javascript
 let result = _.chain(this.selected)
