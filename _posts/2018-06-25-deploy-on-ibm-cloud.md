@@ -56,7 +56,7 @@ applications:
 
 ## 4. 배포하기
 
-[공식 문서](https://console.bluemix.net/docs/starters/upload_app.html)를 참조하여 배포해보자.
+~~[공식 문서](https://console.bluemix.net/docs/starters/upload_app.html)를 참조하여 배포해보자.~~(링크 깨짐)
 
 1.**IBM Cloud Develop Tools** 설치
 
@@ -64,25 +64,36 @@ applications:
 
 2.배포
 
-우선 내 로컬 머신에서 서비스가 잘 돌아가는지 확인하자. 문제없이 돌아간다면 준비 끝이다. 이제 커맨드창을 띄워 배포할 서비스가 있는 위치로 이동한 후, 다음과 같이 명령어를 입력한다. IBM Cloud cli를 설치했는데 왜 *bluemix*를 명령어로 치냐면, *bluemix*가 IBM Cloud의 예전 이름이기 때문이다.
+우선 내 로컬 머신에서 서비스가 잘 돌아가는지 확인하자. 문제없이 돌아간다면 준비 끝이다. 이제 커맨드창을 띄워 배포할 서비스가 있는 위치로 이동한 후, 다음과 같이 명령어를 입력한다. ~~IBM Cloud cli를 설치했는데 왜 *bluemix*를 명령어로 치냐면, *bluemix*가 IBM Cloud의 예전 이름이기 때문이다.~~(2019.06.13 현재 bluemix 명령어는 더이상 사용할 수 없다)
 
 ```bash
 # region에 따라 달라지지만 light 플랜(공짜)라면 다 ng(미국 남부)일거다
-bluemix api https://api.ng.bluemix.net
+# bluemix api https://api.ng.bluemix.net
+# 2019.06.13. 위 명령어는 이제 안해도 된다
 
 # ID는 본인의 메일 계정으로 넣자
-bluemix login -u youngseon.me@gmail.com
+# bluemix login -u youngseon.me@gmail.com # 2019.06.13. 사용 불가 명령어
+ibmcloud login
 
-# bluemix 대신 bx만 쳐도 된다.
+# ID/PW를 입력한다
+
+# bluemix 대신 bx만 쳐도 된다. -> (2019.06.13. 이제 안됨)
 # 커맨드창에서 현재 위치한 곳에서 돌아가는 앱을 어디다 올릴건지(타겟을 어디로 할건지) 정해준다.
-bx target --cf
+# bx target --cf # 2019.06.13. 사용 불가 명령어
+ibmcloud target --cf
 ```
 
 이제 IBM Cloud가 시작 가이드가 알려주는대로 이 명령어를 입력하면
 
 ```bash
-bx app push hanGifBot
+# bx app push hanGifBot
+ibmcloud cf push
 ```
+
+# 이제 잘 돌아간다! 끝!
+
+## 아래는 과거 bluemix 시절의 이야기다.
+## ibmcloud를 쓰는 2019.06.13. 현재는 health check, route 모두 따로 설정해줄 필요 없다
 
 잘 올라가는듯 하더니
 
@@ -113,7 +124,7 @@ IBM Cloud를 사용하면, 복잡한 설정을 없이 로컬 서버에서 돌아
 ## 참고
 
 1. 이 글은 [Deploy Node.js telegram bot on IBM BlueMix](https://lovemewithoutall.github.io/it/deploy-bot-on-IBM-bluemix/)의 업그레이드판입니다.
-1. [ibm cloud developer tools CLI] 1.3.3 버전 기준입니다.
+~~1. [ibm cloud developer tools CLI] 1.3.3 버전 기준입니다.~~
 
 [cloud foundry]: https://console.bluemix.net/
 [ibm cloud developer tools CLI]: https://www.ibm.com/cloud/cli
