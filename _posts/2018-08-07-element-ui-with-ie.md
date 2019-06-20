@@ -4,12 +4,14 @@ title: Internet Explorer에서 element-ui 사용하기(한글 입력 오류)
 date: 2018-08-07 16:45:30.000000000 +09:00
 type: post
 header:
-    teaser: "https://camo.githubusercontent.com/462f24153b8e8739c8ea71f7102585c4cb0e1575/68747470733a2f2f63646e2e7261776769742e636f6d2f456c656d6546452f656c656d656e742f6465762f656c656d656e745f6c6f676f2e737667"
-    image: "https://camo.githubusercontent.com/462f24153b8e8739c8ea71f7102585c4cb0e1575/68747470733a2f2f63646e2e7261776769742e636f6d2f456c656d6546452f656c656d656e742f6465762f656c656d656e745f6c6f676f2e737667"
+  teaser: "https://camo.githubusercontent.com/462f24153b8e8739c8ea71f7102585c4cb0e1575/68747470733a2f2f63646e2e7261776769742e636f6d2f456c656d6546452f656c656d656e742f6465762f656c656d656e745f6c6f676f2e737667"
+  image: "https://camo.githubusercontent.com/462f24153b8e8739c8ea71f7102585c4cb0e1575/68747470733a2f2f63646e2e7261776769742e636f6d2f456c656d6546452f656c656d656e742f6465762f656c656d656e745f6c6f676f2e737667"
 categories:
-- IT
+  - IT
 tags: [Vue.js, JavaScript]
 ---
+
+## UPDATE: 오류 재발생(v2.9.1)
 
 ## UPDATE: 오류 재발생(v2.5.4)
 
@@ -38,12 +40,12 @@ v2.4.5 기준으로 IE(Internet Explorer)11에서 [element-ui]를 사용하면 �
 
 내 프로젝트의 node_modules 디렉토리에서 아래 파일들을 수정하면 된다.
 
-* /node_modules/element-ui/lib/input.js
-* /node_modules/element-ui/lib/element-ui.common.js
+- /node_modules/element-ui/lib/input.js
+- /node_modules/element-ui/lib/element-ui.common.js
 
 ### 2. element-ui 소스 수정한 후, 배포판 빌드
 
-[element-ui github 저장소](https://github.com/ElemeFE/element)에서 clone 받은 후, *packages/input/src/input.vue* 파일을 수정한다. 그리고 *npm run dist*를 날려주고 그 결과물을 내 프로젝트에 넣는다.
+[element-ui github 저장소](https://github.com/ElemeFE/element)에서 clone 받은 후, _packages/input/src/input.vue_ 파일을 수정한다. 그리고 *npm run dist*를 날려주고 그 결과물을 내 프로젝트에 넣는다.
 
 ## 그 외
 
@@ -54,4 +56,4 @@ v2.4.5 기준으로 IE(Internet Explorer)11에서 [element-ui]를 사용하면 �
 끝!
 
 [element-ui]: https://github.com/ElemeFE/element
-[Google Chrome]: https://www.google.com/chrome/
+[google chrome]: https://www.google.com/chrome/
