@@ -11,16 +11,16 @@ categories:
 tags: [Vue.js, JavaScript]
 ---
 
-## UPDATE: 오류 재발생(v2.9.1)
+## UPDATE: 오류 발생 확인(v2.9.1)
 
-## UPDATE: 오류 재발생(v2.5.4)
+## UPDATE: 오류 발생 확인(v2.5.4)
 
 한글 입력이 제대로 되지 않는 오류가 재발생했다([issue link](https://github.com/ElemeFE/element/issues/11665#issuecomment-465379995)).
-하기 해결책으로 조치 가능한지 확인해보지 못했다. v2.5.2는 이상없다고 하니([issue link](https://github.com/ElemeFE/element/issues/11665#issuecomment-463073670)), [element-ui]를 꼭 사용하고 싶다면 이 버전을 사용해보자.
+하기 해결책으로 조치 가능한지 확인해보지 못했다. ~~v2.5.2는 이상없다고 하니([issue link](https://github.com/ElemeFE/element/issues/11665#issuecomment-463073670)), [element-ui]를 꼭 사용하고 싶다면 이 버전을 사용해보자.~~
 
 ## 문제
 
-v2.4.5 기준으로 IE(Internet Explorer)11에서 [element-ui]를 사용하면 아래와 같은 오류가 뜬다. 한글 입력이 잘 안된다.
+v2.9.1 기준으로 IE(Internet Explorer)11에서 [element-ui]를 사용하면 아래와 같은 오류가 뜬다. 한글 입력이 잘 안된다.
 
 ![korean-input-error](https://user-images.githubusercontent.com/8110371/41639651-a22c6916-7499-11e8-93d8-cebf80eafb79.gif)
 
@@ -34,22 +34,29 @@ v2.4.5 기준으로 IE(Internet Explorer)11에서 [element-ui]를 사용하면 �
 
 ## 해결책
 
-[여기](https://github.com/jhlee8804/element/commit/0c1d0b3d66c30d3182534a20ea706c951424e3a7?diff=unified)를 참고해 지우면 된다. **valueBeforeComposition** 와 관련된 코드를 다 지워버리자. 2번 방법을 추천한다.
+[여기](https://github.com/jhlee8804/element/commit/0c1d0b3d66c30d3182534a20ea706c951424e3a7?diff=unified)를 참고하면 된다. ~~**valueBeforeComposition** 와 관련된 코드를 다 지워버리자.~~ 2번 방법을 추천한다.
 
-### 1. node_modules 직접 수정
+### ~~1. node_modules 직접 수정~~
 
-내 프로젝트의 node_modules 디렉토리에서 아래 파일들을 수정하면 된다.
+~~내 프로젝트의 node_modules 디렉토리에서 아래 파일들을 수정하면 된다.~~
 
-- /node_modules/element-ui/lib/input.js
-- /node_modules/element-ui/lib/element-ui.common.js
+~~- /node_modules/element-ui/lib/input.js~~
+
+~~- /node_modules/element-ui/lib/element-ui.common.js~~
 
 ### 2. element-ui 소스 수정한 후, 배포판 빌드
 
-[element-ui github 저장소](https://github.com/ElemeFE/element)에서 clone 받은 후, _packages/input/src/input.vue_ 파일을 수정한다. 그리고 *npm run dist*를 날려주고 그 결과물을 내 프로젝트에 넣는다.
+[element-ui github 저장소](https://github.com/ElemeFE/element)에서 clone 받은 후, `/packages/input/src/input.vue` 파일을 수정한다. 그리고 *npm run dist*를 날려주고 그 결과물을 내 프로젝트에 넣는다.
+
+파일 수정은 다음 링크를 참조하시라.
+
+1. issue: https://github.com/ElemeFE/element/pull/15069
+1. source code: https://raw.githubusercontent.com/ElemeFE/element/c1e76a3f01d7c51a5bdd6cb485e1e49d09007882/packages/input/src/input.vue
 
 ## 그 외
 
-[JiHyung Lee](https://github.com/jhlee8804)님이 위 문제를 해결하는 [contribute](https://github.com/ElemeFE/element/issues/11665)를 하셨으니 다음 버전에서는 해결되리라 믿는다.
+~~[JiHyung Lee](https://github.com/jhlee8804)님이 위 문제를 해결하는 [contribute](https://github.com/ElemeFE/element/issues/11665)를 하셨으니 다음 버전에서는 해결되리라 믿는다.~~
+아마도 한글 입력 문제는 3.0 버전에서나 해결될 것 같다.
 
 물론 polyfill은 필수다. [이 글](https://lovemewithoutall.github.io/it/vue-ie-support-with-es6-promise/)을 참조하시라.
 
