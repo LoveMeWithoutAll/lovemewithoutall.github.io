@@ -46,9 +46,11 @@ v2.9.1 기준으로 IE(Internet Explorer)11에서 [element-ui]를 사용하면 �
 
 ### 2. element-ui 소스 수정한 후, 배포판 빌드
 
-[element-ui github 저장소](https://github.com/ElemeFE/element)에서 clone 받은 후, `/packages/input/src/input.vue` 파일을 수정한다. 그리고 *npm run dist*를 날려주고 그 결과물을 내 프로젝트에 넣는다.
+~~[element-ui github 저장소](https://github.com/ElemeFE/element)에서 clone 받은 후, `/packages/input/src/input.vue` 파일을 수정한다. 그리고 *npm run dist*를 날려주고 그 결과물을 내 프로젝트에 넣는다.~~
 
-파일 수정은 다음 링크를 참조하시라.
+위 문제를 해결한 버전(v2.9.1 기반)을 [내 github 저장소](https://github.com/LoveMeWithoutAll/element)에 올려두었다. master 브랜치든, dev 브랜치든 clone 받은 후, 콘솔창에서 해당 경로에 들어가 `npm run dist`를 날려준 후, 빌드 결과물을 작업 중인 프로젝트의 `node_modules/element-ui` 폴더에 복사 붙여넣기 하면 된다.
+
+직접 소스를 수정하려면 다음 링크를 참조하시라.
 
 1. issue: https://github.com/ElemeFE/element/pull/15069
 1. source code: https://raw.githubusercontent.com/ElemeFE/element/c1e76a3f01d7c51a5bdd6cb485e1e49d09007882/packages/input/src/input.vue
