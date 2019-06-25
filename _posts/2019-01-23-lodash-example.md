@@ -100,4 +100,55 @@ let result = _.chain(this.selected)
               .value()
 ```
 
+## Array 안의 Object를 순회하며 Property 추가하기
+
+1. Array 안의 모든 Object를 순회하며 Property 2개를 추가한다.
+1. 추가할 Property는
+  - HOPE1: `HOPE1_DATE + HOPE1_TIME'
+  - HOPE2: `HOPE2_DATE + HOPE2_TIME'
+
+```javascript
+// 변경전
+[{
+  "HOPE1_DATE": "월요일",
+  "HOPE1_TIME": "13시-14시",
+  "HOPE2_DATE": "월요일",
+  "HOPE2_TIME": "14시-15시"
+}, {
+  "HOPE1_DATE": "월요일",
+  "HOPE1_TIME": "13시-14시",
+  "HOPE2_DATE": "월요일",
+  "HOPE2_TIME": "14시-15시"
+}]
+
+// 변경 후
+[{
+  "HOPE1_DATE": "월요일",
+  "HOPE1_TIME": "13시-14시",
+  "HOPE2_DATE": "월요일",
+  "HOPE2_TIME": "14시-15시",
+  "HOPE1": "월요일 13시-14시",
+  "HOPE2": "월요일 14시-15시"
+}, {
+  "HOPE1_DATE": "월요일",
+  "HOPE1_TIME": "13시-14시",
+  "HOPE2_DATE": "월요일",
+  "HOPE2_TIME": "14시-15시",
+  "HOPE1": "월요일 13시-14시",
+  "HOPE2": "월요일 14시-15시"
+}]
+```
+
+핵심은 `assignIn`이다.
+
+```javascript
+_.map(list, o => {
+    return _.assignIn(
+      o,
+      { HOPE1: `${o.HOPE1_DATE} ${o.HOPE1_TIME}` },
+      { HOPE2: `${o.HOPE2_DATE} ${o.HOPE2_TIME}` }
+    )
+  })
+```
+
 [Lodash]: https://lodash.com/
