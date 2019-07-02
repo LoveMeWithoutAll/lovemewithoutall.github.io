@@ -1,14 +1,14 @@
 ---
 layout: single
-title: Deploy Node.js telegram bot on IBM BlueMix
-date: 2018-03-22 19:07:30.000000000 +09:00
+title: Deploying Node.js telegram bot on IBM BlueMix
+date: 2019-07-02 19:07:30.000000000 +09:00
 type: post
 header:
   teaser: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/IBM_Bluemix_logo.svg/1200px-IBM_Bluemix_logo.svg.png"
   image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/IBM_Bluemix_logo.svg/1200px-IBM_Bluemix_logo.svg.png"
 categories:
 - IT
-tags: [IBM BlueMix, BlueMix, bot, Node.js, telegram bot, deploy, cloud foundry]
+tags: [IBM Cloud, bot, Node.js, telegram]
 ---
 
 ### It works on my [Node.js project](https://github.com/LoveMeWithoutAll/HanGifBot).
@@ -30,42 +30,67 @@ FAILED
 Start app timeout
 ```
 
-## setup
+## Setup
 
-### setup manifest.yml
-If you're app is not web app, you must describe it. Health checker will it turn off if you do not.
+### Setup manifest.yml
+
+If you're app is not web app, you must describe it. In the below, app name is `hangifbot`
+
 ```sh
 applications:
 - name: hangifbot
   instances: 1
   memory: 128M
   disk_quota: 1024M
-  no-route: true
+  no-route: true # bot does not need router
 ```
 
 Another option when deploying
-* reference: https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#no-route
-* reference: https://console.ng.bluemix.net/docs/manageapps/depapps.html#deployingapps
+* no-route: https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#no-route
+* deploying: https://cloud.ibm.com/docs/cli?topic=cloud-cli-developing
+
+But there is a problem. Health checker will it turn off in only 1 minute if you do not like below.
+
 ```sh
 cf set-health-check hangifbot none
 cf push --no-route
 ```
-### setup package.json
-package.json for run.
+
+### Setup package.json
+
+Describe package.json for run.
+
 ```sh
+# ...
 "scripts": {
     "start": "node bot.js"   
   }
+# ...  
 ```
 
-### setup Dependencies
-Must describe dependencies in package.json.
-```sh
-"dependencies": {
-    "install": "^0.8.7",
-    "node-bing-api": "^3.2.1",
-    "node-telegram-bot-api": "^0.27.0",
-    "npm": "^4.4.1"
-  }
+## Deploy
+
+### 1. install IBM Cloud Develop Tools
+
+Install [IBM Cloud Develop Tools](https://console.bluemix.net/docs/cli/index.html#overview). It's a superset of [Cloud Foundry cli](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html).
+
+### 2. Deploy
+
+Fisrt, set up IBM Cloud.
+
+```bash
+ibmcloud login
+# type your ID/PW
+
+# set a location for running your bot
+ibmcloud target --cf
 ```
 
+And push to Cloud server.
+
+```bash
+# push to IBM Cloud and run!
+ibmcloud cf push
+```
+
+That's all. `cf push` is good. `npm install` is executed before running automatically.

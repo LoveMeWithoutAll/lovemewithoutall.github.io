@@ -54,6 +54,16 @@ applications:
   no-route: true  # 이 앱은 라우터 필요 없다
 ```
 
+`package.json`에 실행 명령어를 기술한다.
+
+```bash
+# ...
+"scripts": {
+    "start": "node bot.js"   
+  }
+# ...
+```
+
 ## 4. 배포하기
 
 ~~[공식 문서](https://console.bluemix.net/docs/starters/upload_app.html)를 참조하여 배포해보자.~~(링크 깨짐)
