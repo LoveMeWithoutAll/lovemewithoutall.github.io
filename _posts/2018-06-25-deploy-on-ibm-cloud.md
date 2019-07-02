@@ -1,7 +1,7 @@
 ---
 layout: single
 title: IBM Cloud에 Node.js로 만든 텔레그램봇 배포하기
-date: 2018-06-25 23:50:30.000000000 +09:00
+date: 2019-07-02 23:50:30.000000000 +09:00
 type: post
 header:
     teaser: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/IBM_Bluemix_logo.svg/1200px-IBM_Bluemix_logo.svg.png"
@@ -100,11 +100,6 @@ ibmcloud target --cf
 ibmcloud cf push
 ```
 
-# 이제 잘 돌아간다! 끝!
-
-## 아래는 과거 bluemix 시절의 이야기다.
-## ibmcloud를 쓰는 2019.06.13. 현재는 health check, route 모두 따로 설정해줄 필요 없다
-
 잘 올라가는듯 하더니
 
 ![before-failed](/assets/images/2018-06-25-deploy-on-ibm-cloud/before-failed.png)
@@ -113,19 +108,21 @@ ibmcloud cf push
 
 ![start-unsuccessful](/assets/images/2018-06-25-deploy-on-ibm-cloud/start-unsuccessful.png)
 
-원인은 내가 지금 올릴 **앱이 챗봇이기 때문**이다. 시작 가이드가 알려주는 위 명령어는 웹앱을 위한 명령어다. 그러므로 우리는 이렇게 해야한다.
+원인은 내가 지금 올릴 **앱이 챗봇이기 때문**이다. `health check`가 1분만에 앱을 꺼버렸다. 시작 가이드가 알려주는 위 명령어는 웹앱을 위한 명령어다. 그러므로 우리는 이렇게 해야한다.
 
 ```bash
-# health check 끄고
-bx cf set-health-check hanGifBot none
+# health check 끈다.
+ibmcloud cf set-health-check hanGifBot none
 
 # route도 끄고 배포한다
-bx cf push --no-route
+ibmcloud cf push --no-route
 ```
 
 이제 성공했다.
 
 ![deploy-success](/assets/images/2018-06-25-deploy-on-ibm-cloud/deploy-success.png)
+
+# 이제 잘 돌아간다! 끝!
 
 ## 5. 마무리
 

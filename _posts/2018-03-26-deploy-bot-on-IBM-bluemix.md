@@ -52,8 +52,8 @@ Another option when deploying
 But there is a problem. Health checker will it turn off in only 1 minute if you do not like below.
 
 ```sh
-cf set-health-check hangifbot none
-cf push --no-route
+ibmcloud cf set-health-check hangifbot none
+ibmcloud cf push --no-route
 ```
 
 ### Setup package.json
