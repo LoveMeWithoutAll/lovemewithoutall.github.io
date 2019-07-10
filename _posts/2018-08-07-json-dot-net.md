@@ -119,4 +119,59 @@ Dictionary<string, string> location = new Dictionary<string, string>
 string json = JsonConvert.SerializeObject(location, Formatting.Indented);
 ```
 
+## 불필요한 데이터 전송 줄이기
+
+### 1개 컬럼만 있는 DataTable을 Array로 바꾸기
+
+예시의 `DataTable`은 `APPLY_DATE` 컬럼 하나만 있는데, 이를 바로 `json`으로 바꾸면 불필요한 데이터 전송이 많다.
+단순 `string`만 전송하기 위해 `ArrayList`로 바꿔 보내자.
+
+```csharp
+/* before
+[
+  {
+    "APPLY_DATE": "20190311"
+  },
+  {
+    "APPLY_DATE": "20190313"
+  },
+  {
+    "APPLY_DATE": "20190314"
+  }
+]
+*/
+DataTable dt = new DataTable();
+DataColumn column = new DataColumn();
+column.DataType = System.Type.GetType("System.String");
+column.ColumnName = "APPLY_DATE";
+dt.Columns.Add(column);
+DataRow row1 = dt.NewRow();
+row1["APPLY_DATE"] = "20190311";
+dt.Rows.Add(row1);
+DataRow row2 = dt.NewRow();
+row2["APPLY_DATE"] = "20190313";
+dt.Rows.Add(row2);
+DataRow row3 = dt.NewRow();
+row3["APPLY_DATE"] = "20190314";
+dt.Rows.Add(row3);
+
+string json = JsonConvert.SerializeObject(dt, Formatting.Indented);
+```
+
+```csharp
+/* after
+[
+  "20190311",
+  "20190313",
+  "20190314"
+]
+*/
+ArrayList converted = new ArrayList(dt.Rows.Count);
+foreach (DataRow row in dt.Rows)
+{
+    converted.Add(row.ItemArray[0].ToString());
+}
+string json = JsonConvert.SerializeObject(converted, Formatting.Indented);
+```
+
 [Json.NET]: https://www.newtonsoft.com/json
