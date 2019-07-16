@@ -1,7 +1,7 @@
 ---
 layout: single
 title: Vuetify에서 Jest 초기 셋업
-date: 2019-07-05 15:05:30.000000000 +09:00
+date: 2019-07-16 15:05:30.000000000 +09:00
 type: post
 header:
     teaser: "https://jestjs.io/img/jest.svg"
@@ -16,6 +16,8 @@ tags: [Vuetify, Vue, Jest]
 * [Vue CLI] v3.8.4
 * vue-test-utils v1.0.0-beta.29
 * babel-jest v23.6.0
+
+# 오류 1
 
 ## 현상
 
@@ -110,11 +112,33 @@ module.exports = {
 
 이제 test를 재기동하면 오류 메시지는 더이상 보이지 않는다.
 
-## 끝!
-
 ## 그 외
 
 [jest]의 API 문서를 보면 [`setupTestFrameworkScriptFile`는 deprecated 되었다.](https://jestjs.io/docs/en/configuration#setupfilesafterenv-array). 하지만 내가 이 글을 쓰는 현재는 `vue-test-utils`가 [jest] v23.6.0을 사용하므로, [해당 버전의 API](https://jestjs.io/docs/en/23.x/configuration#setuptestframeworkscriptfile-string를 사용했다. 나중에 [jest]의 버전이 올라간다면, deprecated된 `setupTestFrameworkScriptFile` API 대신 `setupFilesAfterEnv` API를 사용하도록 하자.
+
+# 오류 2
+
+## 현상
+
+이런 오류가 발생할 때가 있다.
+
+```javascript
+[Vuetify] Unable to locate target [data-app] in // component name
+```
+
+## 원인
+
+[Vuetify]는 초기화 할 때, `<v-app></v-app>` 태그로 [Vuetify] 컴포넌트를 감싼다. 이 태그의 attribute로 `data-app`이 있는데, [Jest]로 단위 테스트를 할 때는 컴포넌트별로 테스트를 하다보니 `<v-app></v-app>` 태그를 선언하지 않는다. 그래서 위 오류가 발생한 것이다. 스택오버플로우의 [이 링크](https://stackoverflow.com/questions/51596881/vuetify-issue-with-v-menu/51598858#51598858)를 참고할 것.
+
+## 해결책
+
+`오류 1`에서 만든 `jest-setup.js` 파일에 하기 속성을 추가한다.
+
+```javascript
+document.body.setAttribute('data-app', true)
+```
+
+## 끝!
 
 [Vuetify]: https://github.com/vuetifyjs/vuetify
 [Jest]: https://jestjs.io/
