@@ -23,7 +23,7 @@ description              : "short story about IT history economy life etc"
 url                      : "https://lovemewithoutall.github.io"
 baseurl                  : #
 repository               : "lovemewithoutall/lovemewithoutall.github.io"
-teaser                   : "/assets/images/20120817_115437.jpg"
+teaser                   : "/assets/images/kiki.jpg"
 breadcrumbs              : true #, false (default)
 words_per_minute         : 200
 comments:
