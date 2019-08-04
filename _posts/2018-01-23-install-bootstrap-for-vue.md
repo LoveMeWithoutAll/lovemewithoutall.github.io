@@ -11,6 +11,20 @@ categories:
 tags: [Vue.js, Bootstrap, jQuery]
 ---
 
+## Update! 2019-08-04
+
+[Bootstrap Vue]가 v2로 업데이트 됨에 따라, 더이상 [jQuery]가 필요 없어졌다!
+
+이제는 그냥 [여기](https://bootstrap-vue.js.org/docs#using-module-bundlers) 나온대로 따라하면 된다.
+
+하지만 저것도 귀찮다면, 내가 템플릿을 만들어두었다. [이 레포지토리](https://github.com/LoveMeWithoutAll/vue-bootstrap-template)를 클론받아서 그냥 쓰면 된다.
+
+아래 내용은 참고용으로 지우지 않고 남겨둔다.
+
+## 끝
+
+------------
+
 ## 시작
 
 ### 몇 가지 방법
