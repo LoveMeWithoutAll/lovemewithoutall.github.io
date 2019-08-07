@@ -4,8 +4,8 @@ title: Vue image uploader to Firebase Cloud Storage
 date: 2018-09-04 12:45:30.000000000 +09:00
 type: post
 header:
-    teaser: "https://firebase.google.com/_static/13499c168a/images/firebase/lockup.png?hl=ko"
-    image: "https://firebase.google.com/_static/13499c168a/images/firebase/lockup.png?hl=ko"
+    teaser: "/assets/images/vue-image-upload-demo.gif"
+    image: "/assets/images/vue-image-upload-demo.gif"
 categories:
 - IT
 tags: [javascript, firebase, Vue]
@@ -43,7 +43,8 @@ It works on [Firebase Cloud Storage](https://firebase.google.com/docs/storage/).
           add_a_photo
         </v-icon>
     </v-btn>
-    <input
+    <form ref="form">
+      <input
       id="files"
       type="file"
       name="file"
@@ -51,6 +52,7 @@ It works on [Firebase Cloud Storage](https://firebase.google.com/docs/storage/).
       accept="image/*"
       :multiple="false"
       @change="detectFiles($event)" />
+    </form>
       <v-progress-circular
         v-if="uploading && !uploadEnd"
         :size="100"
@@ -121,6 +123,7 @@ export default {
         .catch((error) => {
           console.error(`file delete error occured: ${error}`)
         })
+      this.$refs.form.reset()
     }
   },
   watch: {
