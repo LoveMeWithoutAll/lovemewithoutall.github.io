@@ -4,8 +4,8 @@ title: '크롤링 핵심 가이드 : 웹 사이트 크롤링을 위한 실전 �
 date: 2019-08-11 18:07:30.000000000 +09:00
 type: post
 header:
-    teaser: "https://firebasestorage.googleapis.com/v0/b/book-blog-with-largo.appspot.com/o/images%2F800x0.jfif"
-    image: "https://firebasestorage.googleapis.com/v0/b/book-blog-with-largo.appspot.com/o/images%2F800x0.jfif"
+    teaser: "https://firebasestorage.googleapis.com/v0/b/book-blog-with-largo.appspot.com/o/images%2F800x0.jfif?alt=media&token=67b8047e-052d-40ed-8421-0c2441632373"
+    image: "https://firebasestorage.googleapis.com/v0/b/book-blog-with-largo.appspot.com/o/images%2F800x0.jfif?alt=media&token=67b8047e-052d-40ed-8421-0c2441632373"
 categories:
 - IT
 tags: [crawling]
