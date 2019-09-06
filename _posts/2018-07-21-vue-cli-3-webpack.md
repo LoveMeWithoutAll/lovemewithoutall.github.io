@@ -48,6 +48,12 @@ index.html이 참조할 js와 css의 URL을 명시적으로 지정하면 build o
 
 **참조**: https://cli.vuejs.org/config/#baseurl
 
+### 3. 응용
+
+`git submodule`을 활용한다. `명시적 URL`을 지정하고, build output을 해당 위치에 복사해넣으면 잘 돌아간다. 이렇게 하면 URL에 괜히 `dist`를 붙일 필요가 없어진다. `submodule`을 쓰니 관리도 편하다.
+
+**참조**: https://git-scm.com/book/ko/v2/Git-도구-서브모듈
+
 ## 3. proxyTable 설정
 
 로컬 개발환경에서 프론트엔드와 백엔드 서버가 분리되지 않았다면, [여기에 나온 것처럼](https://lovemewithoutall.github.io/it/webpack-config-for-debug/#%EB%B0%B1%EC%97%94%EB%93%9C%20%EB%94%94%EB%B2%84%EA%B9%85%20%ED%99%98%EA%B2%BD%20%EA%B5%AC%EC%84%B1) proxy middleware를 설정해야 한다.
