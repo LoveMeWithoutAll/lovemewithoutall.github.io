@@ -4,8 +4,8 @@ title: 인공지능 개발 이야기 - 바다 장기의 추억
 date: 2019-09-16 19:33:30.000000000 +09:00
 type: post
 header:
-    teaser: "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=2ahUKEwiitqqIpdDkAhUaMd4KHT5pDi8QjRx6BAgBEAQ&url=http%3A%2F%2Fblog.daum.net%2Fpclovean%2F15762735&psig=AOvVaw2ZXl_aUZSniyUQdvwn-3hk&ust=1568549683197552"
-    image: "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=2ahUKEwiitqqIpdDkAhUaMd4KHT5pDi8QjRx6BAgBEAQ&url=http%3A%2F%2Fblog.daum.net%2Fpclovean%2F15762735&psig=AOvVaw2ZXl_aUZSniyUQdvwn-3hk&ust=1568549683197552"
+    teaser: "http://cfile221.uf.daum.net/image/132815154B35C2C22B2443"
+    image: "http://cfile221.uf.daum.net/image/132815154B35C2C22B2443"
 categories:
 - IT
 tags: [review]
