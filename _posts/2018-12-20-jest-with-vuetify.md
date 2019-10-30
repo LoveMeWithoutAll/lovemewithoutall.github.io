@@ -1,7 +1,7 @@
 ---
 layout: single
 title: Vuetify에서 Jest 초기 셋업
-date: 2019-07-16 15:05:30.000000000 +09:00
+date: 2019-10-30 15:05:30.000000000 +09:00
 type: post
 header:
     teaser: "https://jestjs.io/img/jest.svg"
@@ -13,9 +13,9 @@ tags: [Vuetify, Vue, Jest]
 
 ## 환경
 
-* [Vue CLI] v3.8.4
+* [Vue CLI] v4.0.5
 * vue-test-utils v1.0.0-beta.29
-* babel-jest v23.6.0
+* babel-jest v24.9.0
 
 # 오류 1
 
@@ -87,7 +87,7 @@ localVue.use(Vuetify)
 
 2019.07.04. 현재로서는 문제를 깔끔하게 해결할 수 없다. 다만 [앞으로 고친다고 한다](https://github.com/vuetifyjs/vuetify/issues/4964#issuecomment-500574050). 그러니 이렇게 해보자.
 
-jest-setup.js 파일을 만들어 `Vue`와 `Vuetify`를 미리 셋업해두자. 파일명은 뭐든 상관없다. 파일 위치는 적당히 두면 되는데, 나라면 `/src/tests/unit` 경로에 두는걸 추천한다.
+jest-setup.js 파일을 만들어 `Vue`와 `Vuetify`를 미리 셋업해두자. 파일명은 뭐든 상관없다. 파일 위치는 적당히 두면 되는데, 나라면 `/src/tests` 경로에 두는걸 추천한다.
 
 ```typescript
 // jest-setup.js
@@ -103,7 +103,7 @@ test를 수행할 때마다 위 파일이 실행되도록, `jest` 설정 파일�
 // jest.config.js
 module.exports = {
   // ...
-  setupTestFrameworkScriptFile: '<rootDir>/tests/unit/jest-setup.js'
+  setupFilesAfterEnv: ['<rootDir>/tests/jest-setup.js']
   // ...
 }  
 ```
@@ -114,7 +114,9 @@ module.exports = {
 
 ## 그 외
 
-[jest]의 API 문서를 보면 [`setupTestFrameworkScriptFile`는 deprecated 되었다.](https://jestjs.io/docs/en/configuration#setupfilesafterenv-array). 하지만 내가 이 글을 쓰는 현재는 `vue-test-utils`가 [jest] v23.6.0을 사용하므로, [해당 버전의 API](https://jestjs.io/docs/en/23.x/configuration#setuptestframeworkscriptfile-string를 사용했다. 나중에 [jest]의 버전이 올라간다면, deprecated된 `setupTestFrameworkScriptFile` API 대신 `setupFilesAfterEnv` API를 사용하도록 하자.
+2019.10.28. 기준으로 `vue-test-utils v1.0.0-beta.29` 버전에서는 하기 정보가 더이상 필요없다.
+
+~~[jest]의 API 문서를 보면 [`setupTestFrameworkScriptFile`는 deprecated 되었다.](https://jestjs.io/docs/en/configuration#setupfilesafterenv-array). 하지만 내가 이 글을 쓰는 현재는 `vue-test-utils`가 [jest] v23.6.0을 사용하므로, [해당 버전의 API](https://jestjs.io/docs/en/23.x/configuration#setuptestframeworkscriptfile-string를 사용했다. 나중에 [jest]의 버전이 올라간다면, deprecated된 `setupTestFrameworkScriptFile` API 대신 `setupFilesAfterEnv` API를 사용하도록 하자.~~
 
 # 오류 2
 
@@ -128,7 +130,7 @@ module.exports = {
 
 ## 원인
 
-[Vuetify]는 초기화 할 때, `<v-app></v-app>` 태그로 [Vuetify] 컴포넌트를 감싼다. 이 태그의 attribute로 `data-app`이 있는데, [Jest]로 단위 테스트를 할 때는 컴포넌트별로 테스트를 하다보니 `<v-app></v-app>` 태그를 선언하지 않는다. 그래서 위 오류가 발생한 것이다. 스택오버플로우의 [이 링크](https://stackoverflow.com/questions/51596881/vuetify-issue-with-v-menu/51598858#51598858)를 참고할 것.
+[Vuetify]는 초기화 할 때, `<v-app></v-app>` 태그로 [Vuetify] 컴포넌트를 감싼다. 이 태그의 attribute로 `data-app`이 있는데, [Jest]로 단위 테스트를 할 때는 컴포넌트별로 테스트를 하다보니 `<v-app></v-app>` 태그를 선언하지 않는다. 그래서 위 오류가 발생한 것이다. [stack overflow의 이 링크](https://stackoverflow.com/questions/51596881/vuetify-issue-with-v-menu/51598858#51598858)를 참고할 것.
 
 ## 해결책
 
