@@ -4,8 +4,8 @@ title: AT WAR WITH THE TRUTH
 date: 2019-12-10 23:33:30.000000000 +09:00
 type: post
 header:
-    teaser: "https://www.washingtonpost.com/pb/resources/img/logos/jobs-logo.png"
-    image: "https://www.washingtonpost.com/pb/resources/img/logos/jobs-logo.png"
+    teaser: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/The_Logo_of_The_Washington_Post_Newspaper.svg/1200px-The_Logo_of_The_Washington_Post_Newspaper.svg.png"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/The_Logo_of_The_Washington_Post_Newspaper.svg/1200px-The_Logo_of_The_Washington_Post_Newspaper.svg.png"
 categories:
 - History
 tags: [War]
