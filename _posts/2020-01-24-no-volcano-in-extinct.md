@@ -4,8 +4,8 @@ title: 공룡 멸종, 운석인가? 화산인가?
 date: 2020-01-24 11:23:30.000000000 +09:00
 type: post
 header:
-    teaser: "https://www.evernote.com/shard/s110/res/b9cc2db6-1600-4e53-959b-e6a4efe0d89e"
-    image: "https://www.evernote.com/shard/s110/res/b9cc2db6-1600-4e53-959b-e6a4efe0d89e"
+    teaser: "https://static01.nyt.com/images/2020/01/16/science/16TB-DINOSUARS1/16TB-DINOSUARS1-superJumbo.jpg?quality=90&auto=webp"
+    image: "https://static01.nyt.com/images/2020/01/16/science/16TB-DINOSUARS1/16TB-DINOSUARS1-superJumbo.jpg?quality=90&auto=webp"
 categories:
 - etc
 tags: []
