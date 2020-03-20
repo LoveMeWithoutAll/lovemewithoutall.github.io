@@ -4,8 +4,8 @@ title: Phoenicians Before Columbus Expedition
 date: 2020-02-14 11:23:30.000000000 +09:00
 type: post
 header:
-    teaser: "https://static.wixstatic.com/media/213ff7_3eb4e006e2394950bc9127b219678e8a~mv2_d_1416_1888_s_2.jpg/v1/fill/w_550,h_733,al_c,q_85,usm_0.66_1.00_0.01/Phoenicia%20at%20sea.webp"
-    image: "https://static.wixstatic.com/media/213ff7_3eb4e006e2394950bc9127b219678e8a~mv2_d_1416_1888_s_2.jpg/v1/fill/w_550,h_733,al_c,q_85,usm_0.66_1.00_0.01/Phoenicia%20at%20sea.webp"
+    teaser: "https://static.wixstatic.com/media/213ff7_aac9637679f64980b09843e81ff9c545~mv2.jpg/v1/fill/w_1776,h_1332,al_c,q_90,usm_0.66_1.00_0.01/213ff7_aac9637679f64980b09843e81ff9c545~mv2.jpg"
+    image: "https://static.wixstatic.com/media/213ff7_aac9637679f64980b09843e81ff9c545~mv2.jpg/v1/fill/w_1776,h_1332,al_c,q_90,usm_0.66_1.00_0.01/213ff7_aac9637679f64980b09843e81ff9c545~mv2.jpg"
 categories:
 - History
 tags: []
