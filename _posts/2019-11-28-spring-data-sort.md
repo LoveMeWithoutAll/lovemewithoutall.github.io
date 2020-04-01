@@ -59,7 +59,7 @@ public List<VisitorHistory> getVisitorsByTypeAndId(String id, String type) {
 }
 
 private Sort sortByvDate() {
-    return new Sort(Sort.Direction.DESC, "vDate");
+    return Sort.by(Sort.Direction.DESC, "vDate");
 }
 ```
 
