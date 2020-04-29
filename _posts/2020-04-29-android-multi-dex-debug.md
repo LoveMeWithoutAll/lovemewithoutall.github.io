@@ -11,7 +11,7 @@ categories:
 tags: [Android]
 ---
 
-When your Android App's minSdkVersion is prior to 21(using dalvik), and your app and the libraries it references exceed 65,536 methods, **Android studio debugger does not work** otherwise your expectation, silently. Of course, it is not that all break point is not work. Some Activity Classes trigger debugger. But Any other java classes and kotlin classes would betray you.
+When your Android App's minSdkVersion is prior to 21(using dalvik), and your app and the libraries it references exceed 65,536 methods, **Android studio debugger does not work** otherwise your expectation, silently. Of course, it is not that all break points do not work. Some Activity Classes can trigger debugger. But Almost any other break points in java classes & kotlin classes would betray you.
 
 I couldn't know the cause exactly. However **Multiple DEX problem** might affect it. So believe me, upgrade minSdkVersion to 21 or higher and using ART. ART natively supports loading multiple DEX files. If using ART is impossible, add multidex support lirary to your project
 
