@@ -17,21 +17,21 @@ When using **GitLab-CI**, it is needed that finding changed or new files, and th
 Windows Server
 
 ## git
-Fisrt, listing all changed or new files using **git**. And write a text file.
+Fisrt, listing all changed, new files using **git**. And write a text file.
 
 ```sh
-git diff --name-only HEAD~2 > File-list.txt
+git diff --name-only --diff-filter=d HEAD~1 > copy-target.txt # exclude delete
 ```
 
 ## Copy
 
-Second, Copying a list of files. In 'File-list.txt', there are lines of full path & name. Using **xcopy**, write a file named `auto-copy.bat`
+Second, Copying a list of files. In 'copy-target.txt', there are lines of full path & name. Using **xcopy**, write a file named `auto-copy.bat`
 
 ```bat
 @echo off
 set src_folder=.\
 set dst_folder=o:\target
-for /f "tokens=*" %%i in (File-list.txt) DO (
+for /f "tokens=*" %%i in (copy-target.txt) DO (
     xcopy /S/E "%src_folder%\%%i" "%dst_folder%"
 )
 ```
@@ -56,7 +56,7 @@ deploy-to-prod:
   script:
     - echo 'deploy to production server'
     - 'net use o: \\server_ip\folder password /user:id'
-    - 'git diff --name-only HEAD~2 > copy-target.txt'
+    - 'git diff --name-only --diff-filter=d HEAD~1 > copy-target.txt'
     - 'auto-copy.bat'
 ```
 
