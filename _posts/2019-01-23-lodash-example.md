@@ -1,7 +1,7 @@
 ---
 layout: single
 title: lodash 사용 예제
-date: 2019-01-26 12:00:30.000000000 +09:00
+date: 2020-05-28 12:00:30.000000000 +09:00
 type: post
 header:
     teaser: "https://lodash.com/assets/img/lodash.svg"
@@ -13,7 +13,7 @@ tags: [javascript, lodash]
 
 [Lodash] 사용 예제를 정리해보았다. 왜냐면 내가 자꾸 잊어먹기 때문... 계속 업데이트 할 예정이다.
 
-## json multi group by
+## array multi group by
 
 `BUILDING`과 `BUILDING_NAME`, 2개 컬럼을 기준으로 GROUP BY를 만든다. 이 2개 컬럼은 `CODE`, `VALUE`로서 1:1 관계다.
 
@@ -48,13 +48,13 @@ tags: [javascript, lodash]
 ```javascript
 json = _.chain(json)
         .groupBy("BUILDING_NAME") // BUILDING_NAME으로 group by를 하고
-        .map(function(v, i) {
+        .map(function(v, i) { // groupBy를 하면 object가 return되니, map을 써서 array로 다시 바꿔주자
           return {
             BUILDING: _.get(_.find(v, 'BUILDING'), 'BUILDING'), // BUILDING은 _.find로 하나만 골라내고
-            BUILDING_NAME: i,
+            BUILDING_NAME: i, // BUILDING_NAME이 기준자라 index다
             ROOM: _.chain(v) // ROOM과 ROOM_NO도 1:1 관계니까 groupBy를 또 해주면 된다
                   .groupBy("ROOM_NO")
-                  .map(function(v, i) {
+                  .map((v, i) => {
                     return {
                       ROOM_NO: i,
                       ROOM: _.get(_.find(v, 'ROOM'), 'ROOM')
