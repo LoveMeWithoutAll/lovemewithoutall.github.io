@@ -11,9 +11,7 @@ categories:
 tags: []
 ---
 
-https://www.academia.edu/37380708/Homer_and_the_East_on_Aegean_Crossroads_History_Archaeology_Mythology?email_work_card=view-paper
-
-위 논문(Elias K. Petropoulos, Homer and the East on Aegean Crossroads History Archaeology Mythology, 2018)의 일부가 흥미로워서 정리해본다.
+논문 [Elias K. Petropoulos, Homer and the East on Aegean Crossroads History Archaeology Mythology, 2018](https://www.academia.edu/37380708/Homer_and_the_East_on_Aegean_Crossroads_History_Archaeology_Mythology?email_work_card=view-paper)의 일부가 흥미로워서 정리해본다.
 
 일리아드의 영웅 아켈레우스는 히타이트적 전통을 계승했을지도 모른다. 고대 그리스와 아시아는 이미 청동기 시대 후기에 히타이트 제국이 건재하던 시절부터 교류해왔다. 히타이트가 멸망한 이후에도 네오 히타이트와 그리스 간의 교류는 계속 되었다. 히타이트를 세운 민족인 후리아인의 신화에 등장하는 '울리쿰미'는 아켈레우스와 공통점이 많다.
 
