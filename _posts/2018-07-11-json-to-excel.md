@@ -16,7 +16,7 @@ For Exporting JSON to Excel file, [SheetJS] is useful. [SheetJS] is complicated 
 First of all, let's install [SheetJS].
 
 ```bash
-npm install --save xlsx
+npm install xlsx
 ```
 
 The example code below shows how to download Excel file from JSON. I used [Vue.js] single component in below example. But it does not matter if you understand javascript.
