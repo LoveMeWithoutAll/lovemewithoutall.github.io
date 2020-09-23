@@ -1,7 +1,7 @@
 ---
 layout: single
 title: Vuex에서 다른 모듈의 action 호출하기
-date: 2020-08-21 08:23:30.000000000 +09:00
+date: 2020-09-23 08:23:30.000000000 +09:00
 type: post
 header:
     teaser: "https://cli.vuejs.org/favicon.png"
