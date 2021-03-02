@@ -1,6 +1,6 @@
 ---
 layout: single
-title: 모던 자바스크립트 Deep Dive
+title: "모던 자바스크립트 Deep Dive"
 date: 2021-03-02 22:30:30.000000000 +09:00
 type: post
 header:
