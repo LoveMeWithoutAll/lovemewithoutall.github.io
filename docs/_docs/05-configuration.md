@@ -311,14 +311,14 @@ To disable reading time for a post, add `read_time: false` to its YAML Front Mat
 words_per_minute: 250
 ```
 
-### Post meta separator
+### Page meta separator
 
-To customise the separator between the post date and reading time (if both are enabled), edit `.post__meta-sep::before` in a [custom stylesheet]({{ "/docs/stylesheets/" | relative_url }}).
+To customise the separator between the page date and reading time (if both are enabled), edit `.page__meta-sep::before` in a [custom stylesheet]({{ "/docs/stylesheets/" | relative_url }}).
 
 For example,
 
 ```css
-.post__meta-sep::before {
+.page__meta-sep::before {
   content: "\2022";
   padding-left: 0.5em;
   padding-right: 0.5em;
@@ -558,6 +558,15 @@ atom_feed:
 
 **Note:** By default the site feed is linked in two locations: inside the [`<head>` element](https://github.com/mmistakes/minimal-mistakes/blob/master/_includes/head.html) and at the bottom of every page in the [site footer](https://github.com/mmistakes/minimal-mistakes/blob/master/_includes/footer.html).
 {: .notice--info}
+
+### Disable Feed Icons
+
+By default the theme links to `feed.xml` generated in the root of your site by the **jekyll-feed** plugin. To remove the RSS icon in the header and footer, update `atom_feed` in `_config.yml` like so:
+
+```yaml
+atom_feed:
+  hide: true
+```
 
 ### Site search
 

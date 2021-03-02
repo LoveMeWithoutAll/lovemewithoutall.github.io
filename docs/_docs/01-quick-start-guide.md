@@ -64,6 +64,7 @@ To install as a remote theme:
    source "https://rubygems.org"
 
    gem "github-pages", group: :jekyll_plugins
+   gem "jekyll-include-cache", group: :jekyll_plugins
    ```
 
 2. Add `jekyll-include-cache` to the `plugins` array of your `_config.yml`.
@@ -74,7 +75,7 @@ To install as a remote theme:
    bundle
    ```
 
-4. Add `remote_theme: "mmistakes/minimal-mistakes@4.20.1"` to your `_config.yml` file. Remove any other `theme:` or `remote_theme:` entry.
+4. Add `remote_theme: "mmistakes/minimal-mistakes@4.22.0"` to your `_config.yml` file. Remove any other `theme:` or `remote_theme:` entry.
 
 You may also optionally specify a branch, [tag](https://github.com/mmistakes/minimal-mistakes/tags), or commit to use by appending an @ and the Git ref (e.g., `mmistakes/minimal-mistakes@4.9.0` or `mmistakes/minimal-mistakes@bbf3cbc5fd64a3e1885f3f99eb90ba92af84063d`). This is useful when rolling back to older versions of the theme. If you don't specify a Git ref, the latest on `master` will be used.
 
@@ -105,7 +106,7 @@ To do so fork the [Minimal Mistakes theme](https://github.com/mmistakes/minimal-
 
 [netlify-jekyll]: https://www.netlify.com/blog/2015/10/28/a-step-by-step-guide-jekyll-3.0-on-netlify/
 [gitlab-jekyll]: https://about.gitlab.com/2016/04/07/gitlab-pages-setup/
-[ci-jekyll]: https://jekyllrb.com/docs/continuous-integration/
+[ci-jekyll]: https://jekyllrb.com/docs/deployment/automated/#continuous-integration-service
 
 ### Remove the Unnecessary
 
