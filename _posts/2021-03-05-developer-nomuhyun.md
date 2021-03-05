@@ -4,8 +4,8 @@ title: 노무현은 개발자였는가
 date: 2021-03-05 16:56:30.000000000 +09:00
 type: post
 header:
-    teaser: "https://image.aladin.co.kr/product/26006/4/cover500/e252538362_1.jpg"
-    image: "https://image.aladin.co.kr/product/26006/4/cover500/e252538362_1.jpg"
+    teaser: "https://image.aladin.co.kr/product/34/69/cover500/8987175197_1.jpg"
+    image: "https://image.aladin.co.kr/product/34/69/cover500/8987175197_1.jpg"
 categories:
 - IT
 tags: []
