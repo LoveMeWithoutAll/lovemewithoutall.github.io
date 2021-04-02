@@ -1,6 +1,6 @@
 ---
 layout: single
-title: 흑해 지방의 아폴론 신앙과 그리스 식민자
+title: 흑해 지방의 아폴론 신앙과 그리스 식민자
 date: 2021-04-02 13:46:30.000000000 +09:00
 type: post
 header:
