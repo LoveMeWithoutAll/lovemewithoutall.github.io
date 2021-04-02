@@ -4,8 +4,8 @@ title: 퀸즈갬빗 1화 vs 무협지 클리셰
 date: 2020-12-20 20:23:30.000000000 +09:00
 type: post
 header:
-    teaser: "https://w.namu.la/s/7907727d331c41ee3ce9ac9fc57683532d4106751259d1dfee7de17b39b142db42dbd49617ec38e84921ef1fb813f900b72acacdc613c046635e34e4654e8264520de95b467e4d421777c96285e44e898c7ae5b840a49c129a2343a11dd575ea864be6c4c98c47055240c33852dfd1eb"
-    image: "https://w.namu.la/s/7907727d331c41ee3ce9ac9fc57683532d4106751259d1dfee7de17b39b142db42dbd49617ec38e84921ef1fb813f900b72acacdc613c046635e34e4654e8264520de95b467e4d421777c96285e44e898c7ae5b840a49c129a2343a11dd575ea864be6c4c98c47055240c33852dfd1eb"
+    teaser: "https://1.bp.blogspot.com/-004M5jQBjLs/X2zTAhD7MaI/AAAAAAACfvk/ErSEvSJNbqgD8i0yT1b0Whq8ngPOpkNbwCLcBGAsYHQ/s0/the-queens-gambit-full-promo-promotional-poster-release-date-announcement.jpg"
+    image: "https://1.bp.blogspot.com/-004M5jQBjLs/X2zTAhD7MaI/AAAAAAACfvk/ErSEvSJNbqgD8i0yT1b0Whq8ngPOpkNbwCLcBGAsYHQ/s0/the-queens-gambit-full-promo-promotional-poster-release-date-announcement.jpg"
 categories:
 - Art
 tags: [소설]
