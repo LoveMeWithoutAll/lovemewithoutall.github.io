@@ -8,7 +8,7 @@ header:
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Death_Dido_Cayot_Louvre_MR1780.jpg/440px-Death_Dido_Cayot_Louvre_MR1780.jpg"
 categories:
 - History
-tags: [Rome]]
+tags: [Rome]
 ---
 
 *iOS 패키지 매니저 아님*
