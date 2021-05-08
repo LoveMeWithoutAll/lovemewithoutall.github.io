@@ -4,8 +4,8 @@ title: 코로나 19가 유행하는 동안 사라진 인플루엔자, 그 미래
 date: 2021-05-08 19:29:30.000000000 +09:00
 type: post
 header:
-    teaser: "https://pixabay.com/images/id-4999857/"
-    image: "https://pixabay.com/images/id-4999857/"
+    teaser: "https://cdn.pixabay.com/photo/2020/03/29/15/35/coronavirus-4981176_1280.png"
+    image: "https://cdn.pixabay.com/photo/2020/03/29/15/35/coronavirus-4981176_1280.png"
 categories:
 - etc
 tags: [Covid-19]
