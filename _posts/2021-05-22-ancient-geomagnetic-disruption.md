@@ -8,7 +8,7 @@ header:
     image: "https://static01.nyt.com/images/2021/02/23/science/18SCI-MAGNETIC1/merlin_183903594_f75bf996-5e44-43a3-bf02-3dbc08d99708-superJumbo.jpg?quality=90&auto=webp"
 categories:
 - etc
-tags: [earth]]
+tags: [earth]
 ---
 
 [A Hitchhiker’s Guide to an Ancient Geomagnetic Disruption](https://www.nytimes.com/2021/02/18/science/laschamp-earth-magnetic-climate.html?smid=url-share)
