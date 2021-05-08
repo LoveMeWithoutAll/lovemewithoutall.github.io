@@ -1,7 +1,7 @@
 ---
 layout: single
 title: 카르타고인 혐오를 멈춰주세요
-date: 2021-05-08 19:47:30.000000000 +09:00
+date: 2021-04-18 19:47:30.000000000 +09:00
 type: post
 header:
     teaser: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Death_Dido_Cayot_Louvre_MR1780.jpg/440px-Death_Dido_Cayot_Louvre_MR1780.jpg"

@@ -1,7 +1,7 @@
 ---
 layout: single
 title: 멸종한 타즈매니안 타이거의 목격담은 왜 계속 나올까? 
-date: 2021-05-08 19:16:30.000000000 +09:00
+date: 2021-03-17 19:16:30.000000000 +09:00
 type: post
 header:
     teaser: "https://static01.nyt.com/images/2021/03/10/science/10SCI-TASMANIANTIGER2/10SCI-TASMANIANTIGER2-superJumbo.jpg?quality=90&auto=webp"

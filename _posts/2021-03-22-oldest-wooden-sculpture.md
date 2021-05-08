@@ -1,7 +1,7 @@
 ---
 layout: single
 title: 세계에서 가장 오래된 목조 조각상
-date: 2021-05-08 19:33:30.000000000 +09:00
+date: 2021-03-22 19:33:30.000000000 +09:00
 type: post
 header:
     teaser: "https://static01.nyt.com/images/2021/03/18/science/00SCI-IDOL3/00SCI-IDOL3-superJumbo.jpg?quality=90&auto=webp"

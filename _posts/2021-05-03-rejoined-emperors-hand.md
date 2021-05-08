@@ -1,7 +1,7 @@
 ---
 layout: single
 title: 로마 황제의 손가락을 이어 붙이다
-date: 2021-05-08 19:35:30.000000000 +09:00
+date: 2021-05-03 19:35:30.000000000 +09:00
 type: post
 header:
     teaser: "https://static01.nyt.com/images/2021/04/30/world/30italy-statue01/merlin_187078398_58ba219b-7080-4b5a-a5ba-59f2254d3856-jumbo.jpg?quality=90&auto=webp"

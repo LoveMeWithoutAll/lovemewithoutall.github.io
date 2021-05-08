@@ -1,7 +1,7 @@
 ---
 layout: single
 title: 고대 지구 자기장 붕괴에 대한 히치하이커의 가이드
-date: 2021-05-22 19:16:30.000000000 +09:00
+date: 2021-02-24 19:16:30.000000000 +09:00
 type: post
 header:
     teaser: "https://static01.nyt.com/images/2021/02/23/science/18SCI-MAGNETIC1/merlin_183903594_f75bf996-5e44-43a3-bf02-3dbc08d99708-superJumbo.jpg?quality=90&auto=webp"

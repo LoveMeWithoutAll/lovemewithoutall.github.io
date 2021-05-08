@@ -1,7 +1,7 @@
 ---
 layout: single
 title: 멸망한 미국 원주민 문명에 대체 무슨 일이 일어난건가?
-date: 2021-05-08 19:16:30.000000000 +09:00
+date: 2021-04-28 19:16:30.000000000 +09:00
 type: post
 header:
     teaser: "https://static01.nyt.com/images/2021/05/04/science/22SCI-MOUNDS1/merlin_155573514_2b89f575-5a12-48d2-bd83-2a810a93448a-superJumbo.jpg?quality=90&auto=webp"
