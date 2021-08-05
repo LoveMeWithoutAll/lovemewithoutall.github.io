@@ -16,11 +16,11 @@ tags: [chrome]
 	1. 오류 대상: scrollable container
 	2. 현상 상세
 		1. dragging 중에는 scrollable container에서 mouse wheel event 동작하지 않음
-		2. scrollable container는 position fixed | absolute | sticky 인 element와 position relative 인 element 사이에 위치
+		2. scrollable container는 position fixed or absolute or sticky 인 element와 position relative 인 element 사이에 위치
 	3. Browser: macOS Chrome only
 2. 해결 방법
 	4. style 추가
-		1. position fixed | absolute | sticky 인 element 와 같은 level에 위치하며, scrollable container를 포함하는 element의 style을 position: 'sticky'로 설정
+		1. position fixed or absolute or sticky 인 element 와 같은 level에 위치하며, scrollable container를 포함하는 element의 style을 position: 'sticky'로 설정
 		2. 이로서 dragging 중 wheel scroll 동작
 3. 원인
 	5. Chrome의 버그로 추정
