@@ -17,7 +17,7 @@ tags: [chrome]
 	2. 현상 상세
 		1. dragging 중에는 scrollable container에서 mouse wheel event 동작하지 않음
 		2. scrollable container는 position fixed or absolute or sticky 인 element와 position relative 인 element 사이에 위치
-	3. Browser: macOS Chrome only
+	3. Browser: macOS Chrome only([Windows Chrome에서는 원래 안 됨](https://lovemewithoutall.github.io/it/scroll-whild-dragging-on-win/))
 2. 해결 방법
 	4. style 추가
 		1. position fixed or absolute or sticky 인 element 와 같은 level에 위치하며, scrollable container를 포함하는 element의 style을 position: 'sticky'로 설정
