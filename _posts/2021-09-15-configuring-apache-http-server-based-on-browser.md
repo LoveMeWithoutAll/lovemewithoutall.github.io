@@ -1,6 +1,6 @@
 ---
 layout: single
-title: Configuring Apache HTTP Server depend on web browser
+title: Configuring Apache HTTP Server based on web browser
 date: 2021-09-15 19:18:30.000000000 +09:00
 type: post
 header:
@@ -11,7 +11,7 @@ categories:
 tags: [Apache HTTP Server]
 ---
 
-You can configure Apache HTTP Server's response header depend on web browser. Example is below.
+You can configure Apache HTTP Server's response header based on web browser. Example is below.
 
 ```
 # httpd.conf
