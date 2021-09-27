@@ -1,7 +1,7 @@
 ---
 layout: single
 title: Apache HTTP Server에 mime type 추가
-date: 2021-09-18 00:50:30.000000000 +09:00
+date: 2021-09-28 00:50:30.000000000 +09:00
 type: post
 header:
     teaser: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Apache_HTTP_server_logo_%282019-present%29.svg/1200px-Apache_HTTP_server_logo_%282019-present%29.svg.png"
