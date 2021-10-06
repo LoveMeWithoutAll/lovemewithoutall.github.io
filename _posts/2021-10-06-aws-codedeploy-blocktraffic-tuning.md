@@ -21,4 +21,4 @@ AWS EC2에 Apache HTTP Server를 올려 frontend를 서빙하고, CI/CD는 AWS C
 
 신난다!
 
-20211006
+20210729
