@@ -4,8 +4,8 @@ title: safari의 bounce scroll 문제(2)
 date: 2021-10-14 00:48:30.000000000 +09:00
 type: post
 header:
-    teaser: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/IOS_logo.svg/2048px-IOS_logo.svg.png"
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/IOS_logo.svg/2048px-IOS_logo.svg.png"
+    teaser: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fko.m.wikipedia.org%2Fwiki%2F%25ED%258C%258C%25EC%259D%25BC%3ASafari_browser_logo.svg&psig=AOvVaw38ko7eFvwyGAfcECkpODrl&ust=1634226670836000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCJC4hvbex_MCFQAAAAAdAAAAABAD"
+    image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fko.m.wikipedia.org%2Fwiki%2F%25ED%258C%258C%25EC%259D%25BC%3ASafari_browser_logo.svg&psig=AOvVaw38ko7eFvwyGAfcECkpODrl&ust=1634226670836000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCJC4hvbex_MCFQAAAAAdAAAAABAD"
 categories:
 - IT
 tags: [frontend]
