@@ -1,5 +1,6 @@
 ---
-layout: single title: 역사와 서민들의 이야기
+layout: single
+title: 역사와 서민들의 이야기
 date: 2009-06-03 17:09:02.000000000 +09:00
 type: post
 header:
