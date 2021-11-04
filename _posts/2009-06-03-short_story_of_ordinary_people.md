@@ -4,11 +4,11 @@ title: 역사와 서민들의 이야기
 date: 2009-06-03 17:09:02.000000000 +09:00
 type: post
 header:
-  teaser: ""
-  image: ""
-categories: 
- - History 
- tags: [] 
+  teaser: "https://jekyllrb.com/img/logo-2x.png"
+  image: "https://jekyllrb.com/img/logo-2x.png"
+categories:
+- History
+tags: []
 ---
   
  [리라하우스의 링크](http://newkoman.mireene.com/tt/1718)
