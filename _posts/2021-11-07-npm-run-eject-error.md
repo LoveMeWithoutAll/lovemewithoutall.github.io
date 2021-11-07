@@ -17,16 +17,20 @@ create-react-app으로 react 개발을 하다가, webpack 설정이 궁금해서
 
 npm log에는 별다른 정보가 없었다.
 
+```log
   14   │ 12 verbose stack spawn ENOENT
   15   │ 12 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-lifecycle/lib/spawn.js:48:18)
   16   │ 12 verbose stack     at ChildProcess.emit (events.js:400:28)
   17   │ 12 verbose stack     at maybeClose (internal/child_process.js:1055:16)
   18   │ 12 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:288:5)
+```
 
 stackoverflow에도 해결책이 나오지 않았다. 그래서 혼자 궁리하여 해결책을 찾았다. 방법은 간단하다.
 
+```bash
 npm uninstall react-scripts
 npm install react-scripts
+```
 
 순서대로 하면 된다. 끝.
 
