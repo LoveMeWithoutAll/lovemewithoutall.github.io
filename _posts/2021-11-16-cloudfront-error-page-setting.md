@@ -4,8 +4,8 @@ title: AWS CloudFront error page 설정에서 주의할 점
 date: 2021-11-16 21:00:30.000000000 +09:00
 type: post
 header:
-    teaser: "[/assets/images/2021-11-11-build-artifact-source-artifact.png](https://seeklogo.com/images/A/aws-cloudfront-logo-35A2EA80AB-seeklogo.com.png)"
-    image: "[/assets/images/2021-11-11-build-artifact-source-artifact.png](https://seeklogo.com/images/A/aws-cloudfront-logo-35A2EA80AB-seeklogo.com.png)"
+    teaser: "https://seeklogo.com/images/A/aws-cloudfront-logo-35A2EA80AB-seeklogo.com.png"
+    image: "https://seeklogo.com/images/A/aws-cloudfront-logo-35A2EA80AB-seeklogo.com.png"
 categories:
 - IT
 tags: [aws]
