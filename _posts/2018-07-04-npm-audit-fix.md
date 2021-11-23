@@ -4,8 +4,8 @@ title: npm audit fix
 date: 2018-07-04 11:45:30.000000000 +09:00
 type: post
 header:
-    teaser: "https://docs.npmjs.com/images/npm.svg"
-    image: "https://docs.npmjs.com/images/npm.svg"
+    teaser: "https://upload.wikimedia.org/wikipedia/commons/d/db/Npm-logo.svg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/d/db/Npm-logo.svg"
 categories:
 - IT
 tags: [IT, NPM]
