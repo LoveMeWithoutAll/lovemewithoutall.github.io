@@ -4,8 +4,8 @@ title: 클린 애자일 요약
 date: 2021-12-29 08:50:30.000000000 +09:00
 type: post
 header:
-    teaser: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.amazon.com%2FClean-Agile-Basics-Robert-Martin%2Fdp%2F0135781868&psig=AOvVaw33NpQRkj4oZgyOdYyjNNFd&ust=1640940875381000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi7u6KTi_UCFQAAAAAdAAAAABAD"
-    image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.amazon.com%2FClean-Agile-Basics-Robert-Martin%2Fdp%2F0135781868&psig=AOvVaw33NpQRkj4oZgyOdYyjNNFd&ust=1640940875381000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi7u6KTi_UCFQAAAAAdAAAAABAD"
+    teaser: "http://image.yes24.com/goods/95728889/XL"
+    image: "http://image.yes24.com/goods/95728889/XL"
 categories:
 - IT
 tags: [IT]
