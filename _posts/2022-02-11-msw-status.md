@@ -12,7 +12,8 @@ tags: [etc]
 ---
 
 200 ok status만 응답하는 코드
-```
+
+```javascript
 rest.patch(
   `url`,
   (_, res, ctx) => {
