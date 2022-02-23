@@ -4,8 +4,8 @@ title: webpack4 bundle file name
 date: 2022-02-23 08:50:30.000000000 +09:00
 type: post
 header:
-    teaser: "/assets/images/2022-02-22-http-auth/sign-in.png"
-    image: "/assets/images/2022-02-22-http-auth/sign-in.png"
+    teaser: "/assets/images/2022-02-23-webpack-bundle-file-name/final.png"
+    image: "/assets/images/2022-02-23-webpack-bundle-file-name/final.png"
 categories:
 - IT
 tags: [webpack]
