@@ -13,10 +13,9 @@ tags: [javascript]
 
 1. 
 
-react-query의 useQuery로 데이터를 조회할 때, catch 구문에서 처리를 누락한 타입의 오류가 있다면!
+react-query의 useQuery로 데이터를 조회할 때, catch 구문에서 처리를 누락한 타입의 오류가 있다면?
 QueryCache의 subscribe에서 오류를 인식하지 못한다.
-
-코드로 보여준다.
+response status code를 기준으로 try catch를 하려면 반드시 모든 code 케이스의 처리를 해주든가, 아니면 아예 catch를 하지 말아야 한다. catch를 하지 않으면 react-query의 내부적으로 돌아가는 에러 처리 로직을 탄다. 나는 가급적 try catch를 쓰지 말고, onError 콜백 등을 사용할 것을 권한다. 괜히 버그의 여지를 둘 필요가 없다.
 
 ```typescript
 // BAD
@@ -61,7 +60,7 @@ useEffect(() => {
 }, []);
 ```
 
-react-query 소소코드를 까뒤집어 알아낸 사실이니, react-query 사용자는 유의해야 한다.
+중요하지만 공식문서에 설명되지 않은 사실이다. react-query 소소코드를 까뒤집어 알아냈다. react-query 사용자는 유의해야 한다.
 
 ---
 
@@ -101,10 +100,10 @@ mutationCache.clear();
 
 5.
 
-
 subscribe 사용시 실수할 가능성이 잦다.
 
 subscribe를 2번 하면 2번 동작한다. 당연한 일이다. 그러니 1번만 subscribe에 등록하면 된다. 하지만 문제는 실수에서 발생한다. 이런 종류의 실수를 깨닫는 데에는 시간이 많이 걸린다. 실수로 2번 같은 함수를 실행하도록 subscribe를 등록하면, 함수는 2번 실행된다.  놀랍게도 나는 이 한 번의 실수로 며칠 이상의 시간을 써버렸다. 애꿎은 react-query의 소스코드를 뒤지며...
+
 ---
 
 6.
