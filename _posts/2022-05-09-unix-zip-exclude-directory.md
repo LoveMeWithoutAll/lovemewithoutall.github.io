@@ -11,6 +11,7 @@ categories:
 tags: [linux]
 ---
 
+소스 코드를 압축할 때 `.git` 디렉토리나 `node_modules`을 포함할 필요는 없다. 제외하자.
 
 ```bash
 zip -r zip_file_name.zip . # 현재 경로의 모든 파일을 하위 디렉토리 포함하여 압축한다
