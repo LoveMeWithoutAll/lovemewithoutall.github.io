@@ -60,6 +60,8 @@ expect(component.html()).toContain('test');
 ```
 
 ## 5. 그러면 사용자 인터렉션은 테스트 못하나?
-그건 e2e 테스트를 도입 하시라(나도 아직 안 함)
+그건 e2e 테스트를 도입 하시라(나도 안 해봄).
+Vue3가 vitest와 puppeteer를 사용해서 짠 e2e 테스트 코드가 있으니 참고하면 될 것 같다.
+`https://github.com/vuejs/core/blob/main/packages/vue/__tests__/e2e/e2eUtils.ts`
 
 20230426
