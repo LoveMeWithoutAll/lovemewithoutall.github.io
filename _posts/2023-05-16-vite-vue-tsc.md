@@ -1,7 +1,7 @@
 ---
 layout: single
 title: Vite의 polyfill은 vue-tsc와 별도로 동작한다
-date: 2023-05-16 12:50:30.000000000 +09:00
+date: 2023-05-16 09:50:30.000000000 +09:00
 type: post
 header:
     teaser: "https://vitejs-kr.github.io/logo-with-shadow.png"
