@@ -27,7 +27,7 @@ export default defineConfig(() => {
     plugins: [
       vue2(),
       legacy({
-        targets: ['ie >= 11'],
+        targets: ['ie >= 11'], // IE11 이상 지원
         additionalLegacyPolyfills: ['regenerator-runtime/runtime'], // 수동으로 추가하는 폴리필
       }),
     ], 
