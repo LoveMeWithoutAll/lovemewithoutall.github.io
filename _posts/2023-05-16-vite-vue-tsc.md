@@ -55,4 +55,4 @@ export default defineConfig(() => {
 
 만약 tsconfig.json에 자바스크립트 버전을 명시하지 않고, `replaceAll` 같은 최신(?) 문법을 사용하여 프로젝트를 빌드하면 어떻게 될까? `Vite`가 `replaceAll`을 polyfill로 추가해준다. 직접 빌드해서 확인해보았으니 의심하지 않아도 된다.
 
-20220516
+20230516
