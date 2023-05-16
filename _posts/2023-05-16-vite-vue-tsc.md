@@ -28,7 +28,7 @@ export default defineConfig(() => {
       vue2(),
       legacy({
         targets: ['ie >= 11'],
-        additionalLegacyPolyfills: ['regenerator-runtime/runtime'],
+        additionalLegacyPolyfills: ['regenerator-runtime/runtime'], // 수동으로 추가하는 폴리필
       }),
     ], 
     // ...
