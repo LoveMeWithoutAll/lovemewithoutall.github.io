@@ -1,7 +1,7 @@
 ---
 layout: single
 title: Setting scrollTop does not work while momentum scroll is ongoing. But there is a workaround.
-date: 2023-07-20 19:11:30.000000000 +09:00
+date: 2023-07-21 14:11:30.000000000 +09:00
 type: post
 header:
     teaser: "https://upload.wikimedia.org/wikipedia/commons/5/52/Safari_browser_logo.svg"
@@ -29,14 +29,13 @@ iOS Safari
 ## Solution
 - code
 ```javascript
-const scrollToBottomOnIos = () => {
-	const scrollToBottom = () => element.scrollTop = 0; // event what you want to do
-	element.style.overflow = 'hidden'; // stop scroll
-	setTimeout(() => scrollToBottom(), 100); // fire event after rendering
-	setTimeout(() => element.style.overflow = 'auto', 101); // enable scroll after event fire
+const functionOnIos = () => {
+	element.style.overflow = 'hidden'; // disable scrolling
+	whatYouWantToDo();
+	element.style.overflow = 'auto'; // enable scrolling
 };
 ```
-
+- description
 	- There is not any perfect solution for the problem. Because Javascript sandbox cannot control momentum scroll.
 	- But workaround is here. why?
 		- While momentum scroll is ongoing, 
@@ -45,10 +44,14 @@ const scrollToBottomOnIos = () => {
 			- The changed scrollTop value make onScrollEvent be fired as soon as possible
 			- When momentum is too strong, updating scrollTop is not fired or overrided by momentum scroll moving
 		- After applying the solution
-			- The onScrollEvent will be fired after other tasks like rendering
+			- The onScrollEvent will be fired immediately because scrolling is disabled
+
+## Addtional
+* If you want to fire codes that is just do something regardless of a scroll position, use `setTimeout(() => doSomething(), 0)`. It will be fired after scroll rendering.
+* Must check whether it is iOS or iPadOS.
 
 #### create: 20210809
-#### last update: 20230720
+#### last update: 20230721
 
 ### refrence
 * [force-stop-momentum-scrolling](https://stackoverflow.com/questions/16109561/force-stop-momentum-scrolling-on-iphone-ipad-in-javascript)
