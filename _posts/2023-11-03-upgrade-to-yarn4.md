@@ -117,7 +117,7 @@ Continuing in 60 seconds (press Ctrl-C to abort) ...
 ## 해결책
 
 1. AWS Codebuild의 빌드용 docker 이미지를 업그레이드 한다. v7 image에는 Node18이 설치되어 있다. 그러니 빌드 스크립트에서 Node18을 다운받고 설치할 필요가 없다.
-![v7](../assets/images/codebuild-standard-v7.jpg)
+![v7](/assets/images/codebuild-standard-v7.jpg)
 
 1. yarn4로 업그레이드 한다. 아주 간단하다! yarn4 업그레이드를 위해서는 이 외에 아무 것도 더 해줄 게 없다.
 
@@ -135,7 +135,7 @@ Continuing in 60 seconds (press Ctrl-C to abort) ...
 * yarn3 -> yarn4: 빌드 속도 9% 향상
 * AWS Codebuild: 빌드 속도 33% 향상
 
-![performance](../assets/images/build-performance.jpg)
+![performance](/assets/images/build-performance.jpg)
 
 ## 끝
 Yarn4 편하게 쓰세요.
