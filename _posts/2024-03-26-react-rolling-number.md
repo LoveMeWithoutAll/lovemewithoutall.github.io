@@ -56,6 +56,7 @@ export default useRollingNumber;
 
 ## usage
 
+{% raw %}
 ```typescript
 const Info = () => {
   const { experiencePercent } = useMainCharacterStore(); // // experiencePercent 숫자만큼 올리거나 내린다
@@ -74,5 +75,7 @@ const Info = () => {
 export default Info;
 
 ```
+{% endraw %}
+
 
 20240326
