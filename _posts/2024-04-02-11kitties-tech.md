@@ -8,7 +8,7 @@ header:
     image: "/assets/images/2024-04-02-11kitties-tech/game-image.png"
 categories:
 - IT
-tags: [FE]
+tags: [frontend]
 ---
 
 40일의 개발 기간을 거쳐 11 키티즈를 런칭했다.
@@ -108,11 +108,11 @@ tags: [FE]
         1. 설정이 대단히 편리하다
         2. `apple`에서 `pwa`의 `caches api`를 지원하지 않아 좌절했다
         3. Response type이 `opaque`인 경우 처리하기 곤란했다. `Access-control-allow-origin`을 `*`로 설정하지 않을 경우, `access-control-allow-header`와 `access-control-allow-method`도 설정해야 한다는 사실을 몰라서 애먹었다
+        1. 채택 목적이었던 대용량 이미지 캐싱이 더이상 필요하지 않아, 눈물을 머금고 폐기했다. 다음 프로젝트에서는 필요시 사용할 계획
 1. Cypress
     1. 채택 사유
         1. `Safari` 베타 지원 시작
         2. `Cypress studio`의 존재
-    2. 후기
-        1. 바빠서 못써봄
+    2. 후기: 바빠서 제대로 못 써봄
 
 20240402
