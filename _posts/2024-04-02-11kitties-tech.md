@@ -4,11 +4,11 @@ title: 11키티즈 개발에 사용한 기술과 사용 후기
 date: 2024-04-02 09:50:30.000000000 +09:00
 type: post
 header:
-    teaser: "/assets/images/2024-04-02-11kitties-tech/dev-kitten.11st.co.kr_(iPhone XR) Medium.png"
-    image: "/assets/images/2024-04-02-11kitties-tech/dev-kitten.11st.co.kr_(iPhone XR) Medium.png"
+    teaser: "/assets/images/2024-04-02-11kitties-tech/game-image.png"
+    image: "/assets/images/2024-04-02-11kitties-tech/game-image.png"
 categories:
 - IT
-tags: [react]
+tags: [FE]
 ---
 
 40일의 개발 기간을 거쳐 11 키티즈를 런칭했다.
