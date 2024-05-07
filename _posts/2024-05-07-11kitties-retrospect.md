@@ -28,7 +28,7 @@ tags: [frontend]
 
 이런 과제에 대한 해결 경험은 이미 충분했기에 조금도 걱정하지 않았다. 유일한 우려 사항은 촉박한 개발 기간 뿐이었다. 물론 개발 기간 부족은 심각했다. 하지만 이 또한 큰 걱정은 하지 않았다. 불가능해 보이는 개발 일정을 소화해 내는 게 내가 지금껏 해오던 일이다.
 
-사용한 기술은 https://lovemewithoutall.github.io/it/11kitties-tech/ 를 참고할 것.
+사용한 기술은 [11키티즈 개발에 사용한 기술과 사용 후기](https://lovemewithoutall.github.io/it/11kitties-tech/) 를 참고할 것.
 
 ## 개발
 
