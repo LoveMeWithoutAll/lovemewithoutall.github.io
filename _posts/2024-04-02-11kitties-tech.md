@@ -36,6 +36,8 @@ tags: [frontend]
                 2. 사례: 기본 설정만으로는 `production build`를 할 수 없었다. bun의 환경변수 설정이 `Vite`의 환경변수 설정과 충돌하여 항상 `development build`만 되는 오류가 있었다. 이 문제를 해결하기 위해 빌드를 할 때마다 환경에 따른 `.env` 파일을 프로젝트 루트 디렉토리에 복사하는 스크립트를 추가해야 했다.
             1. Test suite의 레퍼런스 부족. 그래서 `github copilot`의 테스트 코드 자동 생성 기능을 그대로 사용할 수 없고, 생성된 테스트 코드를 약간 수정해야 했다. 하지만 잘 동작한다
             5. `pwa`와 함께 작동하기 위해서는 아래와 같은 의존성 overrides가 필요하다
+            1. test suite를 포함하고 있다는 건 bun의 자랑이다. 하지만 `vitest`가 더 낫다. node의 test 기능이 충분히 빠르고, 무엇보다도 AI는 `bun test`의 코드를 모른다.
+            1. bun이 node를 대체할 수 있을까?
 ```json
 "overrides": {
   "@rollup/plugin-node-resolve": "^15.2.3"
@@ -50,6 +52,7 @@ tags: [frontend]
         1. 잘 동작한다
         2. 레퍼런스는 극히 드물다
         3. 웹스톰과 연동이 적당히 잘 된다(버그는 있다)
+        4. biome가 react 18을 제대로 지원하지 않을까 걱정이다. 이미 biome 커뮤니티에서도 말이 많다. 약소 오픈소스의 단점이다.
 3. Vite
     1. 채택 사유: 사실상의 표준
     2. 후기: 빠르고 설정이 편리하다.
