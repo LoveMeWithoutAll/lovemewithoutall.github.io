@@ -1,7 +1,7 @@
 ---
 layout: single
 title: 워런 버핏의 주주 서한
-date: 2024-08-13 09:50:30.000000000 +09:00
+date: 2024-08-13 08:50:30.000000000 +09:00
 type: post
 header:
     teaser: "https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/9791188754649.jpg"
