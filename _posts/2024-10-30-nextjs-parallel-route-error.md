@@ -32,10 +32,16 @@ TypeError: Cannot read properties of undefined (reading '0') at /Users/a1101586/
 
 ## 해결법
 
+### 1
+
 [intercepting route](https://nextjs.org/docs/14/app/building-your-application/routing/intercepting-routes) 구문의 컨벤션을 수정한다. 문서대로라면 `(.)`를 사용하면 같은 라우팅 레벨이니까 이걸 사용하면 될거라 생각할거다. 공식 문서에도 그렇게 되어 있다. 하지만 `(.)` 컨벤션은 parallel routed와 함께 정상 동작하지 않는다. 
 
 대신 **`(...)`(root app directory를 가리킴) 컨벤션은 정상 동작**한다.
 
 app 디렉토리부터 거슬러 올라가자.
+
+### 2 
+
+아주 간혹 모든 의존성을 삭제하고 다시 설치하면 정상 동작하는 경우도 있다.
 
 20241030
