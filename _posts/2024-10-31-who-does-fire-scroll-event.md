@@ -21,6 +21,8 @@ HTML element의 scroll 이벤트는 어디에서 발생하는가? 햇갈리는 �
 
 ![chrome devtools element tab](/assets/images/2024-10-31-who-does-fire-scroll-event/chrome.png)
 
+chrome version 130
+
 ## Safari browser
 
 사파리 브라우저에서도 마찬가지다.
@@ -35,11 +37,15 @@ HTML element의 scroll 이벤트는 어디에서 발생하는가? 햇갈리는 �
 
 ![safari event info](/assets/images/2024-10-31-who-does-fire-scroll-event/safari-event-info.png)
 
+safari version 18.1
+
 ## Firefox
 
 파이어폭스 브라우저는 더더더 좋다. scroll 이벤트에 부착된 함수의 코드까지 한 눈에 볼 수 있다. 아래 캡쳐에서는 `react-dom`의 `dispatchContinuousEvent` 함수를 보여준다. 과연 개발자 도구의 근본이라 할 수 있다.
 
 ![firefox](/assets/images/2024-10-31-who-does-fire-scroll-event/firefox.png)
+
+firefox version 132
 
 ### 디버깅이 막히면 다른 브라우저의 개발자 도구를 돌려보면 좋다.
 
