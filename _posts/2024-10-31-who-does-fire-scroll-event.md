@@ -4,8 +4,8 @@ title: scroll event는 어디에서 발생하는가?
 date: 2024-10-31 08:50:30.000000000 +09:00
 type: post
 header:
-    teaser: "https://w7.pngwing.com/pngs/643/143/png-transparent-nextjs-hd-logo.png"
-    image: "https://w7.pngwing.com/pngs/643/143/png-transparent-nextjs-hd-logo.png"
+    teaser: "https://upload.wikimedia.org/wikipedia/commons/f/ff/Mozilla_Firefox_logo_2013.png"
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/ff/Mozilla_Firefox_logo_2013.png"
 categories:
 - IT
 tags: [html]
