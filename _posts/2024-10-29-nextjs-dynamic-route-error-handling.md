@@ -49,6 +49,6 @@ const nextJsErrorHandler = (error: unknown) => {
 export default nextJsErrorHandler;
 ```
 
-위 포맷으로 json을 만들어주지 않으면 정상적인 response로 인식한다. 공식 문서에는 없는 강제성이다. 기묘한 프레임워크다.
+위 포맷으로 json을 만들어주어야만 정상적인 response로 인식한다. 공식 문서에는 없는 강제성이다. 기묘한 프레임워크다.
 
 20241029
