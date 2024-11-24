@@ -10,7 +10,7 @@ categories:
 - IT
 tags: [Next.js]
 ---
-next.js에서 dynamic import 함부로 하지 마라. 리렌더링 할 때마다 컴포넌트 새로 그린다.
+next.js에서 dynamic import 함부로 하지 마라. 컴포넌트 내부에서 선언하면, 그 컴포넌트를 리렌더링 할 때마다 dynamic import 한 컴포넌트를 새로 그린다.
 
 ```typescript
 const component = dynamic(() => import('@/component'), { ssr: false });
