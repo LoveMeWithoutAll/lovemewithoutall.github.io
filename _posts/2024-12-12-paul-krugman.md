@@ -1,7 +1,7 @@
 ---
 layout: single
 title: 폴 크루그먼의 뉴욕 타임즈 마지막 칼럼
-date: 2024-12-05 08:50:30.000000000 +09:00
+date: 2024-12-12 08:50:30.000000000 +09:00
 type: post
 header:
     teaser: "https://static01.nyt.com/images/2018/04/02/opinion/paul-krugman/paul-krugman-superJumbo.png"
