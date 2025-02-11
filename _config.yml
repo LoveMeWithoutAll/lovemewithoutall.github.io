@@ -16,41 +16,25 @@ minimal_mistakes_skin : "default" # "air", "aqua", "contrast", "dark", "dirt", "
 
 # Site Settings
 locale                   : "en-US"
-<<<<<<< HEAD
+rtl                      : # true, false (default) # turns direction of the page into right to left for RTL languages
 title                    : "Never test"
 title_separator          : "-"
+subtitle                 : # site tagline that appears below site title in masthead
 name                     : "YoungSeon.Ahn"
 description              : "short story about IT history economy life etc"
 url                      : "https://lovemewithoutall.github.io"
-baseurl                  : #
+baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "lovemewithoutall/lovemewithoutall.github.io"
 teaser                   : "/assets/images/kiki.jpg"
-breadcrumbs              : true #, false (default)
-=======
-rtl                      : # true, false (default) # turns direction of the page into right to left for RTL languages
-title                    : "Site Title"
-title_separator          : "-"
-subtitle                 : # site tagline that appears below site title in masthead
-name                     : "Your Name"
-description              : "An amazing website."
-url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
-baseurl                  : # the subpath of your site, e.g. "/blog"
-repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
-teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
-breadcrumbs              : # true, false (default)
->>>>>>> cb140fc5e648c6d808d444a34b6126c43f87d8bd
+breadcrumbs              : true #, false (default)
 words_per_minute         : 200
 enable_copy_code_button  : # true, false (default)
 copyright                : # "copyright" name, defaults to site.title
 copyright_url            : # "copyright" URL, defaults to site.url
 comments:
-<<<<<<< HEAD
   provider               : "disqus" # "discourse", "facebook", "google-plus", "staticman", "custom"
-=======
-  provider               : # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "giscus", "custom"
->>>>>>> cb140fc5e648c6d808d444a34b6126c43f87d8bd
   disqus:
     shortname            : "rezzist"
   discourse:
@@ -99,17 +83,10 @@ google:
   instant_search         : # false (default), true
 # SEO Related
 google_site_verification :
-<<<<<<< HEAD
 bing_site_verification   : "02FE2433D7AC85AA6F923F49D30FDB20"
-alexa_site_verification  :
-yandex_site_verification :
-naver-site-verification : "f7f4d30ab20c98555e2b49de054c6893cd1250da"
-=======
-bing_site_verification   :
-naver_site_verification  :
+naver_site_verification  : "f7f4d30ab20c98555e2b49de054c6893cd1250da"
 yandex_site_verification :
 baidu_site_verification  :
->>>>>>> cb140fc5e648c6d808d444a34b6126c43f87d8bd
 
 # Social Sharing
 twitter:
@@ -128,11 +105,7 @@ social:
 
 # Analytics
 analytics:
-<<<<<<< HEAD
   provider               : "google" # false (default), "google-universal", "custom"
-=======
-  provider               : # false (default), "google", "google-universal", "google-gtag", "custom"
->>>>>>> cb140fc5e648c6d808d444a34b6126c43f87d8bd
   google:
     tracking_id          : "G-2N8PT0G349"
     anonymize_ip         : false # true, false (default)
@@ -254,15 +227,11 @@ sass:
 
 # Outputting
 permalink: /:categories/:title/
-<<<<<<< HEAD
-paginate: 20 # amount of posts to show
-=======
 timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
 # Pagination with jekyll-paginate
-paginate: 5 # amount of posts to show
->>>>>>> cb140fc5e648c6d808d444a34b6126c43f87d8bd
+paginate: 20 # amount of posts to show
 paginate_path: /page:num/
 
 # Pagination with jekyll-paginate-v2

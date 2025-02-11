@@ -1,5 +1,4 @@
 <!-- begin _includes/seo.html -->
-<<<<<<< HEAD
 {%- if site.url -%} {%- assign seo_url = site.url | append: site.baseurl -%} {%- endif -%} {%- assign seo_url = seo_url | default: site.github.url -%} {% assign title_separator = site.title_separator | default: '-' | replace: '|', '&#124;' %} {%- if page.title
 -%} {%- assign seo_title = page.title | append: " " | append: title_separator | append: " " | append: site.title -%} {%- endif -%} {%- if seo_title -%} {%- assign seo_title = seo_title | markdownify | strip_html | strip_newlines | escape_once -%} {%-
 endif -%} {% if page.canonical_url %} {%- assign canonical_url = page.canonical_url %} {% else %} {%- assign canonical_url = page.url | replace: "index.html", "" | absolute_url %} {% endif %} {%- assign seo_description = page.description | default: page.excerpt
@@ -12,7 +11,6 @@ assign og_type = "website" -%} {%- endif -%}
 <title>{{ seo_title | default: site.title }}{% if paginator %}{% unless paginator.page == 1 %} {{ title_separator }} {{ site.data.ui-text[site.locale].page | default: "Page" }} {{ paginator.page }}{% endunless %}{% endif %}</title>
 <meta name="description" content="{{ seo_description }}"> {% if author.name %}
 <meta name="author" content="{{ author.name | default: author }}"> {% endif %}
-=======
 {%- assign title_separator = site.title_separator | default: '-' -%}
 
 {%- assign page_title = page.title | default: site.title | replace: '|', '&#124;' -%}
@@ -58,12 +56,10 @@ assign og_type = "website" -%} {%- endif -%}
   <meta property="article:author" content="{{ author.name | default: author }}">
   {% endif %}
 {% endif %}
->>>>>>> cb140fc5e648c6d808d444a34b6126c43f87d8bd
 
 <meta property="og:type" content="{{ og_type }}">
 <meta property="og:locale" content="{{ site.locale | replace: " - ", "_ " | default: "en_US " }}">
 <meta property="og:site_name" content="{{ site.title }}">
-<<<<<<< HEAD
 <meta property="og:title" content="{{ page.title | default: site.title | markdownify | strip_html | strip_newlines | escape_once }}">
 <meta property="og:url" content="{{ canonical_url }}"> {% if seo_description %}
 <meta property="og:description" content="{{ seo_description }}"> {% endif %} {% if page_large_image %}
@@ -140,7 +136,6 @@ assign og_type = "website" -%} {%- endif -%}
 <meta name="yandex-verification" content="{{ site.yandex_site_verification }}"> {% endif %} {% if site.naver_site_verification %}
 <meta name="naver-site-verification" content="{{ site.naver_site_verification }}"> {% endif %}
 <!-- end _includes/seo.html -->
-=======
 <meta property="og:title" content="{{ page_title }}">
 <meta property="og:url" content="{{ canonical_url }}">
 
@@ -225,4 +220,3 @@ assign og_type = "website" -%} {%- endif -%}
   <meta name="baidu-site-verification" content="{{ site.baidu_site_verification }}">
 {% endif %}
 <!-- end _includes/seo.html -->
->>>>>>> cb140fc5e648c6d808d444a34b6126c43f87d8bd
