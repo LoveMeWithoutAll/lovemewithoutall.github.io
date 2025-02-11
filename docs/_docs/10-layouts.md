@@ -128,8 +128,8 @@ Auto-generated table of contents list for your posts and pages can be enabled by
 | ---------   | -------- | ----------- | ------- |
 | **toc**     | Optional | Show table of contents. (boolean) | `false` |
 | **toc_label** | Optional | Table of contents title. (string) | `toc_label` in UI Text data file. |
-| **toc_icon**  | Optional | Table of contents icon, displays before the title. (string) | [Font Awesome](https://fontawesome.com/icons?d=gallery&s=solid&m=free) <i class="fas fa-file-alt"></i> **file-alt** icon. Other FA icons can be used instead. |
-| **toc_sticky** | Optional | Stick table of contents to top of screen.                   | `false` |  
+| **toc_icon**  | Optional | Table of contents icon, displays before the title. (string) | [Font Awesome](https://fontawesome.com/v6/search?s=solid&m=free) <i class="fas fa-file-alt"></i> **file-alt** icon. Other FA icons can be used instead. |
+| **toc_sticky** | Optional | Stick table of contents to top of screen.                   | `false` |
 
 **TOC example with custom title and icon**
 
@@ -140,6 +140,31 @@ toc_label: "My Table of Contents"
 toc_icon: "cog"
 ---
 ```
+
+{% capture notice-text %}
+**Note:** You need to use contiguous levels of headings for the TOC to generate properly. For example:
+
+```markdown
+Good headings:
+
+# Heading
+## Heading
+### Heading
+### Heading
+# Heading
+## Heading
+
+Bad headings:
+
+# Heading
+### Heading (skipped H2)
+##### Heading (skipped H4)
+```
+{% endcapture %}
+
+<div class="notice--warning">
+  {{ notice-text | markdownify }}
+</div>
 
 ## Archive layout
 
@@ -338,9 +363,9 @@ Then adjust the `paginate_path` in **_config.yml** to match.
 
 ```yaml
 paginate_path: /blog/page:num
-``` 
+```
 
-**Note:** Jekyll can only paginate a single `index.html` file. If you'd like to paginate more pages (e.g. category indexes) you'll need the help of a custom plugin. For more pagination related settings check the [**Configuration**]({{ "/docs/configuration/#paginate" | relative_url }}) section.
+**Note:** The default Jekyll Paginate plugin can only paginate a single `index.html` file. If you'd like to paginate more pages (e.g. category indexes) you'll need the help of a custom plugin. For more pagination-related settings check the [**Configuration**]({{ "/docs/configuration/#paginate" | relative_url }}) section, including settings for [Jekyll Paginate V2](https://github.com/sverrirs/jekyll-paginate-v2).
 {: .notice--info}
 
 **Note:** By default, documents are shown in a list view. To change to a grid view add `entries_layout: grid` to the page's front matter. To increase the width of the main container, giving more space to the grid items also add `classes: wide` to the home page's YAML Front Matter.
@@ -438,8 +463,6 @@ To overlay text on top of a header image you have a few more options:
 | **excerpt**              | Auto-generated page excerpt is added to the overlay text or can be overridden. | |
 | **tagline**              | Overrides page excerpt. Useful when header text needs to be different from excerpt in archive views. | |
 | **actions**              | Call to action button links (`actions` array: `label` and `url`). More than one button link can be assigned. | |
-| **cta_label**            | Deprecated, use `actions` instead. Call to action button text label. | `more_label` in UI Text data file |
-| **cta_url**              | Deprecated, use `actions` instead. Call to action button URL. | |
 
   [mdn-linear-gradient]: https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient()
 
@@ -568,7 +591,7 @@ defaults:
 **Note:** To disable the author sidebar profile for a specific post or page, add `author_profile: false` to the YAML Front Matter instead.
 {: .notice--warning}
 
-To assign more author links, add to the `author.links` array  in [`_config.yml`]({{ "/docs/configuration/" | relative_url }}) link so. Any of [Font Awesome's icons](https://fontawesome.com/icons?d=gallery) are available for use.
+To assign more author links, add to the `author.links` array  in [`_config.yml`]({{ "/docs/configuration/" | relative_url }}) link so. Any of [Font Awesome's icons](https://fontawesome.com/v6/search) are available for use.
 
 ```yaml
 author:
@@ -602,7 +625,7 @@ For example, to color a Reddit icon, simply add a `color` declaration and the co
     color: #ff4500;
   }
 }
-``` 
+```
 
 ![Reddit link in author profile with color]({{ "/assets/images/mm-author-profile-reddit-color.png" | relative_url }})
 
@@ -652,7 +675,7 @@ To start, add a new key to `_data/navigation.yml`. This will be referenced later
 
 **Sample sidebar menu links:**
 
-```yaml 
+```yaml
 docs:
   - title: Getting Started
     children:
@@ -724,6 +747,15 @@ defaults:
         nav: "docs"
 ```
 
+*New in v4.26.0*: If you have multiple sidebar navs defined and want to include more than one on a page, the sidebar nav can also be a list.
+
+```yaml
+sidebar:
+  nav:
+    - main
+    - docs
+```
+
 ---
 
 ## Social sharing links
@@ -753,23 +785,69 @@ The important parts to change are:
 
 To change the color of the button use one of the built in [utility classes]({{ "/docs/utility-classes/#buttons" | relative_url }}). Or you can create a new button class to match whatever color you want.
 
-Under the `$social` color map in `assets/_scss/_buttons.scss` simply add a name (this will be appened to `btn--`) that matches the new button class. In our case `reddit` ~> `.btn--reddit`.
+Under the `$buttoncolors:` color map in `_sass/minimal-mistakes/_buttons.scss` simply add a name (this will be appended to `btn--`) that matches the new button class. In our case `reddit` ~> `.btn--reddit`.
 
 ```scss
-$social:
+$buttoncolors:
 (facebook, $facebook-color),
 (twitter, $twitter-color),
 (linkedin, $linkedin-color),
-(reddit, #ff4500);
+(reddit, $reddit-color);
 ```
 
-**ProTip:** For bonus points you can add it as a Sass `$variable` that you set in `_variables.scss` like the other ["brand" colors](http://brandcolors.net/).
+**ProTip:** For bonus points you can modify the Sass variable `$reddit-color` that is set in `_variables.scss` [or use a different "brand" color](http://brandcolors.net/).
 {: .notice--info}
 
 Add the new `.btn--reddit` class to the `<a>` element from earlier, [compile `main.css`]({{ "/docs/stylesheets/" | relative_url }}) and away you go.
 
 ```html
-{% raw %}<a href="https://www.reddit.com/submit?url={{ page.url | relative_url }}&title={{ page.title }}" class="btn btn--reddit" title="{{ site.data.ui-text[site.locale].share_on_label }} Reddit"><i class="fab fa-fw fa-reddit" aria-hidden="true"></i><span> Reddit</span></a>{% endraw %}
+{% raw %}<a href="https://www.reddit.com/submit?url={{ page.url | absolute_url | url_encode }}&title={{ page.title }}" class="btn btn--reddit" title="{{ site.data.ui-text[site.locale].share_on_label }} Reddit"><i class="fab fa-fw fa-reddit" aria-hidden="true"></i><span> Reddit</span></a>{% endraw %}
 ```
 
 ![Reddit social share link button]({{ "/assets/images/mm-social-share-links-reddit-color.png" | relative_url }})
+
+---
+
+## Custom head and footer
+
+The `default` layout includes a number of custom templates, which provide ways for you to directly add content to all your pages.
+
+### Head
+
+`_includes/head/custom.html` is included at the end of the `<head>` tag. An example use of this include is to add custom CSS per page:
+
+Add some Liquid tags for the new configuration to `_includes/head/custom.html`.
+{% raw %}```html
+{% if page.page_css %}
+  {% for stylesheet in page.page_css %}
+    <link rel="stylesheet" href="{{ stylesheet | relative_url }}">
+  {% endfor %}
+{% endif %}
+```{% endraw %}
+
+Next, add `page_css` to any page's YAML Front Matter to have your CSS loaded for that page.
+```yaml
+page_css:
+  - /path/to/your/custom.css
+```
+
+### Footer
+
+`_includes/footer/custom.html` is included at the beginning of the `<footer>` tag. An example use of this include is to add custom JavaScript per page:
+
+Add some Liquid tags for the new configuration to `_includes/footer/custom.html`.
+{% raw %}```html
+{% if page.page_js %}
+  {% for script in page.page_js %}
+    <script src="{{ script | relative_url }}"></script>
+  {% endfor %}
+{% endif %}
+```{% endraw %}
+
+Next, add `page_js` to any page's YAML Front Matter to have your JavaScript loaded for that page.
+```yaml
+page_js:
+  - /path/to/your/custom.js
+```
+
+---
