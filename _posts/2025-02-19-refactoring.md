@@ -1,6 +1,6 @@
 ---
 layout: single
-title: 리팩토링: 1판
+title: 리팩토링 1판
 date: 2025-02-19 08:50:30.000000000 +09:00
 type: post
 header:
