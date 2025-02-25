@@ -1,6 +1,6 @@
 ---
 layout: single
-title: Android WebView와 document.visibilityState: 왜 ‘visible’일까?
+title: Android WebView와 document.visibilityState - 왜 ‘visible’일까?
 date: 2025-02-25 08:50:30.000000000 +09:00
 type: post
 header:
