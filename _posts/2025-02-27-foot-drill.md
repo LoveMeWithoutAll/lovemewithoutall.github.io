@@ -1,14 +1,14 @@
 ---
 layout: single
-title: Android WebView와 document.visibilityState - 왜 ‘visible’일까?
-date: 2025-02-25 08:50:30.000000000 +09:00
+title: History of Foot drill
+date: 2025-02-27 08:50:30.000000000 +09:00
 type: post
 header:
     teaser: "/assets/images/walking-android.jpg"
     image: "/assets/images/walking-android.jpg"
 categories:
-- IT
-tags: [Andrdoi]
+- History
+tags: [military]
 ---
 
 
