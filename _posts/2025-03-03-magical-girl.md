@@ -165,11 +165,11 @@ tags: [magical girl]
 
 **참고 자료:**
 
-- [Coco Zhou, “Magical Girl as a Shōjo Genre and the Male Gaze” – *Flow* (2016)](https://example.com/magical-girl-shojo-genre)  
-- [AnimeNation, “Ask John: What Exactly Makes Lyrical Nanoha More Adult Oriented?” (2012)](https://www.animenation.net/ask-john-lyrical-nanoha)  
-- [Magical girl - Wikipedia](https://en.wikipedia.org/wiki/Magical_girl)  
-- [Mahoushoujofiles, “Wedding Peach vs Sailor Moon” (2020)](http://mahoushoujofiles.com)  
-- [Reddit 토론 “Magical Girl Anime Genre become more moe for male fans?”](https://www.reddit.com/r/anime)  
+- [Coco Zhou, “Magical Girl as a Shōjo Genre and the Male Gaze” – *Flow* (2016)](https://www.flowjournal.org/2016/02/magical-girl-as-a-shojo-genre/#:~:text=relationships,sh%C5%8Djo%20anime%2C%20if%20not%20prioritized)  
+- [AnimeNation, “Ask John: What Exactly Makes Lyrical Nanoha More Adult Oriented?” (2012)](https://www.animenation.net/blog/ask-john-what-exactly-makes-lyrical-nanoha-more-adult-oriented/#:~:text=Two%20subtle%20elements%20distinguish%20Lyrical,The)  
+- [Magical girl - Wikipedia](https://en.wikipedia.org/wiki/Magical_girl#:~:text=Sailor%20Moon%20%20,In%20addition%2C%20unlike)  
+- [Mahoushoujofiles, “Wedding Peach vs Sailor Moon” (2020)](https://www.tumblr.com/mahoushoujofiles/626879065167642624/wedding-peach-vs-sailor-moon#:~:text=Sailor%20Moon%20featured%20identically%20shaped%2C,compared%20to%20their%20original%20outfits)  
+- [Reddit 토론 “Magical Girl Anime Genre become more moe for male fans?”](https://www.reddit.com/r/MagicalGirlsCommunity/comments/1fwmm4s/unpopular_opinion_question_did_the_magical_girl/#:~:text=While%20there%20was%20always%20a,and%20followed%20its%20art%20conventions)  
 - [Cutie Honey - Wikipedia](https://en.wikipedia.org/wiki/Cutie_Honey)  
 - [Pretty Cure - Wikipedia](https://en.wikipedia.org/wiki/Pretty_Cure)  
 - [Lyrical Nanoha - Wikipedia](https://en.wikipedia.org/wiki/Lyrical_Nanoha)  
