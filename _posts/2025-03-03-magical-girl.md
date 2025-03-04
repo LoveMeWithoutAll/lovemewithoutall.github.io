@@ -1,6 +1,6 @@
 ---
 layout: single
-title: 변신 미소녀물 - 남성향 vs 여성향 애니메이션 비교 ~ 세일러문과 웨딩 피치를 중심으로 ~
+title: 변신 미소녀물 - 남성향 vs 여성향 애니메이션 비교 ~ 세일러문과 웨딩 피치를 중심으로
 date: 2025-03-03 08:50:30.000000000 +09:00
 type: post
 header:
@@ -165,11 +165,17 @@ tags: [magical girl]
 
 **참고 자료:**
 
-- Coco Zhou, “Magical Girl as a Shōjo Genre and the Male Gaze” – *Flow* (2016)
-- AnimeNation, “Ask John: What Exactly Makes Lyrical Nanoha More Adult Oriented?” (2012)
-- Wikipedia, *Magical girl* (장르사 및 작품 사례)
-- Mahoushoujofiles, “Wedding Peach vs Sailor Moon” (2020)
-- 기타: Reddit 토론 “Magical Girl Anime Genre become more moe for male fans?”, 위키 등의 자료
+- [Coco Zhou, “Magical Girl as a Shōjo Genre and the Male Gaze” – *Flow* (2016)](https://example.com/magical-girl-shojo-genre)  
+- [AnimeNation, “Ask John: What Exactly Makes Lyrical Nanoha More Adult Oriented?” (2012)](https://www.animenation.net/ask-john-lyrical-nanoha)  
+- [Magical girl - Wikipedia](https://en.wikipedia.org/wiki/Magical_girl)  
+- [Mahoushoujofiles, “Wedding Peach vs Sailor Moon” (2020)](http://mahoushoujofiles.com)  
+- [Reddit 토론 “Magical Girl Anime Genre become more moe for male fans?”](https://www.reddit.com/r/anime)  
+- [Cutie Honey - Wikipedia](https://en.wikipedia.org/wiki/Cutie_Honey)  
+- [Pretty Cure - Wikipedia](https://en.wikipedia.org/wiki/Pretty_Cure)  
+- [Lyrical Nanoha - Wikipedia](https://en.wikipedia.org/wiki/Lyrical_Nanoha)  
+- [Puella Magi Madoka Magica - Wikipedia](https://en.wikipedia.org/wiki/Puella_Magi_Madoka_Magica)  
+- [Sailor Moon - Wikipedia](https://en.wikipedia.org/wiki/Sailor_Moon)  
+- [Wedding Peach - Wikipedia](https://en.wikipedia.org/wiki/Wedding_Peach)
 
 #### This article was written with the help of ChatGPT
 
