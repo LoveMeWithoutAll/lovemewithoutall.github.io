@@ -11,9 +11,9 @@ categories:
 tags: [jeju]
 ---
 
-위 논문은 GPT4.5 deep research를 활용하여 나의 다음 주장을 논문으로 작성한 것이다. 
+아래 논문은 GPT4.5 deep research를 활용하여 나의 다음 주장을 논문으로 작성한 것이다. 
 
-```
+```html
 침미다례는 현대의 해남 인근이고, 탐라는 현대 제주도라는 주장이 통설이다. 설득력이 있는 주장이다. 그러나 침마다례가 탐라를 가리킬 수도 있다는 주장에도 나름의 설득력이 있다. 사료가 극히 부족한 한반도 고대사 연구에 있어서, 통설과 맞지 않다고 하여 사료를 내다버리는 짓은 가슴 아프다. 그래서 나는 책임지지 못 할 가설을 하나 던지고자 한다. 침미다례가 여러 소국을 거느린 지역 맹주국이었던 만큼, 침미다례가 제주도를 복속시켜 속국화 해도 이상하지 않다. 제주도와 전라도 남부의 잦은 교역은 고고학적으로도 증명되며, 제주도가 비록 큰 섬이지만 소금과 곡식이 부족하여 자립하기에는 어려움이 있다. 후에 진구황후의 침미다례 도륙 등의 사건 끝에 침미다례가 백제에 종속당했으나 간접 지배에 머물렀고, 권력 공백기를 틈타 탐라(제주도)가 침미다례의 영향력에서 떨어져 나와 자립하기 시작했다고 본다면, 6세기에 이르러 여러 사서에 독자적인 정치체이자 섬나라임이 분명한 탐라의 등장을 설명할 수 있다.
 ```
 
@@ -88,89 +88,28 @@ _주_: 2) 제주도에서 한반도계 유물이 다수 출토된 사례로는 �
 
 **주석**
 
-<small>【12】 _《삼국지》 위서 동이전_에 보이는 탐라(주호) 관련 기록. 주호인들은 언어와 풍습이 한과 다르며, 배로 오가며 마한과 물품을 거래했다고 전한다​
+<small>【12】 _《삼국지》 위서 동이전_에 보이는 탐라(주호) 관련 기록. 주호인들은 언어와 풍습이 한과 다르며, 배로 오가며 마한과 물품을 거래했다고 전한다​([en.wikipedia.org](https://en.wikipedia.org/wiki/Tamna#:~:text=kingdom%20may%20come%20in%20the,Korean%20scholar%20%20211%20Lee)
+, [en.wikipedia.org](https://en.wikipedia.org/wiki/Tamna#:~:text=In%20476%2C%20according%20to%20the,As%20Baekje)). 이를 통해 3세기경 제주도 탐라와 마한의 교류 정황을 알 수 있다.
 
-[en.wikipedia.org](https://en.wikipedia.org/wiki/Tamna#:~:text=kingdom%20may%20come%20in%20the,Korean%20scholar%20%20211%20Lee)
+【28】 _《삼국사기》 백제본기_ 동성왕 20년(498) 조의 기록과 \*《위서》\*에 인용된 고구려 사신 예실불의 상주문 내용. 여기에는 탐라(섭라)가 백제에 병합되어 고구려와의 교역이 끊겼다는 진술이 담겨 있어, 5세기 말 탐라가 백제의 영향권에 들어갔음을 시사한다​.([ko.wikipedia.org](https://ko.wikipedia.org/wiki/%ED%83%90%EB%9D%BC#:~:text=%E3%80%8A%EC%82%BC%EA%B5%AD%EC%82%AC%EA%B8%B0%E3%80%8B%EC%97%90%EB%8A%94%20%EB%B0%B1%EC%A0%9C%20%EB%AC%B8%EC%A3%BC%EC%99%95%20,21)
+,
+[ko.wikipedia.org](https://ko.wikipedia.org/wiki/%ED%83%90%EB%9D%BC#:~:text=%E3%80%8A%EC%9C%84%EC%84%9C%E3%80%8B,%ED%83%90%EB%9D%BC%EC%97%90%20%EC%99%80%EC%84%9C%20%EC%82%B0%EC%B2%9C%EC%A7%80%ED%98%95%EC%9D%84%20%EC%8B%9C%EC%B0%B0%ED%95%98%EC%98%80%EB%8B%A4%EA%B3%A0%20%ED%95%9C%EB%8B%A4)).
 
-​
+【15】 _《삼국사기》 백제본기_ 문주왕 2년(476) 조의 기록. 탐라가 토산물을 바치자 백제 왕이 기뻐하여 탐라왕을 은솔에 봉했다는 내용이 전한다​([mediajeju.com](https://www.mediajeju.com/news/articleView.html?idxno=173803#:~:text=%ED%83%90%EB%9D%BC%EA%B0%80%20%EB%B0%B1%EC%A0%9C%EC%9D%98%20%EC%86%8D%EA%B5%AD%EC%9D%B4%EC%97%88%EB%8B%A4%EB%8A%94%20%EC%A3%BC%EC%9E%A5%EC%9D%80%20,%EC%A7%80%EB%B0%B0%EB%A5%BC%20%EB%B0%9B%EB%8A%94%20%EA%B4%80%EA%B3%84%EB%8A%94%20%EC%95%84%EB%8B%88%EC%97%88%EC%9D%8C%EC%9D%84%20%EB%B3%B4%EC%97%AC%EC%A4%80%EB%8B%A4)). 이는 탐라가 이 시기 백제에 조공을 바치며 사실상 속국 대우를 받았음을 의미한다.
 
-[en.wikipedia.org](https://en.wikipedia.org/wiki/Tamna#:~:text=In%20476%2C%20according%20to%20the,As%20Baekje)
+【44】 김형훈, 「“탐라는 백제의 속국이 아니었다”」, _미디어제주_, 2015. 기사에서 인용된 삼국사기 기록 해설 부분. 문주왕 2년 탐라의 방물 헌상과 동성왕 20년 탐라 정벌 시도에 관한 설명이 실려 있다​([jejunews.com](https://www.jejunews.com/news/articleView.html?idxno=2208077#:~:text=%ED%83%90%EB%9D%BC%EA%B5%AD%EC%9D%B4%20%EC%82%BC%EA%B5%AD%20%EA%B0%80%EC%9A%B4%EB%8D%B0%20%EC%B2%98%EC%9D%8C%20%EA%B3%B5%EC%8B%9D%EC%A0%81%EC%9D%B8,%E9%99%84%E5%BA%B8%E5%9C%8B%29%EC%9D%B4%EC%97%88%EB%8D%98%20%EA%B2%83%EC%9C%BC%EB%A1%9C%20%ED%8C%8C%EC%95%85%EB%90%9C%EB%8B%A4)). 특히 \*“탐라는 백제에 공부, 즉 세금을 내며 관계를 유지하는 부용국이었다”\*는 해석은 본 논지와 일치한다.
 
-. 이를 통해 3세기경 제주도 탐라와 마한의 교류 정황을 알 수 있다.
+【51】 강봉룡, 「해남 백포만 고대 포구세력의 존재양태」 _백제학보_ 26, 2018. 문헌과 고고학 자료를 종합한 결론 부분을 인용. 신미국(침미다례) 세력이 3세기 후반 등장하여 29개 소국을 이끌고 진에 사신 파견​([dspace.kci.go.kr](https://dspace.kci.go.kr/handle/kci/398593?show=full#:~:text=%ED%8F%AC%EA%B5%AC%EC%84%B8%EB%A0%A5%EC%9D%80%203%EC%84%B8%EA%B8%B0%20%ED%9B%84%EB%B0%98%EC%97%90%20%E2%80%98%EC%8B%A0%EB%AF%B8%EA%B5%AD%E2%80%99%EC%9D%B4%EB%9D%BC%EB%8A%94%20%EC%9D%B4%EB%A6%84%EC%9C%BC%EB%A1%9C,6%EC%84%B8%EA%B8%B0%20%EC%9D%B4%ED%9B%84%EC%97%90%EB%8A%94%20%EB%B0%B1%EC%A0%9C%EA%B0%80%20%EA%B3%A0%EA%B5%AC%EB%A0%A4%EB%A5%BC)), 4세기 후반 침미다례로 재등장하였으나 백제에 저항하다가 토벌당함​([dspace.kci.go.kr](https://dspace.kci.go.kr/handle/kci/398593?show=full#:~:text=29%EA%B0%9C%20%EC%86%8C%EA%B5%AD%EC%9D%84%20%EC%95%84%EC%9A%B8%EB%9F%AC%20%E2%80%98%EC%8B%A0%EB%AF%B8%EC%A0%9C%EA%B5%AD%E2%80%99%EC%9D%B4%EB%9D%BC%EB%8A%94%20%EC%9D%B4%EB%A6%84%EC%9C%BC%EB%A1%9C,5%EB%B0%A9%EC%A0%9C%29%EC%9C%BC%EB%A1%9C%20%EC%99%84%EC%A0%84%ED%9E%88%20%ED%8E%B8%EC%9E%85%EB%90%98%EC%97%88%EB%8B%A4)), 5세기 후반 탐라(탐모라)로 다시 등장하여 가야·왜와 교류하였으나 백제의 공격을 받았다는 서술이 있다​([dspace.kci.go.kr](https://dspace.kci.go.kr/handle/kci/398593?show=full#:~:text=%EC%9D%B4%EB%A6%84%EC%9C%BC%EB%A1%9C%20%EB%AC%B8%ED%97%8C%EC%97%90%20%EB%8B%A4%EC%8B%9C%20%EB%93%B1%EC%9E%A5%ED%95%9C%EB%8B%A4,5%EB%B0%A9%EC%A0%9C%29%EC%9C%BC%EB%A1%9C%20%EC%99%84%EC%A0%84%ED%9E%88%20%ED%8E%B8%EC%9E%85%EB%90%98%EC%97%88%EB%8B%A4)). 이는 침미다례-탐라의 연속성과 대외관계를 잘 보여주는 자료이다.
 
-【28】 _《삼국사기》 백제본기_ 동성왕 20년(498) 조의 기록과 \*《위서》\*에 인용된 고구려 사신 예실불의 상주문 내용. 여기에는 탐라(섭라)가 백제에 병합되어 고구려와의 교역이 끊겼다는 진술이 담겨 있어, 5세기 말 탐라가 백제의 영향권에 들어갔음을 시사한다​
+【32】 김영관, 「백제와 탐라 관계를 바라보는 시각」 _한국고대사탐구_ 44, 2023. 해당 논문의 서론에서 소개된 기존 이견을 참고​([dspace.kci.go.kr](https://dspace.kci.go.kr/handle/kci/2054707#:~:text=%EC%98%81%EC%82%B0%EA%B0%95%20%EC%9C%A0%EC%97%AD%EC%97%90%20%EC%A7%84%EC%B6%9C%ED%95%9C%20%EC%8B%9C%EA%B8%B0%EB%A5%BC%20%EA%B7%BC%EC%B4%88%EA%B3%A0%EC%99%95%EB%8C%80%EB%A1%9C,%EB%B0%B1%EC%A0%9C%EC%99%80)). 일본서기 진구황후 49년조의 침미다례를 제주 탐라와 동일시하려는 견해가 소개되나, 논자(김영관)는 이를 신미국 등 남해안 마한 세력의 하나로 보아야 한다고 논박한다. 본고에서는 일본서기 기록 그 자체보다는 이러한 명칭이 일본 기록에 존재한다는 점에 의의를 두었다.
 
-[ko.wikipedia.org](https://ko.wikipedia.org/wiki/%ED%83%90%EB%9D%BC#:~:text=%E3%80%8A%EC%82%BC%EA%B5%AD%EC%82%AC%EA%B8%B0%E3%80%8B%EC%97%90%EB%8A%94%20%EB%B0%B1%EC%A0%9C%20%EB%AC%B8%EC%A3%BC%EC%99%95%20,21)
+【50】 광주MBC 보도, 「해남 군곡리 패총은 '마한 핵심 유적'」, 2025. 군곡리 패총의 규모와 층위, 그리고 마한 유적으로서의 중요성을 전하는 뉴스 내용​([kjmbc.co.kr](https://kjmbc.co.kr/article/fYKezSJY8x-DQXzA73Bc#:~:text=%EC%A7%80%EA%B8%88%EA%B9%8C%EC%A7%80%208%EC%B0%A8%EB%A1%80%20%EB%B0%9C%EA%B5%B4%EC%A1%B0%EC%82%AC%EA%B0%80%20%EC%9D%B4%EB%A4%84%EC%A7%80%EB%A9%B4%EC%84%9C%2C), [kjmbc.co.kr](https://kjmbc.co.kr/article/fYKezSJY8x-DQXzA73Bc#:~:text=%ED%8A%B9%ED%9E%88%20%EC%8B%9C%EB%8C%80%EC%97%90%20%EB%94%B0%EB%9D%BC%20%EC%B8%B5%EC%B8%B5%EC%9D%B4%20%EB%82%98%ED%83%80%EB%82%98%EB%8A%94,%EC%83%9D%ED%99%9C%20%EC%9C%A0%EC%A0%81%EB%93%A4%EC%9D%B4%20%EB%88%88%EA%B8%B8%EC%9D%84%20%EB%81%8C%EA%B3%A0%20%EC%9E%88%EC%8A%B5%EB%8B%88%EB%8B%A4))을 인용하였다. 이를 통해 해남 백포만 일대 유적이 장기간 지속된 해양세력의 거점이었음을 알 수 있다. 특히 \*“마한 연맹체 54곳 가운데 생활유물이 출토되는 유일한 유적”\*이라는 설명은 군곡리 패총의 유별난 중요성을 보여준다​([kjmbc.co.kr](https://kjmbc.co.kr/article/fYKezSJY8x-DQXzA73Bc#:~:text=%EA%B5%B0%EA%B3%A1%EB%A6%AC%20%ED%8C%A8%EC%B4%9D%EC%9D%B4%20%EC%A3%BC%EB%AA%A9%EB%B0%9B%EB%8A%94%20%EA%B2%83%EC%9D%80)).
 
-​
+【2】 장창은, 「『삼국사기』 백제본기 耽羅의 실체 검토」 _신라사학보_ 57, 2023. 논문 키워드에 나타난 _“제주산 현무암”_ 등의 용어를 통해, 제주도산 자원이 한반도 남부 유적에서 발견되었음을 시사하는 연구가 있음을 참고하였다​([m.riss.kr](https://m.riss.kr/search/detail/DetailView.do?p_mat_type=1a0202e37d52c72d&control_no=500c5c8c3c71002a4884a65323211ff0#:~:text=,Tamna)). 구체적인 사례는 주석 1)에서 언급한 바와 같다.
 
-[ko.wikipedia.org](https://ko.wikipedia.org/wiki/%ED%83%90%EB%9D%BC#:~:text=%E3%80%8A%EC%9C%84%EC%84%9C%E3%80%8B,%ED%83%90%EB%9D%BC%EC%97%90%20%EC%99%80%EC%84%9C%20%EC%82%B0%EC%B2%9C%EC%A7%80%ED%98%95%EC%9D%84%20%EC%8B%9C%EC%B0%B0%ED%95%98%EC%98%80%EB%8B%A4%EA%B3%A0%20%ED%95%9C%EB%8B%A4)
+【17】 앞의 김영관(2023) 논문. 해당 논문에서는 오히려 백제가 탐라와 일찍부터 통교했다는 주장을 펴고 있지만, 그 과정에서 \*“문주왕 2년과 동성왕 20년에 백제에 사신을 보낸 탐라는 제주도가 아니라 강진과 해남”\*이라는 이설을 소개하고 있다​([dspace.kci.go.kr](https://dspace.kci.go.kr/handle/kci/2054707#:~:text=%EB%B0%B1%EC%A0%9C%EC%99%80%20%ED%83%90%EB%9D%BC%20%EA%B4%80%EA%B3%84%EC%97%90%20%EB%8C%80%ED%95%B4%20%EB%8B%A4%EC%9D%8C%EA%B3%BC,%EB%B0%B1%EC%A0%9C%EA%B0%80%20%EB%82%A8%ED%95%B4%EC%95%88%EC%A7%80%EC%97%AD%EC%9C%BC%EB%A1%9C)). 이는 곧 일부 학자들이 탐라(탐모라)를 제주가 아닌 영산강 유역의 세력으로 비정함을 뜻하며, 본고의 가설과 일맥상통한다.
 
-.
-
-【15】 _《삼국사기》 백제본기_ 문주왕 2년(476) 조의 기록. 탐라가 토산물을 바치자 백제 왕이 기뻐하여 탐라왕을 은솔에 봉했다는 내용이 전한다​
-
-[mediajeju.com](https://www.mediajeju.com/news/articleView.html?idxno=173803#:~:text=%ED%83%90%EB%9D%BC%EA%B0%80%20%EB%B0%B1%EC%A0%9C%EC%9D%98%20%EC%86%8D%EA%B5%AD%EC%9D%B4%EC%97%88%EB%8B%A4%EB%8A%94%20%EC%A3%BC%EC%9E%A5%EC%9D%80%20,%EC%A7%80%EB%B0%B0%EB%A5%BC%20%EB%B0%9B%EB%8A%94%20%EA%B4%80%EA%B3%84%EB%8A%94%20%EC%95%84%EB%8B%88%EC%97%88%EC%9D%8C%EC%9D%84%20%EB%B3%B4%EC%97%AC%EC%A4%80%EB%8B%A4)
-
-. 이는 탐라가 이 시기 백제에 조공을 바치며 사실상 속국 대우를 받았음을 의미한다.
-
-【44】 김형훈, 「“탐라는 백제의 속국이 아니었다”」, _미디어제주_, 2015. 기사에서 인용된 삼국사기 기록 해설 부분. 문주왕 2년 탐라의 방물 헌상과 동성왕 20년 탐라 정벌 시도에 관한 설명이 실려 있다​
-
-[jejunews.com](https://www.jejunews.com/news/articleView.html?idxno=2208077#:~:text=%ED%83%90%EB%9D%BC%EA%B5%AD%EC%9D%B4%20%EC%82%BC%EA%B5%AD%20%EA%B0%80%EC%9A%B4%EB%8D%B0%20%EC%B2%98%EC%9D%8C%20%EA%B3%B5%EC%8B%9D%EC%A0%81%EC%9D%B8,%E9%99%84%E5%BA%B8%E5%9C%8B%29%EC%9D%B4%EC%97%88%EB%8D%98%20%EA%B2%83%EC%9C%BC%EB%A1%9C%20%ED%8C%8C%EC%95%85%EB%90%9C%EB%8B%A4)
-
-. 특히 \*“탐라는 백제에 공부, 즉 세금을 내며 관계를 유지하는 부용국이었다”\*는 해석은 본 논지와 일치한다.
-
-【51】 강봉룡, 「해남 백포만 고대 포구세력의 존재양태」 _백제학보_ 26, 2018. 문헌과 고고학 자료를 종합한 결론 부분을 인용. 신미국(침미다례) 세력이 3세기 후반 등장하여 29개 소국을 이끌고 진에 사신 파견​
-
-[dspace.kci.go.kr](https://dspace.kci.go.kr/handle/kci/398593?show=full#:~:text=%ED%8F%AC%EA%B5%AC%EC%84%B8%EB%A0%A5%EC%9D%80%203%EC%84%B8%EA%B8%B0%20%ED%9B%84%EB%B0%98%EC%97%90%20%E2%80%98%EC%8B%A0%EB%AF%B8%EA%B5%AD%E2%80%99%EC%9D%B4%EB%9D%BC%EB%8A%94%20%EC%9D%B4%EB%A6%84%EC%9C%BC%EB%A1%9C,6%EC%84%B8%EA%B8%B0%20%EC%9D%B4%ED%9B%84%EC%97%90%EB%8A%94%20%EB%B0%B1%EC%A0%9C%EA%B0%80%20%EA%B3%A0%EA%B5%AC%EB%A0%A4%EB%A5%BC)
-
-, 4세기 후반 침미다례로 재등장하였으나 백제에 저항하다가 토벌당함​
-
-[dspace.kci.go.kr](https://dspace.kci.go.kr/handle/kci/398593?show=full#:~:text=29%EA%B0%9C%20%EC%86%8C%EA%B5%AD%EC%9D%84%20%EC%95%84%EC%9A%B8%EB%9F%AC%20%E2%80%98%EC%8B%A0%EB%AF%B8%EC%A0%9C%EA%B5%AD%E2%80%99%EC%9D%B4%EB%9D%BC%EB%8A%94%20%EC%9D%B4%EB%A6%84%EC%9C%BC%EB%A1%9C,5%EB%B0%A9%EC%A0%9C%29%EC%9C%BC%EB%A1%9C%20%EC%99%84%EC%A0%84%ED%9E%88%20%ED%8E%B8%EC%9E%85%EB%90%98%EC%97%88%EB%8B%A4)
-
-, 5세기 후반 탐라(탐모라)로 다시 등장하여 가야·왜와 교류하였으나 백제의 공격을 받았다는 서술이 있다​
-
-[dspace.kci.go.kr](https://dspace.kci.go.kr/handle/kci/398593?show=full#:~:text=%EC%9D%B4%EB%A6%84%EC%9C%BC%EB%A1%9C%20%EB%AC%B8%ED%97%8C%EC%97%90%20%EB%8B%A4%EC%8B%9C%20%EB%93%B1%EC%9E%A5%ED%95%9C%EB%8B%A4,5%EB%B0%A9%EC%A0%9C%29%EC%9C%BC%EB%A1%9C%20%EC%99%84%EC%A0%84%ED%9E%88%20%ED%8E%B8%EC%9E%85%EB%90%98%EC%97%88%EB%8B%A4)
-
-. 이는 침미다례-탐라의 연속성과 대외관계를 잘 보여주는 자료이다.
-
-【32】 김영관, 「백제와 탐라 관계를 바라보는 시각」 _한국고대사탐구_ 44, 2023. 해당 논문의 서론에서 소개된 기존 이견을 참고​
-
-[dspace.kci.go.kr](https://dspace.kci.go.kr/handle/kci/2054707#:~:text=%EC%98%81%EC%82%B0%EA%B0%95%20%EC%9C%A0%EC%97%AD%EC%97%90%20%EC%A7%84%EC%B6%9C%ED%95%9C%20%EC%8B%9C%EA%B8%B0%EB%A5%BC%20%EA%B7%BC%EC%B4%88%EA%B3%A0%EC%99%95%EB%8C%80%EB%A1%9C,%EB%B0%B1%EC%A0%9C%EC%99%80)
-
-. 일본서기 진구황후 49년조의 침미다례를 제주 탐라와 동일시하려는 견해가 소개되나, 논자(김영관)는 이를 신미국 등 남해안 마한 세력의 하나로 보아야 한다고 논박한다. 본고에서는 일본서기 기록 그 자체보다는 이러한 명칭이 일본 기록에 존재한다는 점에 의의를 두었다.
-
-【50】 광주MBC 보도, 「해남 군곡리 패총은 '마한 핵심 유적'」, 2025. 군곡리 패총의 규모와 층위, 그리고 마한 유적으로서의 중요성을 전하는 뉴스 내용​
-
-[kjmbc.co.kr](https://kjmbc.co.kr/article/fYKezSJY8x-DQXzA73Bc#:~:text=%EC%A7%80%EA%B8%88%EA%B9%8C%EC%A7%80%208%EC%B0%A8%EB%A1%80%20%EB%B0%9C%EA%B5%B4%EC%A1%B0%EC%82%AC%EA%B0%80%20%EC%9D%B4%EB%A4%84%EC%A7%80%EB%A9%B4%EC%84%9C%2C)
-
-​
-
-[kjmbc.co.kr](https://kjmbc.co.kr/article/fYKezSJY8x-DQXzA73Bc#:~:text=%ED%8A%B9%ED%9E%88%20%EC%8B%9C%EB%8C%80%EC%97%90%20%EB%94%B0%EB%9D%BC%20%EC%B8%B5%EC%B8%B5%EC%9D%B4%20%EB%82%98%ED%83%80%EB%82%98%EB%8A%94,%EC%83%9D%ED%99%9C%20%EC%9C%A0%EC%A0%81%EB%93%A4%EC%9D%B4%20%EB%88%88%EA%B8%B8%EC%9D%84%20%EB%81%8C%EA%B3%A0%20%EC%9E%88%EC%8A%B5%EB%8B%88%EB%8B%A4)
-
-을 인용하였다. 이를 통해 해남 백포만 일대 유적이 장기간 지속된 해양세력의 거점이었음을 알 수 있다. 특히 \*“마한 연맹체 54곳 가운데 생활유물이 출토되는 유일한 유적”\*이라는 설명은 군곡리 패총의 유별난 중요성을 보여준다​
-
-[kjmbc.co.kr](https://kjmbc.co.kr/article/fYKezSJY8x-DQXzA73Bc#:~:text=%EA%B5%B0%EA%B3%A1%EB%A6%AC%20%ED%8C%A8%EC%B4%9D%EC%9D%B4%20%EC%A3%BC%EB%AA%A9%EB%B0%9B%EB%8A%94%20%EA%B2%83%EC%9D%80)
-
-.
-
-【2】 장창은, 「『삼국사기』 백제본기 耽羅의 실체 검토」 _신라사학보_ 57, 2023. 논문 키워드에 나타난 _“제주산 현무암”_ 등의 용어를 통해, 제주도산 자원이 한반도 남부 유적에서 발견되었음을 시사하는 연구가 있음을 참고하였다​
-
-[m.riss.kr](https://m.riss.kr/search/detail/DetailView.do?p_mat_type=1a0202e37d52c72d&control_no=500c5c8c3c71002a4884a65323211ff0#:~:text=,Tamna)
-
-. 구체적인 사례는 주석 1)에서 언급한 바와 같다.
-
-【17】 앞의 김영관(2023) 논문. 해당 논문에서는 오히려 백제가 탐라와 일찍부터 통교했다는 주장을 펴고 있지만, 그 과정에서 \*“문주왕 2년과 동성왕 20년에 백제에 사신을 보낸 탐라는 제주도가 아니라 강진과 해남”\*이라는 이설을 소개하고 있다​
-
-[dspace.kci.go.kr](https://dspace.kci.go.kr/handle/kci/2054707#:~:text=%EB%B0%B1%EC%A0%9C%EC%99%80%20%ED%83%90%EB%9D%BC%20%EA%B4%80%EA%B3%84%EC%97%90%20%EB%8C%80%ED%95%B4%20%EB%8B%A4%EC%9D%8C%EA%B3%BC,%EB%B0%B1%EC%A0%9C%EA%B0%80%20%EB%82%A8%ED%95%B4%EC%95%88%EC%A7%80%EC%97%AD%EC%9C%BC%EB%A1%9C)
-
-. 이는 곧 일부 학자들이 탐라(탐모라)를 제주가 아닌 영산강 유역의 세력으로 비정함을 뜻하며, 본고의 가설과 일맥상통한다.
-
-【28】 _《삼국사기》 고구려본기_ 문자명왕 13년(서기 503)조와 _《위서》_ 영명연간 기록. 고구려와 탐라의 교역 및 백제의 개입 상황을 보여주는 대목으로, 탐라 조공선이 가야와 백제에 약탈당했다는 탐라 왕실의 전승도 함께 언급되어 있다​
-
-[ko.wikipedia.org](https://ko.wikipedia.org/wiki/%ED%83%90%EB%9D%BC#:~:text=%ED%83%90%EB%9D%BC%20%EA%B3%A0%EC%94%A8%EC%9D%98%20%EC%A0%84%EC%8A%B9%EC%97%90%EB%8A%94%20%EB%8B%B4%EC%99%95%20%EB%95%8C,%ED%83%90%EB%9D%BC%EC%97%90%20%EC%99%80%EC%84%9C%20%EC%82%B0%EC%B2%9C%EC%A7%80%ED%98%95%EC%9D%84%20%EC%8B%9C%EC%B0%B0%ED%95%98%EC%98%80%EB%8B%A4%EA%B3%A0%20%ED%95%9C%EB%8B%A4)
-
-. 이를 통해 탐라가 신라에까지 조공을 보낼 정도로 광범위한 외교망을 구축했고, 백제 등 본토 세력이 이를 견제했음을 알 수 있다.
+【28】 _《삼국사기》 고구려본기_ 문자명왕 13년(서기 503)조와 _《위서》_ 영명연간 기록. 고구려와 탐라의 교역 및 백제의 개입 상황을 보여주는 대목으로, 탐라 조공선이 가야와 백제에 약탈당했다는 탐라 왕실의 전승도 함께 언급되어 있다​([ko.wikipedia.org](https://ko.wikipedia.org/wiki/%ED%83%90%EB%9D%BC#:~:text=%ED%83%90%EB%9D%BC%20%EA%B3%A0%EC%94%A8%EC%9D%98%20%EC%A0%84%EC%8A%B9%EC%97%90%EB%8A%94%20%EB%8B%B4%EC%99%95%20%EB%95%8C,%ED%83%90%EB%9D%BC%EC%97%90%20%EC%99%80%EC%84%9C%20%EC%82%B0%EC%B2%9C%EC%A7%80%ED%98%95%EC%9D%84%20%EC%8B%9C%EC%B0%B0%ED%95%98%EC%98%80%EB%8B%A4%EA%B3%A0%20%ED%95%9C%EB%8B%A4)). 이를 통해 탐라가 신라에까지 조공을 보낼 정도로 광범위한 외교망을 구축했고, 백제 등 본토 세력이 이를 견제했음을 알 수 있다.
 
 <small>**참고문헌**: 강봉룡 (2018), 김영관 (2023), 장창은 (2023), 김형훈 (2015, _미디어제주_), 광주MBC (2025 보도) 등.</small>
 
