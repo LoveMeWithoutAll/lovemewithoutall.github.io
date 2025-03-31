@@ -4,13 +4,15 @@ title: 세브란스; 단절 season 2
 date: 2025-03-25 08:50:30.000000000 +09:00
 type: post
 header:
-    teaser: "https://static.wikia.nocookie.net/severance-series/images/c/c8/S2KeyArt3.png/revision/latest/scale-to-width-down/1000?cb=20250109230001"
-    image: "https://static.wikia.nocookie.net/severance-series/images/c/c8/S2KeyArt3.png/revision/latest/scale-to-width-down/1000?cb=20250109230001"
+    teaser: "https://m.media-amazon.com/images/M/MV5BNmI5MDlhM2YtYjU0Zi00MjNkLThkODUtY2I4YjhkYzNlMDk1XkEyXkFqcGc@._V1_QL75_UY281_CR0,0,500,281_.jpg"
+    image: "https://m.media-amazon.com/images/M/MV5BNmI5MDlhM2YtYjU0Zi00MjNkLThkODUtY2I4YjhkYzNlMDk1XkEyXkFqcGc@._V1_QL75_UY281_CR0,0,500,281_.jpg"
 categories:
 - Art
 tags: []
 ---
 
 시즌2 완결에도 불구하고 여전히 많은 복선을 풀지 않았다. 하지만 그간 쌓아둔 복선을 해결하는 카타르시스는 부족했다. 적어도 시즌1에 비해서는 그렇다. 다만 단절된 인간에게서 어떤 일이 벌어질 수 있을지 보다 다양한 시각에서 보여준 장점은 있다. 드라마로서의 재미는 떨어졌고, 생각할 점은 많아졌다. 인상 비평은 이쯤에서 마치자. 아무튼 충분히 즐길만한 드라마다. 그보다 나는 협력에 대하여 생각하고 싶다. 동일한 몸을 사용하는 두 인격(물론 분리되어 있지만)조차 서로 협력하지 못 한다면, 서로 다른 몸을 사용하는 두 인격은 어떻게 협력할 수 있겠는가? 작중에서 등장인물(특히 마크.S의 아우티)의 접근법은 근본적으로 틀렸다고 볼 수 밖에 없다. 마크.S의 이니에게 통합은 인격의 말살일 뿐이다. 단절 층에서의 이니들은 퇴사를 사실상의 죽음이라 여기며 애도한다. 이런 상황에서 마크.S의 아우티가 어떻게 이니에게 죽음을 부탁할 수 있겠는가. 시즌2의 결말은 당연하다. 다른 결말을 기대할 수 없었기 때문에 충격적이지도 않았다. 오히려 나는 운명으로 인하여 어쩔 수 없이 끌려 다니는 인간상(그리스 비극)을 그리는 편이 더 나았다고 본다. 아무튼 인간 세상은 비참하고, 루멘에서는 더욱 그렇지 않겠는가?
+
+Apple TV | TV seriers | 2025
 
 20250326
