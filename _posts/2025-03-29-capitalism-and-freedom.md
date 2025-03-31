@@ -1,7 +1,7 @@
 ---
 layout: single
 title: 자본주의와 자유
-date: 2025-03-29  00:30:30.000000000 +09:00
+date: 2025-03-29 00:30:30.000000000 +09:00
 type: post
 header:
     teaser: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Portrait_of_Milton_Friedman.jpg/400px-Portrait_of_Milton_Friedman.jpg"
