@@ -21,7 +21,7 @@ tags: [tanstack query]
 
 ### 예시
 
-```javascript
+```tsx
 const { data, refetch } = useQuery(
   ['myData'],
   fetchData,
