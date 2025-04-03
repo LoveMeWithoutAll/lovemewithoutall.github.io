@@ -13,7 +13,7 @@ tags: [yarn]
 
 [bitbucket cloud pipeline](https://www.atlassian.com/ko/software/bitbucket/features/pipelines)에서 [zero install](https://yarnpkg.com/features/caching#zero-installs)을 사용하지 마라.
 
-시간 낭비 하지 마라. 어차피 안 된다.
+시간 낭비 하지 마라. 대신 다른 방법이 있다.
 
 ## 목표
 ### 마이크로 프론트엔드 프로젝트에서 여러 패키지를 한 번에 배포한다. 배포 시간을 최대한 단축하기 위하여 zero install을 사용한다.
@@ -78,8 +78,10 @@ Expected package location: /.../.yarn/unplugged/esbuild-npm-0.25.1-xxxxxx/node_m
 
 없다. 그 이유는
 * esbuild, node-sass, sharp 등 native 바이너리 패키지는 운영체제 및 CPU 아키텍처에 따라 다르게 설치된다. 그러니 내 로컬 시스템의 바이너리 패키지는 CI의 docker 환경에서 동작하지 않는다.
-* yarn은 unplugged package를 비결정적으로 설치한다. 그래서 yarn install을 할 때마다 매번 git merge conflict가 발생할 수 있다.
-* unplugged를 유발하는 패키지를 제거한다면? 이론적으로는 가능하다. 하지만 esbuild → esbuild-wasm 등의 마이그레이션 작업을 하는 건 불 속에 뛰어드는 것과 다를 바 없다.
+* yarn은 환경(OS, Node version, Yarn version, library version and etc)에 따라 unplugged package를 비결정적으로 설치한다. 그래서 각 팀원이 yarn install을 할 때마다 매번 git merge conflict가 발생할 수 있다.
+* unplugged를 유발하는 바이너리 패키지를 제거한다면? 이론적으로는 가능하다. 하지만 esbuild → esbuild-wasm 등의 마이그레이션 작업을 하는 건 불 속에 뛰어드는 것과 다를 바 없다.
+* unplugged 유발 바이너리를 분기 처리한다면? 가능해보이지만 난이도가 높아 보인다.
+* custom docker 이미지를 사용해서 빌드하는 방법이 아주 좋아 보이지만, 회사 정책상 사용할 수 없었다.
 
 ## 그러면 영원히 느린 배포 속도로 고통받야야 하는가?
 
