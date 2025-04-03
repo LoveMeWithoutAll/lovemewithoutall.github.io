@@ -65,7 +65,7 @@ Expected package location: /.../.yarn/unplugged/esbuild-npm-0.25.1-xxxxxx/node_m
 * zero install을 위하여 .yarn/cache를 git에 포함시켰으나, `.yarn/unplugged/*`는 git에 포함시키지 않았다
 
 ### CI 환경에서는?
-* .yarn/unplugged/는 Git에 포함하지 않기 때문에, CI(bitbucket pipeline)에서는 매번 yarn install을 실행해서 이 디렉토리를 다시 생성해야 한다ㅏ.
+* .yarn/unplugged/는 Git에 포함하지 않기 때문에, CI(bitbucket pipeline)에서는 매번 yarn install을 실행해서 이 디렉토리를 다시 생성해야 한다.
 * 그런데 현재 CI에서는 zero install을 한답시고 yarn install을 생략했기 때문에, esbuild가 디스크에 없어서 실패한 것.
 
 ## 해결책
