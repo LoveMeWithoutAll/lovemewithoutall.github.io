@@ -4,8 +4,8 @@ title: Vite 환경변수 우선순위 멘탈 모델
 date: 2025-04-16 08:50:30.000000000 +09:00
 type: post
 header:
-    teaser: "/assets/images/2024-04-02-11kitties-tech/game-image.png"
-    image: "/assets/images/2024-04-02-11kitties-tech/game-image.png"
+    teaser: "https://vitejs.dev/logo-with-shadow.png"
+    image: "https://vitejs.dev/logo-with-shadow.png"
 categories:
 - IT
 tags: [frontend, vite]
