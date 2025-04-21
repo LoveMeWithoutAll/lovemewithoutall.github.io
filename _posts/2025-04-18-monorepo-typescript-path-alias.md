@@ -18,12 +18,11 @@ tags: [typescript]
 - tsconfig.json의 paths 설정은 해당 파일이 포함된 컴파일 단계에만 적용된다. 패키지 경계를 넘어 자동 전파되지 않는다.
 
 ## 환경
-| Tool | Version |
-|------|---------|
-| TypeScript | 5.x |
-| Yarn (Berry, PnP) | 4.x |
-| Vite | 6.x |
-| Vitest | 3.x |
+
+- TypeScript: 5.x
+- Yarn : 4.x
+- Vite: 6.x 
+- Vitest : 3.x 
 
 
 ## 문제 정의
