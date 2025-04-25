@@ -1,17 +1,17 @@
 ---
 layout: single
-title: React Router <ScrollRestoration /> 디버깅 기록 — 왜 스크롤이 안 움직였을까?
+title: React Router ScrollRestoration 디버깅 기록 — 왜 스크롤이 안 움직였을까?
 date: 2025-04-25 10:49:30.000000000 +09:00
 type: post
 header:
-    teaser: "http://image.yes24.com/Goods/90265564/L"
-    image: "http://image.yes24.com/Goods/90265564/L"
+    teaser: "https://reactrouter.com/splash/hero-3d-logo.webp"
+    image: "https://reactrouter.com/splash/hero-3d-logo.webp"
 categories:
 - IT
-tags: [typescript]
+tags: [react-router]
 ---
 
-# React Router <ScrollRestoration /> 디버깅 기록 — 왜 스크롤이 안 움직였을까?
+# React Router ScrollRestoration 디버깅 기록 — 왜 스크롤이 안 움직였을까?
 
 Single-Page Application(이하 SPA)에서 뒤로·앞으로 네비게이션을 했을 때 유저가 읽던 위치로 스크롤을 복원해 주는 일은 UX 품질을 좌우합니다. React Router v6.4+는 이를 위해 <ScrollRestoration /> 컴포넌트를 제공하지만, “넣기만 하면 된다”는 공식 설명과 달리 CSS·레이아웃 제약 때문에 전혀 작동하지 않을 수 있습니다.
 
@@ -60,7 +60,7 @@ CSS 고수라면 이것만 보고도 문제의 원인을 짐작하실 수 있을
 
 ⸻
 
-## 2. <ScrollRestoration /> 한 줄 추가 → 실패
+## 2. ScrollRestoration 한 줄 추가 → 실패
 
 `<Outlet />` 옆에 한 줄만 추가하면 된다는 React router의 호언장담과 달리 스크롤은 전혀 동작하지 않았다.
 
