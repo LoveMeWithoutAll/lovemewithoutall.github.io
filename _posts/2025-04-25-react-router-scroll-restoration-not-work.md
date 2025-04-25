@@ -108,10 +108,12 @@ window.scrollTo(0, 300);                 // 효과 없음
 
 ### 4-1 실험 ① — overflow:hidden 제거
 
+```css
 html, body {
   height: 100vh;
   /* overflow: hidden; ⬅︎ 주석 */
 }
+```
 
 	•	window.scrollTo 즉시 정상 동작
 	•	<ScrollRestoration />도 바로 복원 성공
@@ -130,7 +132,7 @@ html, body {
 	•	height:100vh 는 scrollHeight 계산을 1 : 1 로 만드는 보조 요인
 	•	두 속성이 동시에 있으면 “루트 스크롤 0px”이 확정 → ScrollRestoration 완전 무력화
 
-[StackOverflow](https://stackoverflow.com/questions/66098013/window-scrollto-doesnt-work-with-overflow-and-100vh-height?utm_source=chatgpt.com) · [jQuery](https://github.com/jquery/jquery/issues/4581?utm_source=chatgpt.com) 이슈 등에서도 같은 현상 보고가 다수 있다. ￼ ￼
+[StackOverflow](https://stackoverflow.com/questions/66098013/window-scrollto-doesnt-work-with-overflow-and-100vh-height) · [jQuery](https://github.com/jquery/jquery/issues/4581) 이슈 등에서도 같은 현상 보고가 다수 있다. ￼ ￼
 
 ⸻
 
