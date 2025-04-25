@@ -120,10 +120,12 @@ html, body {
 
 ### 4-2 실험 ② — overflow 유지, height:100vh만 제거
 
+```css
 html, body {
   /* height: 100vh; ⬅︎ 주석 처리 */
   overflow: hidden;
 }
+```
 
 	•	여전히 스크롤 불가 (루트가 overflow hidden 이면 내부 높이와 무관하게 스크롤 차단)
 
@@ -160,7 +162,7 @@ html, body {
 1. Zustand 스토어를 만들어서
 1. 목록 아이템을 클릭할 때마다 zustand에 아이템의 id를 저장하고
 3. 목록 아이템 html element에 data-id를 부여하고
-4. useEffect에서 스크롤을 복원한다
+4. useEffect에서 document.querySelector로 zustand의 그 id에 해당하는 element를 선택한 후, scrollIntoView로 스크롤을 복원한다
 
 ```typescript
 const navType  = useNavigationType();      
