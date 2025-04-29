@@ -1,6 +1,6 @@
 ---
 layout: single
-title: react-router useNavigate 훅의 동작 분석 - navigate는 어디서부터 시작되는가
+title: React Router useNavigate 훅 완전 분석 - "navigate('..') 한 번인데 왜 두 칸이 날아갈까?"
 date: 2025-04-29 10:49:30.000000000 +09:00
 type: post
 header:
@@ -18,7 +18,7 @@ tags: [react-router]
 
 ## 1줄 요약
 
-`navigate('.')`의 라우팅 기점은 `useNavigate()`를 호출한 컴포넌트.
+`navigate('.')`가 어디서부터 경로를 계산할지는, `useNavigate()`를 호출한 컴포넌트가 속한 `<Route> (=pathnameBase)`에 달려 있다.
 
 ## 현상
 
@@ -27,10 +27,10 @@ tags: [react-router]
 ```ts
 const navigate = useNavigate();
 
-navigate('..');
+navigate('..'); // 예상: /list
 ```
 
-상위 route로 이동하는 코드니까, `/list`로 이동하기를 기대했다. 하지만 `/list` 대신 루트 경로(path: `/`)로 이동해 버렸다. 혹시나 navigate가 2번 실행되었는지 싶어서 콘솔 로그를 찍어보아도 `navigate`는 단 1번만 실행된다.
+하지만 실제로는 `/list` 대신 루트 경로(path: `/`)로 이동해 버렸다. 혹시나 navigate가 2번 실행되었는지 싶어서 콘솔 로그를 찍어보아도 `navigate`는 딱 1번 뿐.
 
 아래와 같이 relative: path 옵션을 줘도 결과는 동일했다.
 
@@ -38,58 +38,60 @@ navigate('..');
 navigate('..', { relative: 'path' })
 ```
 
-위 현상은 같은 코드를 사용하는 다른 컴포넌트에서도 발생하고 있었다.
+같은 코드를 쓰는 다른 컴포넌트들도 모두 같은 현상을 보인다.
 
 ## 디버깅 과정
 
 1. navigate 호출 횟수
-	- 이벤트 버블링·더블 클릭으로 두 번 호출되는지 먼저 의심
-	- console.count() 로 체크
-	- 1번만 호출 확인
+	- 확인 대상: 이벤트 버블링 or 더블 클릭으로 두 번 호출되는지 먼저 의심
+	- 확인 방법: console.count() 로 체크
+	- 결과: 1번만 호출 확인
 1. 라우트 구조
-	- 라우트 선언이 잘못된 것 아닌가? 절대 & 상대 경로, path 없는 래퍼(Route path="") 존재 여부 의심
-	- `<Route path="...">` 선언 확인했으나
-	- 문제 없음
+	- 확인 대상: 라우트 선언이 잘못된 것 아닌가? 절대 & 상대 경로, path 없는 래퍼(Route path="") 존재 여부
+	- 확인 방법: `<Route path="...">` 선언 확인
+	- 결과: 문제 없음
 1. 현재 URL
-	- 클릭 직전 URL이 확실히 `/list/:no` 인가? 나도 모르게 `/list`로 리다이렉트 하지는 않았을까?
-	- `location.pathname`을 log로 확인
-	- 문제 없음. 클릭 직전 url은 `/list/:no` 였다.
-1. 상대 경로 종류
-	- navigate('.') vs navigate('..') 동작 비교
-	- **공식 문서의 설명과는 다르게 navigate('.')는 기대한 대로 정상 동작**
-	- '.' 은 기대한 대로 동작하고, '..' 는 그렇지 않았다. '.'는 현재 라우트로 이동이고, '..'는 상위 라우트로 이동 아닌가?
-	- 공식 문서에는 기산점에 대해 애매하게만 써져 있다. 현재 위치는 `useNavigate`가 호출된 곳이라고 하는데, `relative: "path"` 옵션이 적용된 경우만 그런 것인지, 아닌지 확실치가 않다
-1. useNavigate 내부 분석
-	- `react-router hooks.tsx` 파일에서 useNavigate 내부 동작 확인
+	- 확인 대상: 클릭 직전 URL이 확실히 `/list/:no` 인가? 나도 모르게 `/list`로 리다이렉트 하지는 않았을까?
+	- 확인 방법: `location.pathname`을 log로 확인
+	- 결과: 문제 없음. 클릭 직전 url은 `/list/:no` 였다.
+1. 상대 경로 비교
+	- 확인 대상: navigate('.') vs navigate('..') 동작 비교
+	- 확인 결과: **공식 문서의 설명과는 다르게 navigate('.')는 기대한 대로 정상 동작**
+	- 의문: '.' 은 기대한 대로 동작하고, '..' 는 그렇지 않았다. '.'는 현재 라우트로 이동이고, '..'는 상위 라우트로 이동 아닌가?
+	- 공식 문서 확인: 공식 문서에는 기산점에 대해 애매하게만 써져 있다. 현재 위치는 `useNavigate`가 호출된 곳이라고 하는데, `relative: "path"` 옵션이 적용된 경우만 그런 것인지, 아닌지 확실치가 않다
+1. useNavigate 내부 코드 확인
+	- 확인 대상: `react-router hooks.tsx` 파일에서 useNavigate 내부 동작
+	- 확인 방법:
 		- [react-router의 matchs를 사용하여 route 구조를 배열로 만드는 코드를 확인해보니](https://github.com/remix-run/react-router/blob/main/packages/react-router/lib/hooks.tsx#L246C43-L246C62)
 		- [useNavigate가 인식하는 현재 route는 현재 컴포넌트의 matches 배열에서 가장 마지막 엘리먼트](https://github.com/remix-run/react-router/blob/main/packages/react-router/lib/router/utils.ts#L1430C55-L1430C73)
-	- 분석 결과: `라우트 이동`의 **계산 기준점** 은 현재 컴포넌트에서 matches 배열의 마지막 element(Route)이다.
+	- 결과: `라우트 이동`의 **계산 기준점** 은 현재 컴포넌트에서 matches 배열의 마지막 element(Route)이다.
 1. 라우트 기준점
-	- useMatches() 로 useNavigation을 실행하는 컴포넌트가의 `pathnameBase`을 확인
-	- `pathnameBase`가 `/list`(!)로 찍힌다
-	- `pathnameBase`이 왜 `/list/:no`가 아닐까?
+	- 확인 대상: useMatches() 로 useNavigation을 실행하는 컴포넌트가의 `pathnameBase`을 확인
+	- 확인 결과: `pathnameBase`가 `/list`(!)로 찍힌다
+	- 의문: `pathnameBase`이 왜 `/list/:no`가 아닐까?
 
 ## 원인
-1. useNavigate() 는 자신이 선언된 컴포넌트가 속한 `<Route>` 를 기준으로 pathnameBase 를 결정한다.
 
-1. 옵션에 relative: 'path' 를 줘도 계산 기준점은 변하지 않는다. 다만 '..' 을 “URL 세그먼트” 방식으로 해석할 뿐이다.
+1. useNavigate() 는 자신이 선언된 컴포넌트가 속한 `<Route>`의 `pathnameBase`을 기준점으로 삼는다.
 
-1. 만약 아래와 같이 Layout 컴포넌트가 `useNavigate을` 호출하여 라우팅 이동을 한다면, 라우팅 계산 출발점은 `/list`이다. 상세 페이지( `/list/:no` )를 보고 있다고 하더라도, `useNavigate`가 `/list` 를 출발점(계산 기준점)으로 잡는다.
+1. `navigate` 옵션에 relative: 'path' 를 줘도, 계산 기준점은 변하지 않는다. 다만 해석 방식만 “URL 세그먼트” 방식으로 할 뿐이다.
+
+1. Layout 같은 상위 라우트에서 `useNavigate을` 호출하여 라우팅을 하면, 상세 페이지( `/list/:no` )를 보고 있다고 하더라도 기준점은 `/list`가 된다.
 
 ```tsx
-<Route path="/list" element={<Layout />}>
+<Route path="/list" element={<Layout />}> {/* ← Layout 안에서 useNavigate() */}
 	<Route index element={<List />} />
 	<Route path=":no" element={<Content />} />
 </Route>
 ```
 
-4. 따라서 한 번의 `navigate('..')` 이 `/list` -> `/` 까지 라우팅을 1단계 이동시킨 것. `/list/:no`는 애당초 계산 대상이 아니었다. 그래서 `/list/:no`에서 즉시 `/list`로 이동했으니 마치 **두 단계가 날아간 것처럼** 보인다.
+4. 따라서 `'..'`을 1번만 적용해도 `/list` -> `/` 가 된다. `/list/:no`는 애당초 계산 대상이 아니었다. 결과적으로 **두 세그먼트가 한꺼번에 잘린 것처럼** 보인다.
 
 ## useNavigate가 인식하는 현재 path 확인 방법
 
 ### 방법1: 가장 간단
 
-React DevTools에서 useNavigate를 호출하는 컴포넌트를 선택 -> hooks 패널에서 `Navigate.Route.matches[0].pathnameBase`를 확인
+`React DevTools`에서 useNavigate를 호출하는 컴포넌트를 선택 -> hooks 패널에서 `Navigate.Route.matches[마지막].pathnameBase`를 확인
 
 ### 방법2
 
@@ -102,7 +104,7 @@ const Component = () => {
   // 현재 컴포넌트가 속한 라우트 = 배열의 마지막 요소
   const current = matches[matches.length - 1];
 
-  console.log('pathnameBase 👉', current.pathnameBase); // 예: "/list"
+  console.log('pathnameBase : ', current.pathnameBase); // 예: "/list"
 	// ...
 }
 ```
@@ -122,7 +124,7 @@ function usePathnameBase(): string {
 ```
 
 ## 결론 및 best practice
-- `useNavigate를` 호출하는 컴포넌트의 `path`가 항상 라우팅 기준점이다.
+- `useNavigate를` 호출하는 컴포넌트의 `pathnameBase`가 항상 라우팅 기준점이다.
 - 햇갈릴 때는 애당초 절대 경로를 사용하여 라우팅 하는 것도 좋은 방법이다
 	- 예: navigate('/list')
 - 라우팅 디버깅 할 때는 라우팅 기준점을 디버깅 해야한다.
@@ -131,17 +133,14 @@ function usePathnameBase(): string {
 ## 요약
 - 문제: `navigate('..)` 를 썼는데 생각보다 많이 올라간다. 
 
-- 원인: navigate 의 출발점은 현재 컴포넌트가 속한 <Route> 의 pathnameBase.
-
-- 공통 헤더 & 검색바처럼 상위 라우트에 붙어 있으면 상세 URL 세그먼트를 계산에 포함하지 못한다.
+- 원인: navigate 의 출발점은 navigate를 실행하는 컴포넌트의 `<Route>`(pathnameBase)이기 때문. `navigate` 하는 코드가 공통 헤더 & 검색바처럼 상위 라우트에 붙어 있으면, 상세 URL 세그먼트를 계산에 포함하지 못한다.
 
 - 해결
-	- 리스트 라우트의 공통 컴포넌트라면 navigate('.') 를 사용해서 상위 route로 이동하거나,
+	- 상위 라우트의 공통 컴포넌트에서는 navigate('.') 를 사용해서 상위 route로 이동하거나,
 	- navigate('/notice') 처럼 절대 경로를 쓰거나,
-	- navigate 하는 컴포넌트를 하위 라우트로 옮겨 pathnameBase 를 바꾼다.
+	-`useNavigate()` 호출 위치를 하위 라우트로 옮긴 후, `navigate('..')`를 실행(상위 라우트로 이동)
 
-- 디버깅팁: 문제가 생기면 언제나 useMatches().at(-1).pathnameBase 를 로그로 찍어라.
-“예상과 다른 상대 네비게이션” 의 90 % 는 여기서 답이 나온다.
+- 체크포인트: 항상 pathnameBase를 로그로 확인하라
 
 EOD
 
