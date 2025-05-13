@@ -1,7 +1,7 @@
 ---
 layout: single
 title: 대통령의 시간 - 이명박 회고록
-date: 2025-05-13 10:49:30.000000000 +09:00
+date: 2025-05-13 08:49:30.000000000 +09:00
 type: post
 header:
     teaser: "https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/9788925555102.jpg"
