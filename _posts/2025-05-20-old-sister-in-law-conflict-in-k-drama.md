@@ -4,8 +4,8 @@ title: 1970년대부터 현대까지 ‘시집 못 간 늙은 시누이’ 캐�
 date: 2025-05-27 00:00:30.000000000 +09:00
 type: post
 header:
-    teaser: "https://ojsfile.ohmynews.com/STD_IMG_FILE/2020/1211/IE002733595_STD.jpg"
-    image: "https://ojsfile.ohmynews.com/STD_IMG_FILE/2020/1211/IE002733595_STD.jpg"
+    teaser: "https://pds.joongang.co.kr//news/component/htmlphoto_mmdata/201709/18/93543e89-1ee5-4ec1-b17e-7733fababfea.jpg"
+    image: "https://pds.joongang.co.kr//news/component/htmlphoto_mmdata/201709/18/93543e89-1ee5-4ec1-b17e-7733fababfea.jpg"
 categories:
 - History
 tags: [드라마]
