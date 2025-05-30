@@ -1,7 +1,7 @@
 ---
 layout: single
 title: 청동기 시대 말기 붕괴와 이탈리아 고대 민족의 형성
-date: 2025-05-31 00:00:30.000000000 +00:00
+date: 2025-05-31 00:00:30.000000000 +09:00
 type: post
 header:
     teaser: "https://www.stefanorometours.com/upload/CONF100/20230628/Day_Tours_from_Rome_to_Etruscan_Places.jpg"
