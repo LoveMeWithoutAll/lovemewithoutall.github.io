@@ -144,8 +144,8 @@ Galaxy S21 시리즈 WebView의 동영상 녹색 화면 문제는 GPU 절전과 
 
 ## 참고
 - [Green Screen Android System Webview · Issue #1116 · PierfrancescoSoffritti/android-youtube-player · GitHub](https://github.com/PierfrancescoSoffritti/android-youtube-player/issues/1116)
-- [Deep-dive: VideoNG  |  Chromium  |  Chrome for Developers](https://developer.chrome.com/docs/chromium/videong)
-- [Animating and Compositing | Web Browser Engineering](https://browser.engineering/animations.html)
+- [Deep-dive: VideoNG  ,  Chromium  ,  Chrome for Developers](https://developer.chrome.com/docs/chromium/videong)
+- [Animating and Compositing , Web Browser Engineering](https://browser.engineering/animations.html)
 
 -----
 
