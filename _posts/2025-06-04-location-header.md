@@ -47,7 +47,7 @@ Client (HTTPS)
 
 1. 사용자가 `https://domain/path`(뒤에 `/` 없음)을 요청
 2. Nginx 가 디렉터리로 간주 → 301 리디렉션 출력
-3. **`Location: http://도메인/path/`**
+3. **`Location: http://domain/path/`**
 4. 브라우저가 HTTP 로 재요청 → L4 는 TLS 없음 → 백엔드가 특정 리소스를 못 찾고 **404**
 5. 사용자는 "HTTPS 페이지가 왜 갑자기 깨져?" 당황
 
@@ -91,7 +91,7 @@ absolute_redirect off;
 * 클라이언트(브라우저)가 상대 `Location` (`/path/`) 를 받으면
   **“내가 방금 보낸 URL 이 `https://…`였으니까, 거기에 그대로 붙이면 되겠군.”**
 * 그래서 HTTPS 스킴과 호스트를 **클라이언트가 자동 계승**
-* 결과 리디렉션: `https://msoffice.11st.co.kr/pages/product-reg/`
+* 결과 리디렉션: `https://domain/path/`
 * curl로 테스트 해보아도 마찬가지
 
 ---
@@ -129,7 +129,7 @@ absolute_redirect off;
 
 ### 참고 자료
 
-* **RFC 7231** – Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content
+* **RFC 7231** – [Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content](https://datatracker.ietf.org/doc/html/rfc7231#section-7.1.2)
 * **RFC 3986** – Uniform Resource Identifier (URI): Generic Syntax
 * Nginx 문서 – [`absolute_redirect`](https://nginx.org/en/docs/http/ngx_http_core_module.html#absolute_redirect)
 
