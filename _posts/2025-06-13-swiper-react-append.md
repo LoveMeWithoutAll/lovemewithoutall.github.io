@@ -1,7 +1,7 @@
 ---
 layout: single
 title: Swiper.js + React 에서 slide prepend 문제를 해결하는 방법
-date: 2025-06-13 00:49:30.000000000 +09:00
+date: 2025-06-12 00:49:30.000000000 +09:00
 type: post
 header:
     teaser: "/assets/images/11play.png"
