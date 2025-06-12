@@ -94,7 +94,11 @@ SAFE_RETURNS = { useRef, useState, useReducer, … }
 
 ---
 
-[1]: https://stackoverflow.com/questions/72402329/what-is-the-exact-behaviour-of-useref-react-hook-does-the-object-get-recreated?utm_source=chatgpt.com "What is the exact behaviour of useRef react hook? Does the object ..."
-[2]: https://github.com/facebook/react/issues/22539?utm_source=chatgpt.com "Allow custom hooks to return stable results · Issue #22539 - GitHub"
-[3]: https://github.com/facebook/react/issues/24112?utm_source=chatgpt.com "Suggestion: [eslint-plugin-react-hooks] - exhaustive-deps ... - GitHub"
-[4]: https://www.reddit.com/r/reactjs/comments/1d5rkro/can_eslint_reacthooksexhaustivedeps_safely_be/?utm_source=chatgpt.com "Can ESLint \"react-hooks/exhaustive-deps\" safely be ignored with ..."
+[1]: https://stackoverflow.com/questions/72402329/what-is-the-exact-behaviour-of-useref-react-hook-does-the-object-get-recreated "What is the exact behaviour of useRef react hook? Does the object ..."
+[2]: https://github.com/facebook/react/issues/22539 "Allow custom hooks to return stable results · Issue #22539 - GitHub"
+[3]: https://github.com/facebook/react/issues/24112 "Suggestion: [eslint-plugin-react-hooks] - exhaustive-deps ... - GitHub"
+[4]: https://www.reddit.com/r/reactjs/comments/1d5rkro/can_eslint_reacthooksexhaustivedeps_safely_be/ "Can ESLint \"react-hooks/exhaustive-deps\" safely be ignored with ..."
+
+EOD
+
+20250612
