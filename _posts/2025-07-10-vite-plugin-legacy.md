@@ -1,6 +1,6 @@
 ---
 layout: single
-title: '@vitejs/plugin-legacy' 정리
+title: '@vitejs/plugin-legacy 정리'
 date: 2025-07-10 00:49:30.000000000 +09:00
 type: post
 header:
