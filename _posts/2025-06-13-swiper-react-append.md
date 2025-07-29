@@ -151,6 +151,7 @@ const useSwiperIndexForPrepending = (
 1. swiper.slideTo 메소드의 2번째 파라미터는 0으로 설정해야 slide가 즉시 변경된다.
 2. swiper.slideTo 메소드의 3번째 파라미터인 `runCallbacks를 false로 설정`해야 한다. 이 코드는 오로지 사용자에게 보여지는 슬라이드를 유지시키는 것만이 목적이다. 따라서 다른 비즈니스 로직(analytics 등)을 실행하면 안 된다.
 `runCallbacks를 false로 설정`하면 slide가 이동해도 swiper.js의 `slideChange` 등 콜백 함수가 **실행되지 않는다**. 
+3. swiper.slideTo 메소드를 사용하면 이동된 컴포넌트가 unmount -> 다시 mount 될 수 있다. 이 때 `IntersectionObserver`의 콜백이 2번 실행될 수 있으니 주의하라. ref에 값을 저장해서 판단하는 방식으로는 콜백 2번 실행을 막을 수 없다(ref가 보존되는 건 리렌더링 뿐이기 때문).
 
 ### 4-3. ShortsSwiper 컴포넌트
 
