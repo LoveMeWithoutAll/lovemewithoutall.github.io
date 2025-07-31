@@ -219,6 +219,11 @@ function Footer() {
 
 이러한 전략을 조합하면, 예상치 못한 시점에 발생하는 stale closure 버그를 크게 줄일 수 있다. 결론적으로 React 함수형 컴포넌트에서는 **클로저가 capture한 값이 언제, 어디서 사용되는지**를 항상 고려해야 한다. 클로저가 캡처된 과거 값이 아니라 **최신 데이터**가 필요할 땐, `useRef`나 함수형 업데이트 같은 패턴을 통해 명시적으로 최신 값을 유지하도록 해야 한다.
 
+## 미래?
+
+[useEffectEvent](https://react.dev/learn/separating-events-from-effects#declaring-an-effect-event)를 사용하면 stale 문제를 쉽게 해결할 수도 있어 보인다. 하지만 현재(2025.07.31.) 실험적 기능이다.
+
+
 **참고자료:** 
 - [How Are Function Components Different from Classes? [번역]](https://ideveloper2.dev/blog/2019-03-12--how-are-function-components-different-from-classes/)
 - [Be Aware of Stale Closures when Using React Hooks](https://dmitripavlutin.com/react-hooks-stale-closures/#:~:text=component,actual%20value%20of%20the%20ref)
