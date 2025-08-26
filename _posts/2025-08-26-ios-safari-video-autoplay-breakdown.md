@@ -31,7 +31,7 @@ iOS safari 브라우저에서 사용자 제스처 없이 unmute 상태의 video 
 
 ## 원인
 
-webkit 2.5 기준, HTMLMediaElemet의 소스코드를 살펴보면
+webkit 2.5 기준, HTMLMediaElement의 소스코드를 살펴보면
 
 https://github.com/WebKit/WebKit/blob/webkitglib/2.50/Source/WebCore/html/HTMLMediaElement.cpp#L4355
 
