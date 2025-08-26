@@ -1,6 +1,6 @@
 ---
 layout: single
-title: HTML Video element를 재생하려고 했더니 영상이 나오다가 만다. safari 버그가 아닐까?
+title: HTML Video element를 재생하려고 했더니 영상이 나오다가 만다. safari 버그가 아닐까? webkit 소스코드를 까보았다
 date: 2025-08-26 00:49:30.000000000 +09:00
 type: post
 header:
