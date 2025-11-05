@@ -134,6 +134,9 @@ author:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
+    - label: "Resume"
+      icon: "fab fa-fw fa-file"
+      url: "https://lovemewithoutall.github.io/assets/resume/AHN_YOUNGSEON_RESUME_20251009.pdf"
 
 # Site Footer
 footer:
