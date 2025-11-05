@@ -119,9 +119,6 @@ author:
   location         : "S.Korea"
   email            : "ys.ahn@outlook.com"
   links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: "mailto:ys.ahn@outlook.com"
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
