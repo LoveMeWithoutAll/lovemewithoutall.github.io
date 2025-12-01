@@ -74,7 +74,8 @@ UserActivation {hasBeenActive: true, isActive: true}
 
 간단히 설명해 보자. transient activation으로 얻은 권한은 일시적으로만 활성화 된다. sticky activation으로 얻은 권한은 이후에도 계속 유지된다. 두 권한은 브라우저 탭(window) 전체에 적용되고, 같은 페이지 내 동일 출처일 경우 적용된다.
 
-쉬워 보이지만 여기에도 몇 가지 함정이 있다. 
+[HTML Media element의 Autoplay는 일단 sticky activation이 적용된다](https://developer.mozilla.org/en-US/docs/Web/Security/Defenses/User_activation#comparison_between_transient_and_sticky_activation:~:text=Autoplay%20of%20Media%20and%20Web%20Audio%20APIs%20(in%20particular%20for%20AudioContexts)). 하지만 safari는 MDN 문서대로 동작하지 않는다. 많은 함정이 있다.
+
 
 ### 함정1. "사용자 제스처로 인해 실행되었다"는 조건을 만족해야 한다
 
@@ -154,7 +155,9 @@ Webkit은 영상 재생을 promise로 일단 실행(많은 리소스가 필요�
 
 ## iOS 17 미만 버전에서는 어떻게 영상 자동 재생을 하면 좋은가?
 
-경험 있는 개발자라면 위에서 열거한 여러 함정을 피하기란 불가능에 가깝다는 사실을 이미 깨달았을 것이다. 이 문제를 해결하기 위하여 나는 iOS 17 이상과 그 미만 버전을 분리하여 접근하는 방법을 제안한다. 그 이유는 다음과 같다.
+경험 있는 개발자라면 위에서 열거한 여러 함정을 피하기란 불가능에 가깝다는 사실을 이미 깨달았을 것이다. 영상 자동 재생은 사실상 sticky vs transient user activation의 문제가 아니다. 이는 브라우저 내부 구현에 정의된 휴리스틱 정책의 문제다.
+
+이 문제를 해결하기 위하여 나는 iOS 17 이상과 그 미만 버전을 분리하는 휴리스틱한 접근법을 제안한다. 그 이유는 다음과 같다.
 
 앞서 설명했듯이 iOS 16 이하에서는 각 media elememt 별로 user activation 활성화 권한이 필요하다. iOS 17 이상에서는 해당 문서에 생성되어 있는 media elememt가 모두 user activation 활성화 권한을 부여 받는다. 
 
