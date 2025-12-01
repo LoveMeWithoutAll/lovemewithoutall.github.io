@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>동면 정책: 거시경제 안정화 시뮬레이션</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Chosen Palette: Warm Stone & Clinical Teal -->
+    <!-- Used a base of Stone (Warm Neutrals) to represent the 'human/biological' aspect,
+         contrasted with Teal (Scientific/Policy) and Rose (Crisis/Unemployment).
+         The background is light and readable. -->
+
+    <!-- Application Structure Plan:
+         1. Hero Section: Abstract & Core Concept - Sets the stage immediately.
+         2. Interactive Mechanism Flow: Users step through the policy phases (Trigger -> Return) to understand the 'How'.
+         3. The Simulation Room (Core Interaction): A dashboard where users can toggle the policy ON/OFF to see immediate effects on Unemployment and GDP/Spending charts. This directly visualizes the paper's quantitative findings.
+         4. Theoretical & Case Context: Explains the 'Why' (AD-AS model) and precedents (Germany/Finland) using card layouts.
+         5. Ethical Implications: An interactive grid to explore the human cost, ensuring the user leaves with a balanced view.
+         Structure chosen to move from "What is it?" to "Does it work?" to "Is it right?". -->
+
+    <!-- Visualization & Content Choices:
+         1. Mechanism Flowchart: HTML/CSS Flexbox with JS interaction. Goal: Explain process. Interaction: Click step to see details. No SVG used.
+         2. Comparative Charts (Chart.js): Line charts for Unemployment and Fiscal Spending. Goal: Compare Policy vs. No Policy. Interaction: Toggle switch triggers dataset update. Best for showing trends over time.
+         3. Impact Cards: Simple HTML Grid. Goal: Summarize textual findings (GDP, Inflation).
+         4. Ethics Grid: Interactive Cards. Goal: Reflection. Interaction: Hover/Click to reveal details.
+         CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #f5f5f4; /* stone-100 */
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .step-card.active {
+            border-color: #0d9488; /* teal-600 */
+            background-color: #f0fdfa; /* teal-50 */
+        }
+        /* Custom scrollbar for text blocks if needed */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d6d3d1;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body class="text-stone-800">
+
+<!-- Header / Hero Section -->
+<header class="bg-white border-b border-stone-200 sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+        <h1 class="text-xl md:text-2xl font-bold text-stone-900 tracking-tight">
+            <span class="text-teal-600">❖</span> 동면 정책 시뮬레이터
+        </h1>
+        <div class="text-sm font-medium text-stone-500">
+            거시경제 안정화 연구 보고서 기반
+        </div>
+    </div>
+</header>
+
+<main class="max-w-6xl mx-auto px-4 py-8 space-y-12">
+
+    <!-- Intro Section -->
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+        <div class="md:col-span-2 space-y-4">
+            <h2 class="text-3xl font-bold text-stone-900">경기 침체의 새로운 해법: <br>인위적 '동면(Hibernation)'</h2>
+            <p class="text-lg text-stone-700 leading-relaxed">
+                본 연구는 경기 침체기에 실업자와 저소득층을 일시적으로 '동면' 상태로 전환하여
+                공식 실업률 급등을 막고, 재정 지출을 절감하는 급진적인 정책 대안을 분석합니다.
+                첨단 생명공학 기술을 경제 정책에 접목한 이 제안은
+                <span class="font-bold text-teal-700">실업률 억제</span>와 <span class="font-bold text-teal-700">재정 안정</span>이라는
+                두 마리 토끼를 잡을 수 있을까요?
+            </p>
+            <div class="bg-stone-200 p-4 rounded-lg text-sm border-l-4 border-stone-500">
+                <strong>초록 요약:</strong> 경기 하강 국면에서 노동공급을 인위적으로 줄여 실업 통계 악화를 방지하고,
+                동면자의 소비를 0으로 수렴시켜 과잉 소비를 억제합니다. 시뮬레이션 결과 실업률 급등 완화 효과가 입증되었습니다.
+            </div>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm border border-stone-200">
+            <h3 class="font-bold text-stone-800 mb-4 border-b pb-2">핵심 가정 (Model)</h3>
+            <ul class="space-y-3 text-sm text-stone-600">
+                <li class="flex items-start">
+                    <span class="text-teal-600 mr-2">●</span>
+                    <span><strong>대상:</strong> 전체 인구의 약 5~10% (저소득, 실업자)</span>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-teal-600 mr-2">●</span>
+                    <span><strong>비용:</strong> 일반 실업급여보다 저렴 (생체 유지비만 지원)</span>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-teal-600 mr-2">●</span>
+                    <span><strong>효과:</strong> $u_1 < u_0$ (공식 실업률 하락)</span>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-teal-600 mr-2">●</span>
+                    <span><strong>기간:</strong> 6개월 ~ 1년 (경기 회복 시까지)</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Interactive Mechanism Section -->
+    <section class="bg-white rounded-2xl shadow-sm border border-stone-200 p-6 md:p-8">
+        <div class="mb-6">
+            <h2 class="text-2xl font-bold text-stone-900 mb-2">정책 메커니즘 흐름도</h2>
+            <p class="text-stone-600">
+                동면 정책은 단순한 격리가 아닙니다. 경제 지표에 따라 정교하게 설계된 5단계 프로세스입니다.
+                아래 단계를 클릭하여 정책이 어떻게 작동하는지 확인해보세요.
+            </p>
+        </div>
+
+        <!-- Flow Diagram (Clickable) -->
+        <div class="flex flex-col md:flex-row justify-between items-center gap-4 mb-8 relative">
+            <!-- Step 1 -->
+            <button onclick="showStep(1)" id="step1" class="step-card active w-full md:w-1/5 p-4 rounded-lg border-2 border-stone-200 text-center transition-all hover:shadow-md focus:outline-none">
+                <div class="text-2xl mb-2">📉</div>
+                <div class="font-bold text-stone-800">1. 발동</div>
+                <div class="text-xs text-stone-500">위기 감지</div>
+            </button>
+            <div class="hidden md:block text-stone-300 font-bold text-xl">→</div>
+
+            <!-- Step 2 -->
+            <button onclick="showStep(2)" id="step2" class="step-card w-full md:w-1/5 p-4 rounded-lg border-2 border-stone-200 text-center transition-all hover:shadow-md focus:outline-none">
+                <div class="text-2xl mb-2">📋</div>
+                <div class="font-bold text-stone-800">2. 선정</div>
+                <div class="text-xs text-stone-500">대상자 모집</div>
+            </button>
+            <div class="hidden md:block text-stone-300 font-bold text-xl">→</div>
+
+            <!-- Step 3 -->
+            <button onclick="showStep(3)" id="step3" class="step-card w-full md:w-1/5 p-4 rounded-lg border-2 border-stone-200 text-center transition-all hover:shadow-md focus:outline-none">
+                <div class="text-2xl mb-2">💤</div>
+                <div class="font-bold text-stone-800">3. 동면</div>
+                <div class="text-xs text-stone-500">경제활동 중단</div>
+            </button>
+            <div class="hidden md:block text-stone-300 font-bold text-xl">→</div>
+
+            <!-- Step 4 -->
+            <button onclick="showStep(4)" id="step4" class="step-card w-full md:w-1/5 p-4 rounded-lg border-2 border-stone-200 text-center transition-all hover:shadow-md focus:outline-none">
+                <div class="text-2xl mb-2">💉</div>
+                <div class="font-bold text-stone-800">4. 유지</div>
+                <div class="text-xs text-stone-500">저비용 관리</div>
+            </button>
+            <div class="hidden md:block text-stone-300 font-bold text-xl">→</div>
+
+            <!-- Step 5 -->
+            <button onclick="showStep(5)" id="step5" class="step-card w-full md:w-1/5 p-4 rounded-lg border-2 border-stone-200 text-center transition-all hover:shadow-md focus:outline-none">
+                <div class="text-2xl mb-2">🌤️</div>
+                <div class="font-bold text-stone-800">5. 복귀</div>
+                <div class="text-xs text-stone-500">경기 회복</div>
+            </button>
+        </div>
+
+        <!-- Dynamic Detail Box -->
+        <div class="bg-stone-50 p-6 rounded-lg border border-stone-200 min-h-[120px] transition-all" id="mechanism-detail">
+            <h3 class="text-lg font-bold text-teal-700 mb-2">1. 발동 조건 (Trigger)</h3>
+            <p class="text-stone-700">경기침체 또는 실업률 급등 조짐이 나타날 경우 정부가 프로그램을 발동합니다. 구체적으로 분기별 GDP 성장률의 연속 하락이나 실업률이 사전 설정한 임계치를 넘는 상황(Crisis Threshold)이 기준이 됩니다.</p>
+        </div>
+    </section>
+
+    <!-- Simulation Section (The Core Analysis) -->
+    <section class="space-y-6">
+        <div class="flex flex-col md:flex-row justify-between items-end gap-4">
+            <div>
+                <h2 class="text-2xl font-bold text-stone-900 mb-2">정책 시뮬레이션 결과</h2>
+                <p class="text-stone-600 max-w-2xl">
+                    가상의 경기 침체 시나리오(4분기 연속 -5% 성장)에서 동면 정책(인구의 10% 대상)을 시행했을 때와 하지 않았을 때의 거시경제 지표 변화를 비교합니다.
+                    오른쪽 스위치를 눌러 <strong>정책 효과</strong>를 확인하세요.
+                </p>
+            </div>
+            <!-- Interactive Toggle -->
+            <div class="flex items-center gap-3 bg-white px-4 py-2 rounded-full border border-stone-300 shadow-sm">
+                <span class="text-sm font-bold text-stone-500" id="toggle-label-off">정책 미시행</span>
+                <button id="sim-toggle" onclick="toggleSimulation()" class="relative w-14 h-8 bg-stone-300 rounded-full transition-colors duration-300 focus:outline-none">
+                    <div id="sim-toggle-dot" class="absolute top-1 left-1 w-6 h-6 bg-white rounded-full shadow-md transition-transform duration-300"></div>
+                </button>
+                <span class="text-sm font-bold text-stone-400" id="toggle-label-on">동면 정책 시행</span>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- Chart 1: Unemployment -->
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-stone-200">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="font-bold text-lg text-stone-800">공식 실업률 추이 (%)</h3>
+                    <span class="text-xs bg-rose-100 text-rose-800 px-2 py-1 rounded">핵심 지표</span>
+                </div>
+                <div class="chart-container">
+                    <canvas id="unemploymentChart"></canvas>
+                </div>
+                <p class="mt-4 text-sm text-stone-600 bg-stone-50 p-3 rounded">
+                    <strong class="text-teal-700">분석:</strong>
+                    <span id="unemp-analysis">정책 미도입 시 실업률은 최고 12%까지 치솟습니다. 이는 사회적 불안을 야기할 수 있는 위험 수준입니다.</span>
+                </p>
+            </div>
+
+            <!-- Chart 2: Fiscal Spending -->
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-stone-200">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="font-bold text-lg text-stone-800">정부 재정 지출 지수</h3>
+                    <span class="text-xs bg-stone-100 text-stone-600 px-2 py-1 rounded">사회안전망 비용</span>
+                </div>
+                <div class="chart-container">
+                    <canvas id="spendingChart"></canvas>
+                </div>
+                <p class="mt-4 text-sm text-stone-600 bg-stone-50 p-3 rounded">
+                    <strong class="text-teal-700">분석:</strong>
+                    <span id="spending-analysis">실업 급여 지출이 급증하며 재정에 큰 부담을 줍니다. 동면 유지는 일반 실업급여보다 비용 효율적입니다.</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- Additional Stats Grid -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="bg-white p-4 rounded-lg border border-stone-200 text-center">
+                <div class="text-xs text-stone-500 mb-1">최고 실업률 억제</div>
+                <div class="text-xl md:text-2xl font-bold text-teal-600" id="stat-1">0%p</div>
+                <div class="text-xs text-stone-400 mt-1">정책 효과</div>
+            </div>
+            <div class="bg-white p-4 rounded-lg border border-stone-200 text-center">
+                <div class="text-xs text-stone-500 mb-1">GDP 단기 변동</div>
+                <div class="text-xl md:text-2xl font-bold text-stone-600" id="stat-2">-0.0%</div>
+                <div class="text-xs text-stone-400 mt-1">노동공급 감소 영향</div>
+            </div>
+            <div class="bg-white p-4 rounded-lg border border-stone-200 text-center">
+                <div class="text-xs text-stone-500 mb-1">재정 절감 효과</div>
+                <div class="text-xl md:text-2xl font-bold text-teal-600" id="stat-3">0%</div>
+                <div class="text-xs text-stone-400 mt-1">지출 감소율</div>
+            </div>
+            <div class="bg-white p-4 rounded-lg border border-stone-200 text-center">
+                <div class="text-xs text-stone-500 mb-1">인플레이션 압력</div>
+                <div class="text-xl md:text-2xl font-bold text-stone-600">감소</div>
+                <div class="text-xs text-stone-400 mt-1">소비 위축 효과</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Theory & Case Study -->
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+            <h3 class="text-xl font-bold text-stone-900 mb-4 border-l-4 border-stone-400 pl-3">이론적 배경 (Theory)</h3>
+            <div class="bg-white p-6 rounded-lg shadow-sm border border-stone-200 h-full">
+                <p class="text-stone-700 mb-4">
+                    경기 하강기에 정부는 보통 통화완화나 재정 부양책을 쓰지만, 심각한 침체에서는 한계가 있습니다.
+                </p>
+                <ul class="space-y-4">
+                    <li class="bg-stone-50 p-3 rounded hover:bg-stone-100 transition-colors">
+                        <strong class="block text-stone-900 mb-1">통계적 실업률 하락 ($u_1 < u_0$)</strong>
+                        <p class="text-sm text-stone-600">동면자는 '비경제활동인구'로 분류됩니다. 따라서 분모(경제활동인구)와 분자(실업자 수)가 동시에 조정되어 공식 실업률 수치를 기술적으로 낮춥니다.</p>
+                    </li>
+                    <li class="bg-stone-50 p-3 rounded hover:bg-stone-100 transition-colors">
+                        <strong class="block text-stone-900 mb-1">자동 안정화 기능</strong>
+                        <p class="text-sm text-stone-600">동면 기간 중 소비를 0으로 수렴시켜 과잉 소비를 억제하고, 동시에 정부 보조금은 최소화하여 재정 건전성을 유지합니다.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <h3 class="text-xl font-bold text-stone-900 mb-4 border-l-4 border-teal-500 pl-3">관련 사례 (Case Studies)</h3>
+            <div class="bg-white p-6 rounded-lg shadow-sm border border-stone-200 h-full">
+                <div class="space-y-4">
+                    <div class="border-b border-stone-100 pb-4">
+                        <h4 class="font-bold text-stone-800">🇫🇮 핀란드 시범 프로그램 (2030s)</h4>
+                        <p class="text-sm text-stone-600 mt-1">
+                            약 5만 명의 실업자를 6개월간 동면시키는 정책을 시범 도입.
+                            예상 실업률 15%를 9% 내외로 억제하는 데 성공.
+                        </p>
+                    </div>
+                    <div class="border-b border-stone-100 pb-4">
+                        <h4 class="font-bold text-stone-800">🇩🇪 독일 단축근로제 (Kurzarbeit, 2008)</h4>
+                        <p class="text-sm text-stone-600 mt-1">
+                            노동시간을 단축하여 고용을 유지. 동면 정책의 '노동공급 축소' 개념과 유사한 효과를 입증한 역사적 사례.
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-stone-800">🇦🇺 호주 '경제적 동면' (COVID-19)</h4>
+                        <p class="text-sm text-stone-600 mt-1">
+                            영세 기업의 활동을 일시 중단(동면)시키고 임금 보조금을 지원. 위기를 '일시적 정지' 상태로 관리하려는 시도.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ethics Section -->
+    <section class="bg-stone-800 text-stone-100 rounded-2xl p-8">
+        <h2 class="text-2xl font-bold mb-6 text-center">⚠️ 윤리적 고려사항</h2>
+        <p class="text-center text-stone-400 mb-8 max-w-2xl mx-auto">
+            경제적 효율성 이면에는 심각한 윤리적 쟁점이 존재합니다. 정책 시행 전 반드시 사회적 합의가 필요한 부분입니다.
+            <br><span class="text-xs opacity-75">(카드를 클릭하여 상세 내용을 확인하세요)</span>
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- Ethics Card 1 -->
+            <div class="bg-stone-700 p-5 rounded-lg cursor-pointer hover:bg-stone-600 transition-all group" onclick="toggleEthics(this)">
+                <div class="flex justify-between items-center">
+                    <h4 class="font-bold text-lg text-teal-400">인권과 자발성</h4>
+                    <span class="text-2xl group-hover:rotate-45 transition-transform">+</span>
+                </div>
+                <p class="text-stone-300 text-sm mt-2 hidden">
+                    경제적 곤궁함 때문에 어쩔 수 없이 동면을 선택한다면, 이를 진정한 '자발적 선택'으로 볼 수 있을까요? 사실상의 강요가 될 위험이 있습니다.
+                </p>
+            </div>
+
+            <!-- Ethics Card 2 -->
+            <div class="bg-stone-700 p-5 rounded-lg cursor-pointer hover:bg-stone-600 transition-all group" onclick="toggleEthics(this)">
+                <div class="flex justify-between items-center">
+                    <h4 class="font-bold text-lg text-teal-400">계층간 형평성</h4>
+                    <span class="text-2xl group-hover:rotate-45 transition-transform">+</span>
+                </div>
+                <p class="text-stone-300 text-sm mt-2 hidden">
+                    동면 대상자가 주로 저소득층과 실업자에 집중될 가능성이 높습니다. 사회적 약자에게만 '시간의 정지'라는 부담을 전가한다는 비판이 가능합니다.
+                </p>
+            </div>
+
+            <!-- Ethics Card 3 -->
+            <div class="bg-stone-700 p-5 rounded-lg cursor-pointer hover:bg-stone-600 transition-all group" onclick="toggleEthics(this)">
+                <div class="flex justify-between items-center">
+                    <h4 class="font-bold text-lg text-teal-400">건강 및 안전</h4>
+                    <span class="text-2xl group-hover:rotate-45 transition-transform">+</span>
+                </div>
+                <p class="text-stone-300 text-sm mt-2 hidden">
+                    장기간의 동면이 신체 및 정신 건강에 미치는 영향은 불확실합니다. 깨어난 후 노동시장 경쟁력이 유지될 수 있을지도 미지수입니다.
+                </p>
+            </div>
+
+            <!-- Ethics Card 4 -->
+            <div class="bg-stone-700 p-5 rounded-lg cursor-pointer hover:bg-stone-600 transition-all group" onclick="toggleEthics(this)">
+                <div class="flex justify-between items-center">
+                    <h4 class="font-bold text-lg text-teal-400">사회적 배제</h4>
+                    <span class="text-2xl group-hover:rotate-45 transition-transform">+</span>
+                </div>
+                <p class="text-stone-300 text-sm mt-2 hidden">
+                    동면 기간 동안 사회적 관계망이 단절됩니다. 이는 복귀 후 사회 재적응 비용을 발생시키고 고립감을 심화시킬 수 있습니다.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conclusion -->
+    <footer class="text-center py-8 border-t border-stone-200">
+        <p class="text-stone-600 font-medium">
+            결론: 동면 기술은 거시경제 정책의 새로운 지평을 열었지만, <br>
+            <span class="text-teal-700">효율성</span>과 <span class="text-rose-700">윤리성</span> 사이의 균형 잡힌 설계가 필수적입니다.
+        </p>
+        <p class="text-xs text-stone-400 mt-4">Source: 거시경제 안정화 수단으로서 '동면 정책': 이론과 시뮬레이션 분석</p>
+    </footer>
+
+</main>
+
+<!-- JavaScript Logic -->
+<script>
+    // --- 1. Mechanism Flow Interaction ---
+    const mechanismData = {
+        1: {
+            title: "1. 발동 조건 (Trigger)",
+            desc: "경기침체 또는 실업률 급등 조짐이 나타날 경우 정부가 프로그램을 발동합니다. 구체적으로 분기별 GDP 성장률의 연속 하락이나 실업률이 사전 설정한 임계치를 넘는 상황(Crisis Threshold)이 기준이 됩니다."
+        },
+        2: {
+            title: "2. 대상자 선정 (Selection)",
+            desc: "주로 장기 실업자, 일시해고자 및 저소득층을 대상으로 합니다. 참여는 원칙적으로 자발적이며, 동면 종료 후 인센티브(일시금 등)를 제공하여 지원을 유도합니다."
+        },
+        3: {
+            title: "3. 동면 및 지원 (Support)",
+            desc: "참가자들은 생체 유지를 위한 최소한의 의료 지원만 받으며 경제활동을 중단합니다. 소비 지출이 0에 수렴하므로, 정부는 일반 실업급여보다 낮은 비용으로 이들을 지원할 수 있습니다."
+        },
+        4: {
+            title: "4. 기간 및 규모 (Duration)",
+            desc: "경기침체의 예상 지속 기간(수개월~1년) 동안 유지됩니다. 전체 노동력의 5~10%를 초과하지 않도록 규모를 탄력적으로 조절하여 경제 시스템 붕괴를 막습니다."
+        },
+        5: {
+            title: "5. 해제 및 복귀 (Recovery)",
+            desc: "경기 회복 신호가 확인되면 단계적으로 동면을 해제합니다. 깨어난 인원은 재취업 프로그램 및 건강 검진을 지원받아 노동시장에 순차적으로 복귀합니다."
+        }
+    };
+
+    function showStep(stepNum) {
+        // Update UI styling
+        document.querySelectorAll('.step-card').forEach(card => {
+            card.classList.remove('active', 'bg-teal-50', 'border-teal-600');
+            card.classList.add('border-stone-200');
+        });
+        const activeCard = document.getElementById(`step${stepNum}`);
+        activeCard.classList.add('active', 'bg-teal-50', 'border-teal-600');
+        activeCard.classList.remove('border-stone-200');
+
+        // Update content
+        const detailBox = document.getElementById('mechanism-detail');
+        detailBox.innerHTML = `
+                <h3 class="text-lg font-bold text-teal-700 mb-2">${mechanismData[stepNum].title}</h3>
+                <p class="text-stone-700">${mechanismData[stepNum].desc}</p>
+            `;
+    }
+
+    // --- 2. Simulation Logic & Charts ---
+
+    // Base Data (Simulated Scenario: 8 Quarters)
+    const labels = ['Q1 (침체전)', 'Q2 (침체시작)', 'Q3', 'Q4', 'Q5 (위기정점)', 'Q6', 'Q7 (회복기)', 'Q8 (정상화)'];
+
+    // Scenario A: No Policy (Business as Usual)
+    const dataNoPolicy = {
+        unemployment: [3.5, 5.0, 7.5, 9.5, 12.0, 11.0, 8.5, 6.0],
+        spending: [100, 120, 150, 180, 220, 210, 160, 130] // Index based
+    };
+
+    // Scenario B: Hibernation Policy Active
+    const dataPolicy = {
+        unemployment: [3.5, 4.8, 6.0, 7.2, 8.0, 7.5, 5.5, 4.0], // Peaked at 8.0 instead of 12.0
+        spending: [100, 115, 130, 145, 160, 155, 120, 110] // Significantly lower spending
+    };
+
+    let isPolicyActive = false;
+    let unemploymentChart, spendingChart;
+
+    function initCharts() {
+        // Chart 1: Unemployment
+        const ctx1 = document.getElementById('unemploymentChart').getContext('2d');
+        unemploymentChart = new Chart(ctx1, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: '실업률 (%)',
+                    data: dataNoPolicy.unemployment,
+                    borderColor: '#e11d48', // rose-600
+                    backgroundColor: 'rgba(225, 29, 72, 0.1)',
+                    borderWidth: 3,
+                    tension: 0.4,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: { mode: 'index', intersect: false }
+                },
+                scales: {
+                    y: { beginAtZero: true, max: 14, title: {display: true, text: '실업률 (%)'} }
+                }
+            }
+        });
+
+        // Chart 2: Spending
+        const ctx2 = document.getElementById('spendingChart').getContext('2d');
+        spendingChart = new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: '재정 지출 지수 (기준=100)',
+                    data: dataNoPolicy.spending,
+                    backgroundColor: '#a8a29e', // stone-400
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: { beginAtZero: true, title: {display: true, text: '지출 지수'} }
+                }
+            }
+        });
+    }
+
+    function toggleSimulation() {
+        isPolicyActive = !isPolicyActive;
+        const toggleDot = document.getElementById('sim-toggle-dot');
+        const toggleBtn = document.getElementById('sim-toggle');
+        const labelOn = document.getElementById('toggle-label-on');
+        const labelOff = document.getElementById('toggle-label-off');
+
+        // UI Toggle Animation
+        if (isPolicyActive) {
+            toggleDot.style.transform = 'translateX(1.5rem)';
+            toggleBtn.classList.remove('bg-stone-300');
+            toggleBtn.classList.add('bg-teal-500');
+            labelOn.classList.remove('text-stone-400');
+            labelOn.classList.add('text-teal-600');
+            labelOff.classList.add('text-stone-400');
+            labelOff.classList.remove('text-stone-500');
+
+            // Update Data to Policy
+            unemploymentChart.data.datasets[0].data = dataPolicy.unemployment;
+            unemploymentChart.data.datasets[0].borderColor = '#0d9488'; // teal-600
+            unemploymentChart.data.datasets[0].backgroundColor = 'rgba(13, 148, 136, 0.1)';
+
+            spendingChart.data.datasets[0].data = dataPolicy.spending;
+            spendingChart.data.datasets[0].backgroundColor = '#2dd4bf'; // teal-400
+
+            // Update Text Analysis
+            document.getElementById('unemp-analysis').innerHTML = "동면 정책으로 실업률 피크가 <span class='font-bold text-teal-600'>8.0%</span>로 억제되었습니다. (-4.0%p 효과)";
+            document.getElementById('spending-analysis').innerHTML = "동면 유지비용이 낮아 정부 지출이 크게 절감되었습니다. 재정 여력을 확보했습니다.";
+
+            // Update Stats
+            document.getElementById('stat-1').innerText = "-4.0%p";
+            document.getElementById('stat-1').className = "text-xl md:text-2xl font-bold text-teal-600";
+
+            document.getElementById('stat-2').innerText = "-1.0%p"; // Slight GDP drop due to less labor
+
+            document.getElementById('stat-3').innerText = "-27%"; // Rough calc of spending drop at peak
+        } else {
+            toggleDot.style.transform = 'translateX(0)';
+            toggleBtn.classList.add('bg-stone-300');
+            toggleBtn.classList.remove('bg-teal-500');
+            labelOn.classList.add('text-stone-400');
+            labelOn.classList.remove('text-teal-600');
+            labelOff.classList.remove('text-stone-400');
+            labelOff.classList.add('text-stone-500');
+
+            // Update Data to No Policy
+            unemploymentChart.data.datasets[0].data = dataNoPolicy.unemployment;
+            unemploymentChart.data.datasets[0].borderColor = '#e11d48';
+            unemploymentChart.data.datasets[0].backgroundColor = 'rgba(225, 29, 72, 0.1)';
+
+            spendingChart.data.datasets[0].data = dataNoPolicy.spending;
+            spendingChart.data.datasets[0].backgroundColor = '#a8a29e';
+
+            // Update Text Analysis
+            document.getElementById('unemp-analysis').innerHTML = "정책 미도입 시 실업률은 최고 <span class='font-bold text-rose-600'>12%</span>까지 치솟습니다. 이는 사회적 불안을 야기할 수 있는 위험 수준입니다.";
+            document.getElementById('spending-analysis').innerHTML = "실업 급여 지출이 급증하며 재정에 큰 부담을 줍니다. 동면 유지는 일반 실업급여보다 비용 효율적입니다.";
+
+            // Update Stats
+            document.getElementById('stat-1').innerText = "0%p";
+            document.getElementById('stat-1').className = "text-xl md:text-2xl font-bold text-stone-400";
+
+            document.getElementById('stat-2').innerText = "0.0%";
+
+            document.getElementById('stat-3').innerText = "0%";
+        }
+
+        unemploymentChart.update();
+        spendingChart.update();
+    }
+
+    // --- 3. Ethics Accordion Interaction ---
+    function toggleEthics(card) {
+        const p = card.querySelector('p');
+        const sign = card.querySelector('span');
+
+        if (p.classList.contains('hidden')) {
+            p.classList.remove('hidden');
+            sign.style.transform = 'rotate(45deg)';
+            card.classList.add('bg-stone-600');
+            card.classList.remove('bg-stone-700');
+        } else {
+            p.classList.add('hidden');
+            sign.style.transform = 'rotate(0deg)';
+            card.classList.remove('bg-stone-600');
+            card.classList.add('bg-stone-700');
+        }
+    }
+
+    // Initialize
+    window.onload = function() {
+        initCharts();
+    };
+
+</script>
+</body>
+</html>
