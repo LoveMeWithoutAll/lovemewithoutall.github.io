@@ -1,6 +1,6 @@
 ---
 layout: single
-title: Chrome DevTools MCP: Network.enable timed out 해결기
+title: "Chrome DevTools MCP: Network.enable timed out 해결기"
 date: 2026-03-20 00:49:30.000000000 +09:00
 type: post
 header:
