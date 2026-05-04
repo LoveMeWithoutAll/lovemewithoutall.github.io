@@ -1,6 +1,6 @@
 ---
 layout: single
-title: vitest 4와 js-dom 6.9.1 연결하는 삽질 이야기
+title: Node 25에서 vitest 4와 js-dom 6.9.1 연결하는 삽질기
 date: 2026-05-04 00:49:30.000000000 +09:00
 type: post
 header:
@@ -11,7 +11,7 @@ categories:
 tags: [vite]
 ---
 
-# vitest 4와 js-dom 6.9.1 연결하는 삽질 이야기
+# Node 25에서 vitest 4와 js-dom 6.9.1 연결하는 삽질기
 
 AI에게 vitest 초기 환경 설정을 맡겼더니 괴상한 설정 파일을 만들었다. 그냥 `vitest.config.ts` 파일에 `jest-dom`을 import 한 번 하면 될 것 같은데, 왜 이런 코드를 짰을까? 
 
@@ -157,15 +157,25 @@ Node 24를 쓰자.
 
 원래 vitest.config.ts 의 폴리필은 *Node 25 사용자를 위해* 있었던 것이기 때문에, 24 버전을 쓰면 폴리필은 불필요하다
 
-이런 문제가 계속 발생하면 vitest 4를 버려야 할 것 같다.
 
-## 그 외 
 
-아래 코드를 넣어주지 않으면 jest-dom의 type을 불러올 수 없다.
+## 그 외... vitests v4 와 js-dom의 호환 문제
+
+아래 코드를 넣어주지 않으면 jest-dom의 type을 불러올 수 없다. vitest 4를 js-dom이 연결하지 못 하기 때문이다.
 
 ```typescript
 import type {} from '@testing-library/jest-dom/vitest';
 ```
+
+vitest의 expect에서도 오류가 발생한다. expect 메서드가 jsDom의 rejects.toThrow와 연결되지 않기 때문이다. 그래서 아래와 같이 vitest의 expect를 강제로 확장해줘야 한다. vitest v4 이전에는 js-dom이 알아서 실행하는 코드였다.
+
+```typescript
+import * as matchers from '@testing-library/jest-dom/matchers';
+import { expect } from 'vitest';
+
+expect.extend(matchers);
+```
+
 
 ## 완성본
 
@@ -184,8 +194,9 @@ expect.extend(matchers);
 
 // issue #2. jest-dom의 모든 메서드를 vitest에서 사용할 수 있도록 타입을 불러온다
 import type {} from '@testing-library/jest-dom/vitest';
-
 ```
+
+아무래도 이런 문제가 계속 발생하면 vitest 4를 버려야 할 것 같다.
 
 ## 참고
 
