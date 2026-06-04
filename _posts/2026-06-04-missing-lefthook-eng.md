@@ -34,7 +34,11 @@ tags: [git, lefthook]
 
 Creating a new `git worktree` does not create a new `.git/hooks`. A git repository has exactly one `.git/hooks`, shared across all worktrees.
 
-As long as you run `lefthook install` only in the primary worktree, everything is fine. But if you run `lefthook install` in a newly created linked worktree, the lefthook binary path registered in `.git/hooks` gets hardcoded to the binary inside that linked worktree. While the linked worktree is alive, nothing goes wrong. But when you delete the linked worktree, the lefthook binary is deleted along with it.
+As long as you run `lefthook install` only in the primary worktree, everything is fine. 
+
+**But if you run `lefthook install` in a newly created linked worktree, the lefthook binary path registered in `.git/hooks` gets hardcoded to the binary inside that linked worktree.**
+
+While the linked worktree is alive, nothing goes wrong. But when you delete the linked worktree, the lefthook binary is deleted along with it.
 
 After that, git hooks still fire without raising any error. All you get is a message: "Can't find lefthook in PATH". The lefthook binary was removed together with the linked worktree. If you put blind faith in lefthook, you may end up feeling betrayed.
 

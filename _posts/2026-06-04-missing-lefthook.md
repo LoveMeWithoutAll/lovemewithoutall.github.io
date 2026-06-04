@@ -34,7 +34,11 @@ tags: [git, lefthook]
 
 `git worktree`를 신규 생성해도 `.git/hooks`는 신규 생성되지 않는다. 1개의 git 레포지토리에 `.git/hooks`는 1개 뿐이고, 모든 worktree에서 공유한다.
 
-`primary worktree`에서만 `lefthook install`을 실행하면 아무 문제 없다. 하지만 신규 생성한 `linked worktree`에서 `lefthook install`을 하면 `.git/hooks`에 등록된 lefthook 바이너리 파일의 경로가 `linked worktree`의 lefthook 바이너리 파일로 하드코딩 된다. 신규 생성한 `linked worktree`가 살아있을 때는 아무런 문제가 없다. 하지만 `linked worktree`를 삭제하면 `.git/hooks`는 lefthook 바이너리 파일도 함께 삭제된다.
+`primary worktree`에서만 `lefthook install`을 실행하면 아무 문제 없다. 
+
+하지만 **신규 생성한 `linked worktree`에서 `lefthook install`을 하면 `.git/hooks`에 등록된 lefthook 바이너리 파일의 경로가 `linked worktree`의 lefthook 바이너리 파일로 하드코딩** 된다. 
+
+신규 생성한 `linked worktree`가 살아있을 때는 아무런 문제가 없다. 하지만 `linked worktree`를 삭제하면 `.git/hooks`는 lefthook 바이너리 파일도 함께 삭제된다.
 
 이후 git hook이 실행 되어도 오류가 발생하지도 않는다. "Can't find lefthook in PATH"라는 메시지만 나올 뿐이다. lefthook 바이너리 파일이 `linked worktree` 삭제와 함께 제거되었기 때문이다. lefthook만 믿고 있다가 배신감을 느낄 수 있다.
 
