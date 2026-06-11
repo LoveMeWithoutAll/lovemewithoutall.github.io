@@ -82,7 +82,9 @@ Let's tackle the fixed-width problem first.
 2. Give the fixed-width columns a `width`
 3. Don't give the flexible column a `width` (it absorbs the remaining space)
 
-This solves the fixed-width-column part first. The flexible column takes up all of the table width left over after the fixed columns consume theirs. So as the browser window gets wider, that column's width grows too.
+This solves the fixed-width-column part first. The flexible column takes up all of the table width left over after the fixed columns consume theirs. So as the browser window gets wider, that column's width grows too. 
+
+As the browser window gets narrower, that colum's width narrows too and the contents of the column will be disappear. So minimum-width is needed.
 
 ### 2. The flexible column's minimum-width problem
 
