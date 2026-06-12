@@ -193,16 +193,10 @@ export default configureAmplify;
 라우터 생성이 더 이상 import 평가에 묶이지 않고 본문의 한 줄이 됐다. `Amplify 초기화 -> createAppRouter` 가 **실행 순서로** 보장되니, import 가 재정렬되든 린트가 줄을 옮기든 안 깨진다.
 
 
-## 검증
+## 성과
 
-수정 후 첫 [인증 토큰 확인 함수] 가 가짜 인증 토큰을 바로 읽었고, 폴백 강제 인증 토큰 refresh 는 사라졌다. 왕복 한 번이 통째로 없어진 것이다.
-
-
-## 교훈: eager-init 와 전역 설정의 경합
-
-이 버그의 본질은 Amplify 도 react-router 도 아니다. 순서가 중요한데 언어가 그 순서를 보장해 주지 않는다면, 순서를 코드로 명시해야 한다는 더 일반적인 이야기다.
-
-**모듈 로드 시점에 부수효과/eager 작업을 하는 무언가**(여기선 `createBrowserRouter` 의 eager loader)는, **엔트리 본문에서 도는 전역 초기화**(Amplify·Firebase·Sentry·analytics·i18n 의 configure)와 경합할 수 있다. configure 가 코드상 위에 있어도, import 평가가 본문보다 먼저 끝나기 때문에 "위에 적혔으니 먼저 돈다"는 직관이 깨진다.
+- e2e test 에서 인증 토큰 mocking 이 잘 된다
+- 앱 최초 접속시 인증을 위한 네트워크 왕복 1회가 사라졌다.
 
 
 ## 1줄 요약

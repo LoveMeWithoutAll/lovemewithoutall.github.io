@@ -194,21 +194,17 @@ export default configureAmplify;
 Router creation is no longer tied to import evaluation — it's a single line in the body. Because `Amplify init -> createAppRouter` is guaranteed **by execution order**, it won't break even if the imports get reordered or a linter moves lines around.
 
 
-## Verification
+## Archived
 
-After the fix, the first [auth-check function] read the fake token right away, and the fallback forced token refresh was gone. A whole round-trip vanished.
-
-
-## Lesson: the race between eager-init and global setup
-
-The essence of this bug is neither Amplify nor react-router. It's the more general point that when order matters but the language doesn't guarantee that order, you have to make the order explicit in code.
-
-**Something that performs side effects / eager work at module-load time** (here, `createBrowserRouter`'s eager loader) can race with **a global initialization that runs in the entry body** (the `configure` of Amplify·Firebase·Sentry·analytics·i18n). Even if `configure` sits higher in the source, import evaluation finishes before the body — so the intuition "it's written above, so it runs first" breaks.
+- e2e auth mocking works.
+- No more a round-trip to auth on app landing.
 
 
 ## One-line summary
 
 Write your app's initialization order explicitly.
 
+
+EOD
 
 *2026-06-11*
